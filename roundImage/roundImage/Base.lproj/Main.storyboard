@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="roundImage" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQF-e0-nkM">
+                                <rect key="frame" x="79" y="96" width="216" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="cL9-vD-b0n"/>
+                                    <constraint firstAttribute="width" constant="216" id="syG-GI-1nJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="_93841814_d12fzafy" translatesAutoresizingMaskIntoConstraints="NO" id="ffl-Ik-wkw" customClass="RoundImage" customModule="roundImage" customModuleProvider="target">
+                                <rect key="frame" x="67" y="207" width="240" height="147"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Wxx-1y-msx"/>
+                                    <constraint firstAttribute="height" constant="147" id="poD-dd-1QT"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter first name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1in-fV-dNf">
+                                <rect key="frame" x="84" y="148" width="207" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="LlT-Sm-dFo"/>
+                                    <constraint firstAttribute="width" constant="207" id="Wpr-bS-j2M"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="atT-J0-oqY">
+                                <rect key="frame" x="132" y="468" width="110" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Rename"/>
+                                <connections>
+                                    <action selector="rnmBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Mw-dh-xQi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ffl-Ik-wkw" firstAttribute="top" secondItem="JQF-e0-nkM" secondAttribute="bottom" constant="80" id="3PY-6N-xoo"/>
+                            <constraint firstItem="1in-fV-dNf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6ga-oP-ZzA"/>
+                            <constraint firstItem="JQF-e0-nkM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AkW-4J-D8z"/>
+                            <constraint firstItem="ffl-Ik-wkw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EjR-7d-glU"/>
+                            <constraint firstItem="JQF-e0-nkM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="76" id="IA3-qa-Ggl"/>
+                            <constraint firstItem="1in-fV-dNf" firstAttribute="top" secondItem="JQF-e0-nkM" secondAttribute="bottom" constant="21" id="tdO-Kw-s8t"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="fullNameView" destination="JQF-e0-nkM" id="xqd-7P-56A"/>
+                        <outlet property="renameFieldView" destination="1in-fV-dNf" id="edf-oX-GC2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="_93841814_d12fzafy" width="624" height="351"/>
+    </resources>
+</document>
