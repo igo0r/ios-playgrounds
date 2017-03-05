@@ -49,7 +49,7 @@ class DetailVC: UIViewController {
         typeView.text = ""
         descriptionView.text = ""
         nextEvolutionView.text = ""
-        nextEvoImgView.isHidden = true        
+        nextEvoImgView.isHidden = true
     }
     
     func updateUI() {
