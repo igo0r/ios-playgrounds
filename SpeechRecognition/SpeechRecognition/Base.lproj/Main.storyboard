@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SpeechRecognition" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SKW-f7-Cm9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCRIBE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfh-u7-yjo">
+                                        <rect key="frame" x="155.5" y="17.5" width="64.5" height="20"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
+                                        <color key="textColor" red="0.99304448339999996" green="0.99304448339999996" blue="0.99304448339999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.34509803919999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="0.34509803919999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="bfh-u7-yjo" firstAttribute="centerX" secondItem="SKW-f7-Cm9" secondAttribute="centerX" id="6rO-nh-0rJ"/>
+                                    <constraint firstItem="bfh-u7-yjo" firstAttribute="centerY" secondItem="SKW-f7-Cm9" secondAttribute="centerY" id="HP6-YH-atf"/>
+                                    <constraint firstAttribute="height" constant="55" id="tLH-Uq-k0m"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLAY &amp; TRANSCRIBE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uer-by-WLt">
+                                <rect key="frame" x="99" y="639" width="177" height="20"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7g-hp-yyH" customClass="CircleButton" customModule="SpeechRecognition" customModuleProvider="target">
+                                <rect key="frame" x="155.5" y="553" width="64" height="64"/>
+                                <color key="backgroundColor" red="1" green="0.34509803919999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="4Ag-k6-vX1"/>
+                                    <constraint firstAttribute="height" constant="64" id="NG3-Dz-Tdw"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="32"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="recognizeBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dxf-vb-jpu"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Tap red button to translate" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7vd-4d-Kqb">
+                                <rect key="frame" x="20" y="75" width="335" height="458"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="pHr-M5-cMb">
+                                <rect key="frame" x="155.5" y="552.5" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="Og2-2s-sgb"/>
+                                    <constraint firstAttribute="height" constant="64" id="j3n-ff-iWb"/>
+                                </constraints>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Uer-by-WLt" firstAttribute="top" secondItem="a7g-hp-yyH" secondAttribute="bottom" constant="22" id="1Hr-Ny-iUm"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Uer-by-WLt" secondAttribute="bottom" constant="8" id="8Hf-yZ-NUT"/>
+                            <constraint firstItem="SKW-f7-Cm9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9On-wQ-H91"/>
+                            <constraint firstItem="a7g-hp-yyH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Qtz-HB-Op8"/>
+                            <constraint firstItem="SKW-f7-Cm9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Vf6-nw-Icg"/>
+                            <constraint firstItem="7vd-4d-Kqb" firstAttribute="top" secondItem="SKW-f7-Cm9" secondAttribute="bottom" constant="20" id="XJP-8R-FmW"/>
+                            <constraint firstAttribute="trailing" secondItem="7vd-4d-Kqb" secondAttribute="trailing" constant="20" id="fQS-9D-bvl"/>
+                            <constraint firstItem="pHr-M5-cMb" firstAttribute="centerY" secondItem="a7g-hp-yyH" secondAttribute="centerY" id="hIo-DT-sZn"/>
+                            <constraint firstAttribute="trailing" secondItem="SKW-f7-Cm9" secondAttribute="trailing" id="ht6-Qo-LJD"/>
+                            <constraint firstItem="Uer-by-WLt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lNu-a5-ZsR"/>
+                            <constraint firstItem="pHr-M5-cMb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ryD-Mp-SKZ"/>
+                            <constraint firstItem="a7g-hp-yyH" firstAttribute="top" secondItem="7vd-4d-Kqb" secondAttribute="bottom" constant="20" id="uMu-3I-rdi"/>
+                            <constraint firstItem="7vd-4d-Kqb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="yBc-HV-RmB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="spinner" destination="pHr-M5-cMb" id="ErA-PX-J4c"/>
+                        <outlet property="translatedText" destination="7vd-4d-Kqb" id="6zF-1J-mBD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>

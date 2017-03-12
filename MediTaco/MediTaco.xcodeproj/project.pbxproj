@@ -1,0 +1,397 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C03043621E6DE63B00D7CD2D /* TacoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03043601E6DE63B00D7CD2D /* TacoCell.swift */; };
+		C03043631E6DE63B00D7CD2D /* TacoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C03043611E6DE63B00D7CD2D /* TacoCell.xib */; };
+		C03043651E6DECAB00D7CD2D /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03043641E6DECAB00D7CD2D /* ReusableView.swift */; };
+		C03043671E6DF3B200D7CD2D /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03043661E6DF3B200D7CD2D /* NibLoadableView.swift */; };
+		C03043691E6DF44800D7CD2D /* UICollectionView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03043681E6DF44800D7CD2D /* UICollectionView+Ext.swift */; };
+		C04B50AD1E6F619A00CF04D5 /* MutableCollection+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04B50AC1E6F619A00CF04D5 /* MutableCollection+Ext.swift */; };
+		C04B50AF1E6F63F000CF04D5 /* Shakeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04B50AE1E6F63F000CF04D5 /* Shakeable.swift */; };
+		C0736C481E6DD75E00888A5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0736C471E6DD75E00888A5F /* AppDelegate.swift */; };
+		C0736C4D1E6DD75E00888A5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0736C4B1E6DD75E00888A5F /* Main.storyboard */; };
+		C0736C4F1E6DD75E00888A5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0736C4E1E6DD75E00888A5F /* Assets.xcassets */; };
+		C0736C521E6DD75E00888A5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0736C501E6DD75E00888A5F /* LaunchScreen.storyboard */; };
+		C0736C601E6DD87F00888A5F /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0736C5F1E6DD87F00888A5F /* MainVC.swift */; };
+		C0736C621E6DD9E700888A5F /* DropShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0736C611E6DD9E700888A5F /* DropShadow.swift */; };
+		C0736C661E6DDBDC00888A5F /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0736C651E6DDBDC00888A5F /* CustomView.swift */; };
+		C0736C681E6DDD4500888A5F /* Taco.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0736C671E6DDD4500888A5F /* Taco.swift */; };
+		C0736C6A1E6DE06C00888A5F /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0736C691E6DE06C00888A5F /* DataService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C03043601E6DE63B00D7CD2D /* TacoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TacoCell.swift; sourceTree = "<group>"; };
+		C03043611E6DE63B00D7CD2D /* TacoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TacoCell.xib; sourceTree = "<group>"; };
+		C03043641E6DECAB00D7CD2D /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		C03043661E6DF3B200D7CD2D /* NibLoadableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
+		C03043681E6DF44800D7CD2D /* UICollectionView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Ext.swift"; sourceTree = "<group>"; };
+		C04B50AC1E6F619A00CF04D5 /* MutableCollection+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MutableCollection+Ext.swift"; sourceTree = "<group>"; };
+		C04B50AE1E6F63F000CF04D5 /* Shakeable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shakeable.swift; sourceTree = "<group>"; };
+		C0736C441E6DD75E00888A5F /* MediTaco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediTaco.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0736C471E6DD75E00888A5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C0736C4C1E6DD75E00888A5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C0736C4E1E6DD75E00888A5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C0736C511E6DD75E00888A5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C0736C531E6DD75E00888A5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0736C5F1E6DD87F00888A5F /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		C0736C611E6DD9E700888A5F /* DropShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropShadow.swift; sourceTree = "<group>"; };
+		C0736C651E6DDBDC00888A5F /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		C0736C671E6DDD4500888A5F /* Taco.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Taco.swift; sourceTree = "<group>"; };
+		C0736C691E6DE06C00888A5F /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C0736C411E6DD75D00888A5F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C0736C3B1E6DD75D00888A5F = {
+			isa = PBXGroup;
+			children = (
+				C0736C461E6DD75E00888A5F /* MediTaco */,
+				C0736C451E6DD75E00888A5F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C0736C451E6DD75E00888A5F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C0736C441E6DD75E00888A5F /* MediTaco.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C0736C461E6DD75E00888A5F /* MediTaco */ = {
+			isa = PBXGroup;
+			children = (
+				C0736C5E1E6DD81C00888A5F /* Extensions */,
+				C0736C5D1E6DD81700888A5F /* Protocols */,
+				C0736C5C1E6DD80F00888A5F /* Resources */,
+				C0736C5B1E6DD80600888A5F /* Controller */,
+				C0736C5A1E6DD80100888A5F /* View */,
+				C0736C591E6DD7FB00888A5F /* Model */,
+			);
+			path = MediTaco;
+			sourceTree = "<group>";
+		};
+		C0736C591E6DD7FB00888A5F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C0736C671E6DDD4500888A5F /* Taco.swift */,
+				C0736C691E6DE06C00888A5F /* DataService.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		C0736C5A1E6DD80100888A5F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C0736C4B1E6DD75E00888A5F /* Main.storyboard */,
+				C0736C501E6DD75E00888A5F /* LaunchScreen.storyboard */,
+				C0736C651E6DDBDC00888A5F /* CustomView.swift */,
+				C03043601E6DE63B00D7CD2D /* TacoCell.swift */,
+				C03043611E6DE63B00D7CD2D /* TacoCell.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		C0736C5B1E6DD80600888A5F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C0736C471E6DD75E00888A5F /* AppDelegate.swift */,
+				C0736C5F1E6DD87F00888A5F /* MainVC.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		C0736C5C1E6DD80F00888A5F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C0736C4E1E6DD75E00888A5F /* Assets.xcassets */,
+				C0736C531E6DD75E00888A5F /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		C0736C5D1E6DD81700888A5F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				C0736C611E6DD9E700888A5F /* DropShadow.swift */,
+				C03043641E6DECAB00D7CD2D /* ReusableView.swift */,
+				C03043661E6DF3B200D7CD2D /* NibLoadableView.swift */,
+				C04B50AE1E6F63F000CF04D5 /* Shakeable.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		C0736C5E1E6DD81C00888A5F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C03043681E6DF44800D7CD2D /* UICollectionView+Ext.swift */,
+				C04B50AC1E6F619A00CF04D5 /* MutableCollection+Ext.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C0736C431E6DD75D00888A5F /* MediTaco */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0736C561E6DD75E00888A5F /* Build configuration list for PBXNativeTarget "MediTaco" */;
+			buildPhases = (
+				C0736C401E6DD75D00888A5F /* Sources */,
+				C0736C411E6DD75D00888A5F /* Frameworks */,
+				C0736C421E6DD75D00888A5F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MediTaco;
+			productName = MediTaco;
+			productReference = C0736C441E6DD75E00888A5F /* MediTaco.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C0736C3C1E6DD75D00888A5F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Igor Lantushenko";
+				TargetAttributes = {
+					C0736C431E6DD75D00888A5F = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = C0736C3F1E6DD75D00888A5F /* Build configuration list for PBXProject "MediTaco" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C0736C3B1E6DD75D00888A5F;
+			productRefGroup = C0736C451E6DD75E00888A5F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C0736C431E6DD75D00888A5F /* MediTaco */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C0736C421E6DD75D00888A5F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C03043631E6DE63B00D7CD2D /* TacoCell.xib in Resources */,
+				C0736C521E6DD75E00888A5F /* LaunchScreen.storyboard in Resources */,
+				C0736C4F1E6DD75E00888A5F /* Assets.xcassets in Resources */,
+				C0736C4D1E6DD75E00888A5F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C0736C401E6DD75D00888A5F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C03043621E6DE63B00D7CD2D /* TacoCell.swift in Sources */,
+				C04B50AD1E6F619A00CF04D5 /* MutableCollection+Ext.swift in Sources */,
+				C0736C481E6DD75E00888A5F /* AppDelegate.swift in Sources */,
+				C0736C661E6DDBDC00888A5F /* CustomView.swift in Sources */,
+				C03043671E6DF3B200D7CD2D /* NibLoadableView.swift in Sources */,
+				C03043691E6DF44800D7CD2D /* UICollectionView+Ext.swift in Sources */,
+				C03043651E6DECAB00D7CD2D /* ReusableView.swift in Sources */,
+				C0736C621E6DD9E700888A5F /* DropShadow.swift in Sources */,
+				C0736C6A1E6DE06C00888A5F /* DataService.swift in Sources */,
+				C0736C681E6DDD4500888A5F /* Taco.swift in Sources */,
+				C04B50AF1E6F63F000CF04D5 /* Shakeable.swift in Sources */,
+				C0736C601E6DD87F00888A5F /* MainVC.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C0736C4B1E6DD75E00888A5F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C0736C4C1E6DD75E00888A5F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C0736C501E6DD75E00888A5F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C0736C511E6DD75E00888A5F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C0736C541E6DD75E00888A5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C0736C551E6DD75E00888A5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C0736C571E6DD75E00888A5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MediTaco/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.appcoda.MediTaco;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		C0736C581E6DD75E00888A5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MediTaco/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.appcoda.MediTaco;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C0736C3F1E6DD75D00888A5F /* Build configuration list for PBXProject "MediTaco" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0736C541E6DD75E00888A5F /* Debug */,
+				C0736C551E6DD75E00888A5F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C0736C561E6DD75E00888A5F /* Build configuration list for PBXNativeTarget "MediTaco" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0736C571E6DD75E00888A5F /* Debug */,
+				C0736C581E6DD75E00888A5F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C0736C3C1E6DD75D00888A5F /* Project object */;
+}
