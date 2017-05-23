@@ -24,4 +24,9 @@ extension UIViewController {
         }
     }
     
+    func openAppSettings() {
+        if let appSettings = URL(string: UIApplicationOpenSettingsURLString) {
+         UIApplication.shared.open(appSettings, options: [:], completionHandler: nil)
+         }
+    }
 }

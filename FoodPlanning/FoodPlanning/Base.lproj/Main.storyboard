@@ -349,19 +349,25 @@
                                     <constraint firstItem="9Oh-rC-SVG" firstAttribute="leading" secondItem="4nd-mJ-hq4" secondAttribute="leading" id="Scm-fK-gfi"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="srV-Su-sCA">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="srV-Su-sCA">
                                 <rect key="frame" x="60" y="116" width="260" height="452"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventTime" id="yBo-XQ-7AF" customClass="EventTimeTableCell" customModule="FoodPlanning" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="EventTime" id="yBo-XQ-7AF" customClass="EventTimeTableCell" customModule="FoodPlanning" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="260" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yBo-XQ-7AF" id="xtS-OZ-cqL">
                                             <rect key="frame" x="0.0" y="0.0" width="260" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2TJ-Dz-8zo">
+                                                    <rect key="frame" x="8" y="21.5" width="244" height="0.0"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09:30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="En0-Hy-XIX">
                                                     <rect key="frame" x="3" y="14" width="36" height="15.5"/>
                                                     <constraints>
@@ -393,14 +399,19 @@
                                                 <constraint firstItem="En0-Hy-XIX" firstAttribute="leading" secondItem="xtS-OZ-cqL" secondAttribute="leading" constant="3" id="5aI-un-DvY"/>
                                                 <constraint firstItem="lvq-Dx-wFu" firstAttribute="centerY" secondItem="xtS-OZ-cqL" secondAttribute="centerY" id="8Jd-0o-DRj"/>
                                                 <constraint firstItem="En0-Hy-XIX" firstAttribute="centerY" secondItem="xtS-OZ-cqL" secondAttribute="centerY" id="BKE-80-pGw"/>
+                                                <constraint firstItem="2TJ-Dz-8zo" firstAttribute="leading" secondItem="xtS-OZ-cqL" secondAttribute="leading" constant="8" id="Lbs-H5-qhb"/>
+                                                <constraint firstAttribute="trailing" secondItem="2TJ-Dz-8zo" secondAttribute="trailing" constant="8" id="YIi-t4-eh9"/>
                                                 <constraint firstItem="BFA-d4-g4I" firstAttribute="leading" secondItem="lvq-Dx-wFu" secondAttribute="trailing" constant="8" id="bW5-MK-lOe"/>
                                                 <constraint firstItem="BFA-d4-g4I" firstAttribute="trailing" secondItem="xtS-OZ-cqL" secondAttribute="trailingMargin" constant="5" id="bWc-VL-Nu9"/>
+                                                <constraint firstItem="2TJ-Dz-8zo" firstAttribute="centerY" secondItem="xtS-OZ-cqL" secondAttribute="centerY" id="hRS-Bd-5Sc"/>
                                                 <constraint firstItem="lvq-Dx-wFu" firstAttribute="leading" secondItem="En0-Hy-XIX" secondAttribute="trailing" constant="2" id="j8o-87-Z7O"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
+                                            <outlet property="emptyEventsLbl" destination="2TJ-Dz-8zo" id="RNf-Ts-PlN"/>
                                             <outlet property="eventDescriptionLbl" destination="BFA-d4-g4I" id="XIf-kr-KZv"/>
+                                            <outlet property="ovalCircle" destination="lvq-Dx-wFu" id="lfZ-pP-Z5a"/>
                                             <outlet property="timeLbl" destination="En0-Hy-XIX" id="8M9-Yc-lLg"/>
                                         </connections>
                                     </tableViewCell>
@@ -458,17 +469,17 @@
                         <outletCollection property="weekDayBtns" destination="wD2-5S-TGc" collectionClass="NSMutableArray" id="6IV-dQ-a84"/>
                         <outletCollection property="weekDayBtns" destination="aFc-14-cRV" collectionClass="NSMutableArray" id="eX2-Pc-nUj"/>
                         <outletCollection property="weekDayBtns" destination="TTl-et-j0h" collectionClass="NSMutableArray" id="qOG-i4-8sf"/>
-                        <segue destination="VnH-WX-pQo" kind="showDetail" identifier="timingEditor" id="L4O-rT-yoZ"/>
+                        <segue destination="slo-tr-oxr" kind="presentation" identifier="WeekDayEditor" id="Xgk-mX-Yoi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="33.75" y="34.859154929577464"/>
         </scene>
-        <!--Food Timing Controller-->
+        <!--Week Day Controller-->
         <scene sceneID="grr-0U-hi6">
             <objects>
-                <viewController id="VnH-WX-pQo" customClass="FoodTimingController" customModule="FoodPlanning" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="VnH-WX-pQo" customClass="WeekDayController" customModule="FoodPlanning" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KQm-zc-hQP"/>
                         <viewControllerLayoutGuide type="bottom" id="aZf-dE-s8J"/>
@@ -491,89 +502,143 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="IXI-Me-gNF">
-                                        <rect key="frame" x="38" y="20" width="263.5" height="518"/>
+                                        <rect key="frame" x="24" y="20" width="272" height="518"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="LOl-4H-tSQ">
-                                                <rect key="frame" x="0.0" y="0.0" width="250" height="75.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="272" height="75.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wake me up at" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1n-tj-EQA">
-                                                        <rect key="frame" x="0.0" y="0.0" width="104" height="75.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="130" height="75.5"/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="15"/>
                                                         <color key="textColor" red="0.89411764705882346" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                         <size key="shadowOffset" width="0.0" height="0.0"/>
                                                     </label>
-                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="S1n-VT-X5i">
-                                                        <rect key="frame" x="109" y="0.0" width="141" height="75.5"/>
+                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="S1n-VT-X5i" customClass="CustomDatePicker" customModule="FoodPlanning" customModuleProvider="target">
+                                                        <rect key="frame" x="135" y="0.0" width="137" height="75.5"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="141" id="7PE-a1-4cQ"/>
+                                                            <constraint firstAttribute="width" constant="137" id="7PE-a1-4cQ"/>
                                                             <constraint firstAttribute="height" constant="75" id="TPj-mr-M2j"/>
                                                         </constraints>
                                                         <date key="date" timeIntervalSinceReferenceDate="515141908.41841">
                                                             <!--2017-04-29 06:58:28 +0000-->
                                                         </date>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="13"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="timeChangedAction:" destination="VnH-WX-pQo" eventType="valueChanged" id="0Qd-ba-oL9"/>
+                                                        </connections>
                                                     </datePicker>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="S1n-VT-X5i" secondAttribute="trailing" id="0HI-1h-rsb"/>
                                                     <constraint firstItem="b1n-tj-EQA" firstAttribute="leading" secondItem="LOl-4H-tSQ" secondAttribute="leading" id="S6H-kn-Igv"/>
+                                                    <constraint firstAttribute="trailing" secondItem="S1n-VT-X5i" secondAttribute="trailing" id="p6o-8F-WTJ"/>
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0rw-C9-X5l">
-                                                <rect key="frame" x="0.0" y="84.5" width="263.5" height="1"/>
+                                                <rect key="frame" x="0.0" y="86.5" width="272" height="1"/>
                                                 <color key="backgroundColor" red="0.89411764709999997" green="0.87843137250000003" blue="0.87843137250000003" alpha="0.53000000000000003" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="gaa-fY-pYS"/>
                                                 </constraints>
                                             </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="c6W-RS-TKS">
-                                                <rect key="frame" x="0.0" y="119" width="233.5" height="26"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="wrR-zZ-EAV">
+                                                <rect key="frame" x="0.0" y="98" width="272" height="75.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meals count" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIY-TN-mhp">
-                                                        <rect key="frame" x="0.0" y="0.0" width="84.5" height="26"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Go to bed at" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCI-yF-roh">
+                                                        <rect key="frame" x="0.0" y="27.5" width="100" height="20.5"/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="15"/>
                                                         <color key="textColor" red="0.89411764709999997" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                         <size key="shadowOffset" width="0.0" height="0.0"/>
                                                     </label>
-                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="cVN-hB-cgf">
-                                                        <rect key="frame" x="124.5" y="0.0" width="109" height="26"/>
+                                                    <datePicker tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="5sr-DW-uuh" customClass="CustomDatePicker" customModule="FoodPlanning" customModuleProvider="target">
+                                                        <rect key="frame" x="135" y="0.0" width="137" height="75.5"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.69999999999999996" colorSpace="calibratedWhite"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="26" id="GcW-74-jwo"/>
-                                                            <constraint firstAttribute="width" constant="109" id="s7f-CV-wLZ"/>
+                                                            <constraint firstAttribute="width" constant="137" id="YY8-t0-imc"/>
+                                                            <constraint firstAttribute="height" constant="75" id="nyk-yy-N5X"/>
                                                         </constraints>
                                                         <date key="date" timeIntervalSinceReferenceDate="515141908.41841">
                                                             <!--2017-04-29 06:58:28 +0000-->
                                                         </date>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="13"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="timeChangedAction:" destination="VnH-WX-pQo" eventType="valueChanged" id="q25-KK-7E8"/>
+                                                        </connections>
                                                     </datePicker>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="cVN-hB-cgf" secondAttribute="trailing" id="7VK-b2-YVf"/>
-                                                    <constraint firstItem="tIY-TN-mhp" firstAttribute="leading" secondItem="c6W-RS-TKS" secondAttribute="leading" id="JIh-3l-uk4"/>
+                                                    <constraint firstAttribute="trailing" secondItem="5sr-DW-uuh" secondAttribute="trailing" id="CAz-zZ-HQ4"/>
+                                                    <constraint firstItem="xCI-yF-roh" firstAttribute="leading" secondItem="wrR-zZ-EAV" secondAttribute="leading" id="Ktu-67-T1c"/>
+                                                    <constraint firstAttribute="trailing" secondItem="5sr-DW-uuh" secondAttribute="trailing" id="ihp-Pf-o1Z"/>
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AHK-bw-jJY">
-                                                <rect key="frame" x="0.0" y="178.5" width="263.5" height="1"/>
+                                                <rect key="frame" x="0.0" y="184.5" width="272" height="1"/>
                                                 <color key="backgroundColor" red="0.89411764709999997" green="0.87843137250000003" blue="0.87843137250000003" alpha="0.53000000000000003" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="Scb-Mf-7Rq"/>
                                                 </constraints>
                                             </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="tzo-fg-9tF">
-                                                <rect key="frame" x="0.0" y="212" width="256.5" height="28"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="c6W-RS-TKS">
+                                                <rect key="frame" x="0.0" y="214" width="272" height="40"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Week days to apply" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nur-M6-HG0">
-                                                        <rect key="frame" x="0.0" y="0.0" width="136.5" height="28"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meals count" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIY-TN-mhp">
+                                                        <rect key="frame" x="0.0" y="0.0" width="95" height="40"/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="15"/>
                                                         <color key="textColor" red="0.89411764709999997" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                         <size key="shadowOffset" width="0.0" height="0.0"/>
                                                     </label>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="29S-li-lf3">
-                                                        <rect key="frame" x="196.5" y="0.0" width="60" height="28"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fx3-PX-HWt" customClass="AKPickerView" customModule="FoodPlanning" customModuleProvider="target">
+                                                        <rect key="frame" x="135" y="0.0" width="137" height="40"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.69999999999999996" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="137" id="6om-vu-x9G"/>
+                                                            <constraint firstAttribute="height" constant="40" id="fCu-AA-1BI"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="13"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="tIY-TN-mhp" firstAttribute="leading" secondItem="c6W-RS-TKS" secondAttribute="leading" id="JIh-3l-uk4"/>
+                                                </constraints>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mBE-am-9Mu">
+                                                <rect key="frame" x="0.0" y="282.5" width="272" height="1"/>
+                                                <color key="backgroundColor" red="0.89411764709999997" green="0.87843137250000003" blue="0.87843137250000003" alpha="0.53000000000000003" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="6tI-6V-17Y"/>
+                                                </constraints>
+                                            </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="tzo-fg-9tF">
+                                                <rect key="frame" x="0.0" y="318.5" width="272" height="28"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Week days to apply" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nur-M6-HG0">
+                                                        <rect key="frame" x="0.0" y="0.0" width="144.5" height="28"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="15"/>
+                                                        <color key="textColor" red="0.89411764709999997" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="29S-li-lf3">
+                                                        <rect key="frame" x="204.5" y="0.0" width="67.5" height="28"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LP1-Pv-FXK">
-                                                                <rect key="frame" x="0.0" y="0.0" width="30" height="28"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LP1-Pv-FXK">
+                                                                <rect key="frame" x="0.0" y="0.0" width="34" height="28"/>
                                                                 <state key="normal">
                                                                     <attributedString key="attributedTitle">
                                                                         <fragment content="None">
@@ -585,70 +650,40 @@
                                                                         </fragment>
                                                                     </attributedString>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="daysApplyBtnPressed:" destination="VnH-WX-pQo" eventType="touchUpInside" id="5HZ-na-VBk"/>
+                                                                </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NxK-vr-Lo3">
-                                                                <rect key="frame" x="30" y="0.0" width="30" height="28"/>
+                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NxK-vr-Lo3">
+                                                                <rect key="frame" x="34" y="0.0" width="33.5" height="28"/>
                                                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="11"/>
                                                                 <state key="normal" title="All">
                                                                     <color key="titleColor" red="0.59607843140000005" green="0.59607843140000005" blue="0.59607843140000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="daysApplyBtnPressed:" destination="VnH-WX-pQo" eventType="touchUpInside" id="oEW-Tj-eQ4"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="29S-li-lf3" secondAttribute="trailing" id="JHx-Qy-f0X"/>
+                                                    <constraint firstAttribute="trailing" secondItem="29S-li-lf3" secondAttribute="trailing" id="4ie-nE-fCV"/>
                                                     <constraint firstItem="Nur-M6-HG0" firstAttribute="leading" secondItem="tzo-fg-9tF" secondAttribute="leading" id="Pc8-Ga-F0M"/>
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleAspectFill" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hlX-q2-1pX">
-                                                <rect key="frame" x="0.0" y="259.5" width="263.5" height="27"/>
+                                                <rect key="frame" x="0.0" y="368" width="272" height="27"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZSK-C0-Jex">
+                                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="ZSK-C0-Jex" customClass="WeekDayFormBtn" customModule="FoodPlanning" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="43" height="27"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="27" id="2zS-bW-3g4"/>
                                                             <constraint firstAttribute="width" constant="43" id="uso-Zr-njF"/>
                                                         </constraints>
-                                                        <state key="normal">
-                                                            <attributedString key="attributedTitle">
-                                                                <fragment content="mon">
-                                                                    <attributes>
-                                                                        <color key="NSColor" red="0.89411764705882346" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <font key="NSFont" size="11" name="AvenirNext-DemiBold"/>
-                                                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                    </attributes>
-                                                                </fragment>
-                                                            </attributedString>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="1"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" red="0.65490196078431373" green="0.90196078431372551" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="5.3399999999999999"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h9k-4C-Eic">
-                                                        <rect key="frame" x="73.5" y="0.0" width="43" height="27"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="43" id="wVt-b2-aop"/>
-                                                            <constraint firstAttribute="height" constant="27" id="xcL-RY-P2p"/>
-                                                        </constraints>
-                                                        <state key="normal">
-                                                            <attributedString key="attributedTitle">
-                                                                <fragment content="mon">
-                                                                    <attributes>
-                                                                        <color key="NSColor" red="0.89411764705882346" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <font key="NSFont" size="11" name="AvenirNext-DemiBold"/>
-                                                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                    </attributes>
-                                                                </fragment>
-                                                            </attributedString>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="11"/>
+                                                        <state key="normal" title=" mon">
+                                                            <color key="titleColor" red="0.89411764705882346" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -661,23 +696,44 @@
                                                                 <real key="value" value="5.3399999999999999"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="weekDayBtnPressed:" destination="VnH-WX-pQo" eventType="touchUpInside" id="cGS-39-uG7"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gph-oS-hEd">
-                                                        <rect key="frame" x="147" y="0.0" width="43" height="27"/>
+                                                    <button opaque="NO" tag="2" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9k-4C-Eic" customClass="WeekDayFormBtn" customModule="FoodPlanning" customModuleProvider="target">
+                                                        <rect key="frame" x="76.5" y="0.0" width="43" height="27"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="43" id="wVt-b2-aop"/>
+                                                            <constraint firstAttribute="height" constant="27" id="xcL-RY-P2p"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="11"/>
+                                                        <state key="normal" title=" tue">
+                                                            <color key="titleColor" red="0.89411764705882346" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" red="0.89411764705882346" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="5.3399999999999999"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="weekDayBtnPressed:" destination="VnH-WX-pQo" eventType="touchUpInside" id="y5h-Qy-53O"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="4" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gph-oS-hEd" customClass="WeekDayFormBtn" customModule="FoodPlanning" customModuleProvider="target">
+                                                        <rect key="frame" x="152.5" y="0.0" width="43" height="27"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="43" id="5vd-N3-ay8"/>
                                                             <constraint firstAttribute="height" constant="27" id="n6S-lt-azS"/>
                                                         </constraints>
-                                                        <state key="normal">
-                                                            <attributedString key="attributedTitle">
-                                                                <fragment content="mon">
-                                                                    <attributes>
-                                                                        <color key="NSColor" red="0.89411764705882346" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <font key="NSFont" size="11" name="AvenirNext-DemiBold"/>
-                                                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                    </attributes>
-                                                                </fragment>
-                                                            </attributedString>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="11"/>
+                                                        <state key="normal" title=" mon">
+                                                            <color key="titleColor" red="0.89411764705882346" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -690,23 +746,19 @@
                                                                 <real key="value" value="5.3399999999999999"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="weekDayBtnPressed:" destination="VnH-WX-pQo" eventType="touchUpInside" id="tyA-Dn-Eqd"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ljD-0g-MoJ">
-                                                        <rect key="frame" x="220.5" y="0.0" width="43" height="27"/>
+                                                    <button opaque="NO" tag="6" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ljD-0g-MoJ" customClass="WeekDayFormBtn" customModule="FoodPlanning" customModuleProvider="target">
+                                                        <rect key="frame" x="229" y="0.0" width="43" height="27"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="27" id="0Jl-z0-Pm2"/>
                                                             <constraint firstAttribute="width" constant="43" id="7xW-QT-s6S"/>
                                                         </constraints>
-                                                        <state key="normal">
-                                                            <attributedString key="attributedTitle">
-                                                                <fragment content="mon">
-                                                                    <attributes>
-                                                                        <color key="NSColor" red="0.99215686274509807" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <font key="NSFont" size="11" name="AvenirNext-DemiBold"/>
-                                                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                    </attributes>
-                                                                </fragment>
-                                                            </attributedString>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="11"/>
+                                                        <state key="normal" title=" mon">
+                                                            <color key="titleColor" red="0.99215686274509807" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -719,145 +771,115 @@
                                                                 <real key="value" value="5.3399999999999999"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="weekDayBtnPressed:" destination="VnH-WX-pQo" eventType="touchUpInside" id="ceG-r7-72y"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cYs-6p-kFe">
-                                                <rect key="frame" x="0.0" y="306.5" width="238.5" height="27"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IrV-wf-xbi">
+                                                <rect key="frame" x="0.0" y="417" width="247" height="27"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vkg-M9-rW4">
-                                                        <rect key="frame" x="0.0" y="0.0" width="43" height="27"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MBW-9A-Yij">
+                                                        <rect key="frame" x="0.0" y="0.0" width="25" height="27"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="27" id="hVH-Jw-Wfl"/>
-                                                            <constraint firstAttribute="width" constant="43" id="rtz-mE-nPm"/>
+                                                            <constraint firstAttribute="width" constant="25" id="R8P-q3-dAR"/>
+                                                            <constraint firstAttribute="height" constant="27" id="iq5-MN-Fg0"/>
                                                         </constraints>
-                                                        <state key="normal">
-                                                            <attributedString key="attributedTitle">
-                                                                <fragment content="mon">
-                                                                    <attributes>
-                                                                        <color key="NSColor" red="0.89411764705882346" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <font key="NSFont" size="11" name="AvenirNext-DemiBold"/>
-                                                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                    </attributes>
-                                                                </fragment>
-                                                            </attributedString>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="1"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" red="0.89411764709999997" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="5.3399999999999999"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w4e-0H-66u">
-                                                        <rect key="frame" x="98" y="0.0" width="43" height="27"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="27" id="ZW4-zU-n4I"/>
-                                                            <constraint firstAttribute="width" constant="43" id="fys-4G-OKR"/>
-                                                        </constraints>
-                                                        <state key="normal">
-                                                            <attributedString key="attributedTitle">
-                                                                <fragment content="mon">
-                                                                    <attributes>
-                                                                        <color key="NSColor" red="0.89411764705882346" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <font key="NSFont" size="11" name="AvenirNext-DemiBold"/>
-                                                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                    </attributes>
-                                                                </fragment>
-                                                            </attributedString>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="1"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" red="0.89411764709999997" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="5.3399999999999999"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VMY-DG-NgI">
-                                                        <rect key="frame" x="195.5" y="0.0" width="43" height="27"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="27" id="O9d-2e-0jY"/>
-                                                            <constraint firstAttribute="width" constant="43" id="oY5-1b-uh7"/>
-                                                        </constraints>
-                                                        <state key="normal">
-                                                            <attributedString key="attributedTitle">
-                                                                <fragment content="mon">
-                                                                    <attributes>
-                                                                        <color key="NSColor" red="0.99215686274509807" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <font key="NSFont" size="11" name="AvenirNext-DemiBold"/>
-                                                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                    </attributes>
-                                                                </fragment>
-                                                            </attributedString>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="1"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" red="0.89411764709999997" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="5.3399999999999999"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </button>
+                                                    </view>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cYs-6p-kFe">
+                                                        <rect key="frame" x="25" y="0.0" width="222" height="27"/>
+                                                        <subviews>
+                                                            <button opaque="NO" tag="1" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vkg-M9-rW4" customClass="WeekDayFormBtn" customModule="FoodPlanning" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="43" height="27"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="27" id="hVH-Jw-Wfl"/>
+                                                                    <constraint firstAttribute="width" constant="43" id="rtz-mE-nPm"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="11"/>
+                                                                <state key="normal" title="mon">
+                                                                    <color key="titleColor" red="0.89411764705882346" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                        <real key="value" value="1"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                        <color key="value" red="0.89411764709999997" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="5.3399999999999999"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="weekDayBtnPressed:" destination="VnH-WX-pQo" eventType="touchUpInside" id="Nad-Xn-Lrl"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="3" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w4e-0H-66u" customClass="WeekDayFormBtn" customModule="FoodPlanning" customModuleProvider="target">
+                                                                <rect key="frame" x="89.5" y="0.0" width="43" height="27"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="27" id="ZW4-zU-n4I"/>
+                                                                    <constraint firstAttribute="width" constant="43" id="fys-4G-OKR"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="11"/>
+                                                                <state key="normal" title=" mon">
+                                                                    <color key="titleColor" red="0.89411764705882346" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                        <real key="value" value="1"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                        <color key="value" red="0.89411764709999997" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="5.3399999999999999"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="weekDayBtnPressed:" destination="VnH-WX-pQo" eventType="touchUpInside" id="XrR-SE-aaz"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="5" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VMY-DG-NgI" customClass="WeekDayFormBtn" customModule="FoodPlanning" customModuleProvider="target">
+                                                                <rect key="frame" x="179" y="0.0" width="43" height="27"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="27" id="O9d-2e-0jY"/>
+                                                                    <constraint firstAttribute="width" constant="43" id="oY5-1b-uh7"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="11"/>
+                                                                <state key="normal" title=" mon">
+                                                                    <color key="titleColor" red="0.99215686274509807" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                        <real key="value" value="1"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                        <color key="value" red="0.89411764709999997" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="5.3399999999999999"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="weekDayBtnPressed:" destination="VnH-WX-pQo" eventType="touchUpInside" id="t9w-WA-1xW"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
-                                            </stackView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mBE-am-9Mu">
-                                                <rect key="frame" x="0.0" y="366.5" width="263.5" height="1"/>
-                                                <color key="backgroundColor" red="0.89411764709999997" green="0.87843137250000003" blue="0.87843137250000003" alpha="0.53000000000000003" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="1" id="6tI-6V-17Y"/>
-                                                </constraints>
-                                            </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="wrR-zZ-EAV">
-                                                <rect key="frame" x="0.0" y="376" width="263.5" height="75.5"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Go to bed at" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCI-yF-roh">
-                                                        <rect key="frame" x="0.0" y="27.5" width="87.5" height="20.5"/>
-                                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="15"/>
-                                                        <color key="textColor" red="0.89411764709999997" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                        <size key="shadowOffset" width="0.0" height="0.0"/>
-                                                    </label>
-                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="5sr-DW-uuh">
-                                                        <rect key="frame" x="122.5" y="0.0" width="141" height="75.5"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="141" id="YY8-t0-imc"/>
-                                                            <constraint firstAttribute="height" constant="75" id="nyk-yy-N5X"/>
-                                                        </constraints>
-                                                        <date key="date" timeIntervalSinceReferenceDate="515141908.41841">
-                                                            <!--2017-04-29 06:58:28 +0000-->
-                                                        </date>
-                                                    </datePicker>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="xCI-yF-roh" firstAttribute="leading" secondItem="wrR-zZ-EAV" secondAttribute="leading" id="Ktu-67-T1c"/>
-                                                    <constraint firstAttribute="trailing" secondItem="5sr-DW-uuh" secondAttribute="trailing" id="ihp-Pf-o1Z"/>
-                                                </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hgk-SO-Dw0">
-                                                <rect key="frame" x="0.0" y="453.5" width="237.5" height="15"/>
+                                                <rect key="frame" x="0.0" y="462" width="238.5" height="35"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXX-kg-vkH">
-                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="15"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
                                                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="15" id="Dup-gN-9fy"/>
-                                                            <constraint firstAttribute="width" constant="20" id="HFT-7n-hfe"/>
+                                                            <constraint firstAttribute="height" constant="35" id="Dup-gN-9fy"/>
+                                                            <constraint firstAttribute="width" constant="35" id="HFT-7n-hfe"/>
                                                         </constraints>
-                                                        <state key="normal" image="Check"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                 <real key="value" value="1"/>
@@ -871,8 +893,8 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start my morning with water *" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCc-Nh-U7g">
-                                                        <rect key="frame" x="30" y="0.0" width="207.5" height="15"/>
-                                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="15"/>
+                                                        <rect key="frame" x="45" y="0.0" width="193.5" height="35"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="14"/>
                                                         <color key="textColor" red="0.89411764709999997" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                         <size key="shadowOffset" width="0.0" height="0.0"/>
@@ -884,17 +906,25 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Arh-3h-kgj">
-                                                <rect key="frame" x="0.0" y="497.5" width="108" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="498" width="119" height="20"/>
                                                 <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0fU-uH-ART">
+                                                        <rect key="frame" x="0.0" y="0.0" width="25" height="20"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="25" id="31k-ax-TUV"/>
+                                                            <constraint firstAttribute="height" constant="20" id="ChQ-PH-fx0"/>
+                                                        </constraints>
+                                                    </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbT-U0-oat">
-                                                        <rect key="frame" x="0.0" y="0.0" width="7" height="20.5"/>
+                                                        <rect key="frame" x="30" y="0.0" width="7" height="20"/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="15"/>
                                                         <color key="textColor" red="0.89411764709999997" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                         <size key="shadowOffset" width="0.0" height="0.0"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+30 minutes before first meal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgI-xX-tiL">
-                                                        <rect key="frame" x="12" y="0.0" width="96" height="20.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 minutes before meal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgI-xX-tiL">
+                                                        <rect key="frame" x="42" y="0.0" width="77" height="20"/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="7"/>
                                                         <color key="textColor" red="0.89411764709999997" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -904,23 +934,50 @@
                                             </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="cYs-6p-kFe" secondAttribute="trailing" constant="25" id="924-6I-ZX9"/>
+                                            <constraint firstItem="c6W-RS-TKS" firstAttribute="leading" secondItem="IXI-Me-gNF" secondAttribute="leading" id="4Xr-IQ-AR2"/>
+                                            <constraint firstAttribute="trailing" secondItem="LOl-4H-tSQ" secondAttribute="trailing" id="JWS-Td-0qa"/>
                                             <constraint firstItem="0rw-C9-X5l" firstAttribute="leading" secondItem="IXI-Me-gNF" secondAttribute="leading" id="SEO-lJ-3eT"/>
                                             <constraint firstItem="mBE-am-9Mu" firstAttribute="leading" secondItem="IXI-Me-gNF" secondAttribute="leading" id="TBR-Cb-oGp"/>
+                                            <constraint firstItem="IrV-wf-xbi" firstAttribute="leading" secondItem="IXI-Me-gNF" secondAttribute="leading" id="TMo-Pu-Kww"/>
                                             <constraint firstAttribute="trailing" secondItem="0rw-C9-X5l" secondAttribute="trailing" id="aie-j6-SlC"/>
+                                            <constraint firstAttribute="trailing" secondItem="c6W-RS-TKS" secondAttribute="trailing" id="e1L-BS-Zki"/>
+                                            <constraint firstAttribute="trailing" secondItem="IrV-wf-xbi" secondAttribute="trailing" constant="25" id="fqI-cz-ahk"/>
                                             <constraint firstItem="LOl-4H-tSQ" firstAttribute="top" secondItem="IXI-Me-gNF" secondAttribute="top" id="hpf-ib-bS4"/>
+                                            <constraint firstItem="wrR-zZ-EAV" firstAttribute="leading" secondItem="IXI-Me-gNF" secondAttribute="leading" id="ht9-29-qig"/>
                                             <constraint firstItem="AHK-bw-jJY" firstAttribute="leading" secondItem="IXI-Me-gNF" secondAttribute="leading" id="izr-jL-NCC"/>
                                             <constraint firstItem="hlX-q2-1pX" firstAttribute="leading" secondItem="IXI-Me-gNF" secondAttribute="leading" id="jZr-Wd-x7l"/>
                                             <constraint firstAttribute="trailing" secondItem="mBE-am-9Mu" secondAttribute="trailing" id="lGA-CJ-SWh"/>
+                                            <constraint firstItem="LOl-4H-tSQ" firstAttribute="leading" secondItem="IXI-Me-gNF" secondAttribute="leading" id="ljT-6k-qvl"/>
+                                            <constraint firstItem="Arh-3h-kgj" firstAttribute="top" secondItem="hgk-SO-Dw0" secondAttribute="bottom" constant="1" id="mTA-u5-FKD"/>
+                                            <constraint firstAttribute="trailing" secondItem="tzo-fg-9tF" secondAttribute="trailing" id="oVd-b7-PEx"/>
+                                            <constraint firstAttribute="trailing" secondItem="wrR-zZ-EAV" secondAttribute="trailing" id="qP2-xA-dx2"/>
+                                            <constraint firstItem="tzo-fg-9tF" firstAttribute="leading" secondItem="IXI-Me-gNF" secondAttribute="leading" id="qSK-go-5gh"/>
                                             <constraint firstAttribute="trailing" secondItem="hlX-q2-1pX" secondAttribute="trailing" id="w0t-Dv-Kn2"/>
                                             <constraint firstAttribute="trailing" secondItem="AHK-bw-jJY" secondAttribute="trailing" id="xW4-aw-NWO"/>
                                         </constraints>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6tx-V6-taI">
+                                        <rect key="frame" x="24" y="494" width="272" height="45"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2tX-AW-0hz">
+                                                <rect key="frame" x="0.0" y="0.0" width="272" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="5OT-q1-6ED"/>
+                                                </constraints>
+                                                <connections>
+                                                    <action selector="waterBtnPressed:" destination="VnH-WX-pQo" eventType="touchUpInside" id="6OR-bL-KsC"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="IXI-Me-gNF" firstAttribute="leading" secondItem="gsL-tE-0GG" secondAttribute="leading" constant="38" id="3QZ-9t-PEK"/>
-                                    <constraint firstAttribute="trailing" secondItem="IXI-Me-gNF" secondAttribute="trailing" constant="18" id="IF8-ai-AVk"/>
+                                    <constraint firstItem="IXI-Me-gNF" firstAttribute="leading" secondItem="gsL-tE-0GG" secondAttribute="leading" constant="24" id="3QZ-9t-PEK"/>
+                                    <constraint firstAttribute="trailing" secondItem="6tx-V6-taI" secondAttribute="trailing" constant="24" id="69b-cQ-OgS"/>
+                                    <constraint firstAttribute="trailing" secondItem="IXI-Me-gNF" secondAttribute="trailing" constant="24" id="IF8-ai-AVk"/>
+                                    <constraint firstItem="6tx-V6-taI" firstAttribute="leading" secondItem="gsL-tE-0GG" secondAttribute="leading" constant="24" id="Lw1-te-cI8"/>
+                                    <constraint firstItem="6tx-V6-taI" firstAttribute="top" secondItem="IXI-Me-gNF" secondAttribute="bottom" constant="-44" id="NyN-Zj-5Ur"/>
                                     <constraint firstItem="IXI-Me-gNF" firstAttribute="top" secondItem="gsL-tE-0GG" secondAttribute="top" constant="20" id="bNb-cQ-0Up"/>
                                     <constraint firstAttribute="bottom" secondItem="IXI-Me-gNF" secondAttribute="bottom" constant="30" id="uOa-SC-0l5"/>
                                 </constraints>
@@ -942,16 +999,61 @@
                             <constraint firstItem="5rN-8B-eSF" firstAttribute="leading" secondItem="J4F-md-e6i" secondAttribute="leading" id="qoW-SB-L4L"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="46X-cP-rBe"/>
+                    <navigationItem key="navigationItem" id="46X-cP-rBe">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="cDk-hR-NIn">
+                            <color key="tintColor" red="0.89411764705882346" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="navBarBtnPressed:" destination="VnH-WX-pQo" id="veZ-K3-aAx"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" tag="1" style="plain" systemItem="save" id="T6m-We-VVu">
+                            <color key="tintColor" red="0.94117647059999998" green="0.33333333329999998" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="navBarBtnPressed:" destination="VnH-WX-pQo" id="wgr-dE-D7I"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="applyDaysLbl" destination="Nur-M6-HG0" id="hcA-K5-8xh"/>
+                        <outlet property="pickerView" destination="fx3-PX-HWt" id="Fcb-5x-9EF"/>
+                        <outlet property="sleepAtLbl" destination="xCI-yF-roh" id="bDI-3n-a8p"/>
+                        <outlet property="sleepTimePicker" destination="5sr-DW-uuh" id="tCA-Uq-cch"/>
+                        <outlet property="wakeUpPicker" destination="S1n-VT-X5i" id="PzS-qB-sI6"/>
+                        <outlet property="waterBtn" destination="TXX-kg-vkH" id="Ytv-TF-CUA"/>
+                        <outletCollection property="weekDays" destination="ZSK-C0-Jex" collectionClass="NSMutableArray" id="aPg-iW-B95"/>
+                        <outletCollection property="weekDays" destination="h9k-4C-Eic" collectionClass="NSMutableArray" id="oGd-FI-FGN"/>
+                        <outletCollection property="weekDays" destination="Gph-oS-hEd" collectionClass="NSMutableArray" id="rcH-Ny-nIB"/>
+                        <outletCollection property="weekDays" destination="ljD-0g-MoJ" collectionClass="NSMutableArray" id="uzq-fo-MCa"/>
+                        <outletCollection property="weekDays" destination="VMY-DG-NgI" collectionClass="NSMutableArray" id="cb4-eZ-Gci"/>
+                        <outletCollection property="weekDays" destination="w4e-0H-66u" collectionClass="NSMutableArray" id="hHy-65-nbP"/>
+                        <outletCollection property="weekDays" destination="Vkg-M9-rW4" collectionClass="NSMutableArray" id="8jn-xa-4QC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vw2-gR-FKH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="971" y="35"/>
+            <point key="canvasLocation" x="1835.625" y="34.859154929577464"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8wp-hb-kGo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="slo-tr-oxr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gT3-Aw-pBy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="VnH-WX-pQo" kind="relationship" relationship="rootViewController" id="r4S-83-mVu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k47-wS-Uyx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="936" y="35"/>
         </scene>
     </scenes>
     <resources>
         <image name="Cancel" width="14" height="14"/>
-        <image name="Check" width="18" height="15"/>
         <image name="Path" width="21" height="16"/>
         <image name="lemons" width="320" height="568"/>
         <image name="oval" width="8" height="8"/>

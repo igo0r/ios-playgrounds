@@ -51,8 +51,16 @@ class DateTimeUtils {
         return WeekDays(rawValue: (dayOfWeek - 1))!
     }
     
+    static func isTimeIntervalLess(than interval: Double, betweenDate1 date1: Date, andDate2 date2: Date) -> Bool {
+        return date1.timeIntervalSince(date2) <= interval
+    }
+    
     static func getCurrentDate() -> Date {
         return currentDate
+    }
+    
+    static func getTomorrowNoon() {
+        
     }
 
 }

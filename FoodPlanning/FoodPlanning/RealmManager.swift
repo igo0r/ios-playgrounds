@@ -27,10 +27,17 @@ class RealmManager {
         }
     }
     
-    static func writeObject(obj: Any, realm: Realm) {
-        if let weekDay = obj as? WeekDay {
+    static func writeWeekDay(obj: WeekDay) {
+        DispatchQueue.main.async {
+            let realm = try! Realm()
+            let days = realm.objects(WeekDay.self).filter("weekDay == \(obj.weekDay)")
+            for day in days {
+                try! realm.write {
+                    realm.delete(day)
+                }
+            }
             try! realm.write {
-                realm.add(weekDay)
+                realm.add(obj)
             }
         }
     }

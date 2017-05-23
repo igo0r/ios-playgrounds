@@ -15,20 +15,28 @@
 		C00E01851EBBA1850098B9D5 /* TimeEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00E01841EBBA1850098B9D5 /* TimeEvent.swift */; };
 		C00E01871EBBB6C70098B9D5 /* WeekDayBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00E01861EBBB6C70098B9D5 /* WeekDayBtn.swift */; };
 		C00E01891EBBC9FB0098B9D5 /* WeekDays.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00E01881EBBC9FB0098B9D5 /* WeekDays.swift */; };
+		C03B68751ECDFB2A00830DCA /* PickerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03B68741ECDFB2A00830DCA /* PickerLabel.swift */; };
+		C03B68EF1ED0A07D00830DCA /* AKPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03B68EE1ED0A07D00830DCA /* AKPickerView.swift */; };
+		C03B68F11ED0A17300830DCA /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03B68F01ED0A17300830DCA /* UIImage+Resize.swift */; };
+		C043379D1EC71E4B00FA0616 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C043379C1EC71E4B00FA0616 /* Assets.xcassets */; };
+		C043379F1EC742F500FA0616 /* WeekDayFormBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = C043379E1EC742F500FA0616 /* WeekDayFormBtn.swift */; };
 		C0478A351EB1365500E13300 /* UIView+Inspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0478A341EB1365500E13300 /* UIView+Inspectable.swift */; };
 		C0478A371EB1382E00E13300 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0478A361EB1382E00E13300 /* UIButtonExtension.swift */; };
 		C063966E1EBCCAB8008F9F2B /* DateTimeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C063966D1EBCCAB8008F9F2B /* DateTimeUtils.swift */; };
 		C06BDB061EC4AC2B0053B60C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06BDB051EC4AC2B0053B60C /* Constants.swift */; };
 		C06BDB081EC4AC7C0053B60C /* UserDefaultUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06BDB071EC4AC7C0053B60C /* UserDefaultUtils.swift */; };
+		C0810C481ECA40670041721A /* CustomDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0810C471ECA40670041721A /* CustomDatePicker.swift */; };
 		C0A696A21EAE9160001EBFB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A696A11EAE9160001EBFB4 /* AppDelegate.swift */; };
 		C0A696A71EAE9160001EBFB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0A696A51EAE9160001EBFB4 /* Main.storyboard */; };
-		C0A696A91EAE9160001EBFB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0A696A81EAE9160001EBFB4 /* Assets.xcassets */; };
 		C0A696AC1EAE9160001EBFB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0A696AA1EAE9160001EBFB4 /* LaunchScreen.storyboard */; };
 		C0A696B71EAE9161001EBFB4 /* FoodPlanningTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A696B61EAE9161001EBFB4 /* FoodPlanningTests.swift */; };
 		C0E12D6B1EAFC98C005E5C0F /* WeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E12D6A1EAFC98C005E5C0F /* WeekViewController.swift */; };
 		C0E12D6D1EAFDC43005E5C0F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E12D6C1EAFDC43005E5C0F /* UIColor.swift */; };
+		C0E949881ED369E500FA5B09 /* LocalNotificationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E949871ED369E500FA5B09 /* LocalNotificationUtils.swift */; };
+		C0E9498A1ED47EA300FA5B09 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E949891ED47EA300FA5B09 /* Date.swift */; };
+		C0E9498C1ED49B9400FA5B09 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9498B1ED49B9400FA5B09 /* UIView.swift */; };
 		C0E9528D1EBB9C4200182620 /* EventTimeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9528C1EBB9C4200182620 /* EventTimeTableCell.swift */; };
-		C0F147021EB52C0200FB2A19 /* FoodTimingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F147011EB52C0200FB2A19 /* FoodTimingController.swift */; };
+		C0F147021EB52C0200FB2A19 /* WeekDayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F147011EB52C0200FB2A19 /* WeekDayController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,15 +61,20 @@
 		C00E01841EBBA1850098B9D5 /* TimeEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeEvent.swift; sourceTree = "<group>"; };
 		C00E01861EBBB6C70098B9D5 /* WeekDayBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekDayBtn.swift; sourceTree = "<group>"; };
 		C00E01881EBBC9FB0098B9D5 /* WeekDays.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekDays.swift; sourceTree = "<group>"; };
+		C03B68741ECDFB2A00830DCA /* PickerLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerLabel.swift; sourceTree = "<group>"; };
+		C03B68EE1ED0A07D00830DCA /* AKPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPickerView.swift; sourceTree = "<group>"; };
+		C03B68F01ED0A17300830DCA /* UIImage+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
+		C043379C1EC71E4B00FA0616 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C043379E1EC742F500FA0616 /* WeekDayFormBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekDayFormBtn.swift; sourceTree = "<group>"; };
 		C0478A341EB1365500E13300 /* UIView+Inspectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Inspectable.swift"; sourceTree = "<group>"; };
 		C0478A361EB1382E00E13300 /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		C063966D1EBCCAB8008F9F2B /* DateTimeUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTimeUtils.swift; sourceTree = "<group>"; };
 		C06BDB051EC4AC2B0053B60C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C06BDB071EC4AC7C0053B60C /* UserDefaultUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultUtils.swift; sourceTree = "<group>"; };
+		C0810C471ECA40670041721A /* CustomDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDatePicker.swift; sourceTree = "<group>"; };
 		C0A6969E1EAE9160001EBFB4 /* FoodPlanning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodPlanning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0A696A11EAE9160001EBFB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0A696A61EAE9160001EBFB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C0A696A81EAE9160001EBFB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C0A696AB1EAE9160001EBFB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C0A696AD1EAE9160001EBFB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0A696B21EAE9161001EBFB4 /* FoodPlanningTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodPlanningTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,8 +82,11 @@
 		C0A696B81EAE9161001EBFB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0E12D6A1EAFC98C005E5C0F /* WeekViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekViewController.swift; sourceTree = "<group>"; };
 		C0E12D6C1EAFDC43005E5C0F /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		C0E949871ED369E500FA5B09 /* LocalNotificationUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationUtils.swift; sourceTree = "<group>"; };
+		C0E949891ED47EA300FA5B09 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		C0E9498B1ED49B9400FA5B09 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		C0E9528C1EBB9C4200182620 /* EventTimeTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTimeTableCell.swift; sourceTree = "<group>"; };
-		C0F147011EB52C0200FB2A19 /* FoodTimingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodTimingController.swift; sourceTree = "<group>"; };
+		C0F147011EB52C0200FB2A19 /* WeekDayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekDayController.swift; sourceTree = "<group>"; };
 		F71CA9672736C6B6AA4489B2 /* Pods-FoodPlanningTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodPlanningTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodPlanningTests/Pods-FoodPlanningTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,6 +134,7 @@
 				C063966D1EBCCAB8008F9F2B /* DateTimeUtils.swift */,
 				C06BDB051EC4AC2B0053B60C /* Constants.swift */,
 				C06BDB071EC4AC7C0053B60C /* UserDefaultUtils.swift */,
+				C0E949871ED369E500FA5B09 /* LocalNotificationUtils.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -127,6 +144,10 @@
 			children = (
 				C0478A361EB1382E00E13300 /* UIButtonExtension.swift */,
 				C0045E8C1EBF844400C01BFA /* UIViewExtension.swift */,
+				C03B68EE1ED0A07D00830DCA /* AKPickerView.swift */,
+				C03B68F01ED0A17300830DCA /* UIImage+Resize.swift */,
+				C0E949891ED47EA300FA5B09 /* Date.swift */,
+				C0E9498B1ED49B9400FA5B09 /* UIView.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -161,8 +182,8 @@
 				C0E12D681EAFC91D005E5C0F /* View */,
 				C0E12D671EAFC917005E5C0F /* Model */,
 				C0A696A11EAE9160001EBFB4 /* AppDelegate.swift */,
+				C043379C1EC71E4B00FA0616 /* Assets.xcassets */,
 				C0A696A51EAE9160001EBFB4 /* Main.storyboard */,
-				C0A696A81EAE9160001EBFB4 /* Assets.xcassets */,
 				C0A696AA1EAE9160001EBFB4 /* LaunchScreen.storyboard */,
 				C0A696AD1EAE9160001EBFB4 /* Info.plist */,
 			);
@@ -194,6 +215,9 @@
 				C0E12D6C1EAFDC43005E5C0F /* UIColor.swift */,
 				C0E9528C1EBB9C4200182620 /* EventTimeTableCell.swift */,
 				C00E01861EBBB6C70098B9D5 /* WeekDayBtn.swift */,
+				C043379E1EC742F500FA0616 /* WeekDayFormBtn.swift */,
+				C0810C471ECA40670041721A /* CustomDatePicker.swift */,
+				C03B68741ECDFB2A00830DCA /* PickerLabel.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -202,7 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				C0E12D6A1EAFC98C005E5C0F /* WeekViewController.swift */,
-				C0F147011EB52C0200FB2A19 /* FoodTimingController.swift */,
+				C0F147011EB52C0200FB2A19 /* WeekDayController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -309,7 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0A696AC1EAE9160001EBFB4 /* LaunchScreen.storyboard in Resources */,
-				C0A696A91EAE9160001EBFB4 /* Assets.xcassets in Resources */,
+				C043379D1EC71E4B00FA0616 /* Assets.xcassets in Resources */,
 				C0A696A71EAE9160001EBFB4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -421,22 +445,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0E9498A1ED47EA300FA5B09 /* Date.swift in Sources */,
 				C0045E8B1EBF833200C01BFA /* RealmManager.swift in Sources */,
 				C0478A371EB1382E00E13300 /* UIButtonExtension.swift in Sources */,
 				C0E12D6B1EAFC98C005E5C0F /* WeekViewController.swift in Sources */,
 				C0478A351EB1365500E13300 /* UIView+Inspectable.swift in Sources */,
 				C0045E8D1EBF844400C01BFA /* UIViewExtension.swift in Sources */,
 				C06BDB061EC4AC2B0053B60C /* Constants.swift in Sources */,
+				C043379F1EC742F500FA0616 /* WeekDayFormBtn.swift in Sources */,
 				C06BDB081EC4AC7C0053B60C /* UserDefaultUtils.swift in Sources */,
+				C0810C481ECA40670041721A /* CustomDatePicker.swift in Sources */,
 				C00E01871EBBB6C70098B9D5 /* WeekDayBtn.swift in Sources */,
+				C03B68EF1ED0A07D00830DCA /* AKPickerView.swift in Sources */,
+				C03B68751ECDFB2A00830DCA /* PickerLabel.swift in Sources */,
 				C00E01851EBBA1850098B9D5 /* TimeEvent.swift in Sources */,
 				C00E01891EBBC9FB0098B9D5 /* WeekDays.swift in Sources */,
+				C0E949881ED369E500FA5B09 /* LocalNotificationUtils.swift in Sources */,
+				C0E9498C1ED49B9400FA5B09 /* UIView.swift in Sources */,
+				C03B68F11ED0A17300830DCA /* UIImage+Resize.swift in Sources */,
 				C0045E861EBF657700C01BFA /* WeekDay.swift in Sources */,
 				C063966E1EBCCAB8008F9F2B /* DateTimeUtils.swift in Sources */,
 				C0E12D6D1EAFDC43005E5C0F /* UIColor.swift in Sources */,
 				C0E9528D1EBB9C4200182620 /* EventTimeTableCell.swift in Sources */,
 				C0A696A21EAE9160001EBFB4 /* AppDelegate.swift in Sources */,
-				C0F147021EB52C0200FB2A19 /* FoodTimingController.swift in Sources */,
+				C0F147021EB52C0200FB2A19 /* WeekDayController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

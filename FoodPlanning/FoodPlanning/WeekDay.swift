@@ -14,7 +14,7 @@ class WeekDay: Object {
     dynamic var wakeUpAt = NSDate()
     dynamic var sleepAt = NSDate()
     dynamic var withWater = false
-    dynamic var mealsCount = 0
+    dynamic var mealsCount = 3
     
     func getWakeUpAt() -> Date {
         return wakeUpAt as Date
@@ -32,8 +32,8 @@ class WeekDay: Object {
         let halfAnHour = TimeInterval(60 * 30)
         
         if self.withWater {
-            events.append(TimeEvent(startAt: wakeUpAt, description: "Water time!"))
-            events.append(TimeEvent(startAt: sleepAt.addingTimeInterval(-halfAnHour), description: "Water time!"))
+            events.append(TimeEvent(startAt: wakeUpAt, description: "Water time!", weekDay: self))
+            events.append(TimeEvent(startAt: sleepAt.addingTimeInterval(-halfAnHour), description: "Water time!", weekDay: self))
             wakeUpAt = wakeUpAt.addingTimeInterval(halfAnHour)
         }
         
@@ -43,15 +43,15 @@ class WeekDay: Object {
         for counter in 0..<mealsCount {
             let currentInterval = TimeInterval(counter * stepBetweenMeals)
             let mealTime = wakeUpAt.addingTimeInterval(currentInterval)
-            events.append(TimeEvent(startAt: mealTime, description: "Enjoy your \(counter + 1) meal!"))
+            events.append(TimeEvent(startAt: mealTime, description: "Enjoy your \(counter + 1) meal!", weekDay: self))
             
             if withWater && counter > 0 {
                 let waterTime = wakeUpAt.addingTimeInterval(currentInterval - halfAnHour)
-                events.append(TimeEvent(startAt: waterTime, description: "Water time!"))
+                events.append(TimeEvent(startAt: waterTime, description: "Water time!", weekDay: self))
             }
         }
         
-        events.append(TimeEvent(startAt: sleepAt, description: "Its time to go to bed!"))
+        events.append(TimeEvent(startAt: sleepAt, description: "Its time to go to bed!", weekDay: self))
         events.sort(by: {$0.startAt < $1.startAt})
         
         return events

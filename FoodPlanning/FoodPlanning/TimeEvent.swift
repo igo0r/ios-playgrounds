@@ -11,4 +11,5 @@ import Foundation
 struct TimeEvent {
     var startAt = Date()
     var description = ""
+    var weekDay: WeekDay?
 }

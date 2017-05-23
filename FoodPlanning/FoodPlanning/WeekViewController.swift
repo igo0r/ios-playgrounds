@@ -14,10 +14,9 @@ class WeekViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var weekCalendarBtn: UIButton!
     
     @IBOutlet weak var timeLine: UIView!
-    
     @IBOutlet var weekDayBtns: [UIButton]!
     
-    var weekDay = WeekDay()
+    var weekDay: WeekDay?
     var timeEvents = [TimeEvent]()
     
     override func viewDidLoad() {
@@ -28,20 +27,13 @@ class WeekViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         configureNavBar()
         configureCalendarBtn(weekCalendarBtn)
-        
-/*        let weekDay = WeekDay()
-        weekDay.mealsCount = 4
-        weekDay.sleepAt = NSDate()
-        weekDay.wakeUpAt = NSDate()
-        weekDay.weekDay = 3
-        weekDay.withWater = true*/
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
+        let defDate = defaultDate.rawValue
         for btn in weekDayBtns {
             if let weekDayBtn = btn as? WeekDayBtn {
-                if  weekDayBtn.tag == defaultDate.rawValue {
+                if  weekDayBtn.tag == defDate {
                     weekDayBtn.setButtonActive(true)
                 }
             }
@@ -69,7 +61,9 @@ class WeekViewController: UIViewController, UITableViewDelegate, UITableViewData
             return cell
         }
         
-        return EventTimeTableCell()
+        let cell = EventTimeTableCell()
+        
+        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -90,21 +84,35 @@ class WeekViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        performSegue(withIdentifier: "WeekDayEditor", sender: weekDay)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "WeekDayEditor" {
+            if let nav = segue.destination as? UINavigationController {
+                if let destination = nav.childViewControllers[0] as? WeekDayController {
+                    if let weekDay = sender as? WeekDay {
+                        destination.weekDay = weekDay
+                    }
+                }
+            }
+        }
+    }
     func loadDayEventsFor(day: WeekDays) {
         RealmManager.loadEventsFor(day: day) { resultDay in
             if let weekDay = resultDay {
                 self.timeLine.isHidden = false
                 self.weekDay = weekDay
-                self.timeEvents = self.weekDay.prepareTimeEvents()
-                self.eventsTableView.reloadData()
+                self.timeEvents = weekDay.prepareTimeEvents()
             } else {
+                self.weekDay = WeekDay()
+                self.weekDay?.weekDay = day.rawValue
+                
                 self.timeLine.isHidden = true
-                self.timeEvents = [TimeEvent]()
-                self.eventsTableView.reloadData()
+                self.timeEvents = [TimeEvent(startAt: Date(), description: "Tap to create your meal plan", weekDay: nil)]
             }
+            
+            self.eventsTableView.reloadData()
         }
     }
     

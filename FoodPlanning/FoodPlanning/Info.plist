@@ -43,5 +43,9 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Meal notifications help to keep you up to date according to your schedule.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Notifications may help you to take your meal in time according to your schedule.</string>
 </dict>
 </plist>

@@ -7,3 +7,7 @@
 //
 
 let defaultUserDayKey = "defaultUserDayKey"
+let notificationIdentifierPrefix = "MealMeNotify"
+let mealsCountArr = Array(3...10)
+let secondsFrom3Hours: Double = (60 * 60 * 3)
+let secondsFrom13Hours: Double = (60 * 60 * 13)

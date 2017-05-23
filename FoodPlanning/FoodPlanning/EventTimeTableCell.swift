@@ -12,7 +12,8 @@ class EventTimeTableCell: UITableViewCell {
 
     @IBOutlet weak var timeLbl: UILabel!
     @IBOutlet weak var eventDescriptionLbl: UILabel!
-    
+    @IBOutlet weak var ovalCircle: UIImageView!
+    @IBOutlet weak var emptyEventsLbl: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,10 +27,25 @@ class EventTimeTableCell: UITableViewCell {
     }
 
     func configureCellFor(timeEvent: TimeEvent) {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm"
+        if timeEvent.weekDay != nil {
+            hideCellElements(false)
+            
+            let formatter = DateFormatter()
+            formatter.dateFormat = "HH:mm"
+            timeLbl.text =  formatter.string(from: timeEvent.startAt)
+            
+            eventDescriptionLbl.text = timeEvent.description
+        } else {
+            hideCellElements(true)
+            emptyEventsLbl.text = timeEvent.description
+        }
+    }
+    
+    fileprivate func hideCellElements(_ hide: Bool) {
+        timeLbl.isHidden = hide
+        eventDescriptionLbl.isHidden = hide
+        ovalCircle.isHidden = hide
         
-        timeLbl.text =  formatter.string(from: timeEvent.startAt)
-        eventDescriptionLbl.text = timeEvent.description
+        emptyEventsLbl.isHidden = !hide
     }
 }
