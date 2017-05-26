@@ -33,11 +33,14 @@ class RealmManager {
             let days = realm.objects(WeekDay.self).filter("weekDay == \(obj.weekDay)")
             for day in days {
                 try! realm.write {
+                    let dayOfWeek = WeekDays(rawValue: day.weekDay)!
                     realm.delete(day)
+                    LocalNotificationUtils.removeLocalNotificationsFor(dayOfWeek: dayOfWeek)
                 }
             }
             try! realm.write {
                 realm.add(obj)
+                obj.createLocalNotificationsForCurrentDay()
             }
         }
     }

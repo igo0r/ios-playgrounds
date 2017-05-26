@@ -57,6 +57,18 @@ class WeekDay: Object {
         return events
     }
     
+    func createLocalNotificationsForCurrentDay() {
+        let events = prepareTimeEvents()
+        for event in events {
+            event.createLocalNotification()
+        }
+    }
+    
+    func deleteLocalNotificationsForCurrentDay() {
+        let identifier = LocalNotificationUtils.composeNotificationIdentifierFor(dayOfWeek: WeekDays(rawValue: weekDay)!, date: nil)
+        LocalNotificationUtils.removeLocalNotificationsWith(identifier: identifier)
+    }
+    
 // Specify properties to ignore (Realm won't persist these)
     
 //  override static func ignoredProperties() -> [String] {

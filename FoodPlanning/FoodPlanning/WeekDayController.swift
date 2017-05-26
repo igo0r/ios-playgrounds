@@ -17,6 +17,11 @@ class WeekDayController: UIViewController, UINavigationControllerDelegate, AKPic
     @IBOutlet weak var pickerView: AKPickerView!
     @IBOutlet weak var applyDaysLbl: UILabel!
     @IBOutlet weak var sleepAtLbl: UILabel!
+    @IBOutlet weak var saveBtn: UIBarButtonItem!
+    
+    //Validation lbls
+    @IBOutlet weak var validationSleepLbl: UILabel!
+    @IBOutlet weak var validationWeekDaySLbl: UILabel!
     
     @IBOutlet var weekDays: [WeekDayFormBtn]!
     
@@ -25,11 +30,13 @@ class WeekDayController: UIViewController, UINavigationControllerDelegate, AKPic
     var wakeUpAt: Date? {
         didSet {
             wakeUpPicker.date = wakeUpAt!
+            _ = isFormValid()
         }
     }
     var sleepAt: Date? {
         didSet {
             sleepTimePicker.date = sleepAt!
+            _ = isFormValid()
         }
     }
     
@@ -46,6 +53,7 @@ class WeekDayController: UIViewController, UINavigationControllerDelegate, AKPic
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        SpinnerView.sharedInstance.showSpinnerFor(view: view)
         
         pickerView.delegate = self
         pickerView.dataSource = self
@@ -57,8 +65,17 @@ class WeekDayController: UIViewController, UINavigationControllerDelegate, AKPic
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         let selectedItem = mealsCountArr.index(of: mealsCount!)!
         pickerView.selectItem(selectedItem, animated: true)
+        _ = isFormValid()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        SpinnerView.sharedInstance.hideSpinView()
     }
     
     @IBAction func timeChangedAction(_ sender: CustomDatePicker) {
@@ -76,6 +93,7 @@ class WeekDayController: UIViewController, UINavigationControllerDelegate, AKPic
     
     @IBAction func weekDayBtnPressed(_ sender: WeekDayFormBtn) {
         sender.setActive(!sender.isActiveWeekDay)
+        _ = isFormValid()
     }
     
     @IBAction func daysApplyBtnPressed(_ sender: UIButton) {
@@ -84,15 +102,17 @@ class WeekDayController: UIViewController, UINavigationControllerDelegate, AKPic
         } else {
             setActiveWeekDays(true)
         }
+        _ = isFormValid()
     }
     
     @IBAction func navBarBtnPressed(_ sender: UIBarButtonItem) {
+        SpinnerView.sharedInstance.showSpinnerFor(view: view)
         if sender.tag == 0 {
             dismiss(animated: true, completion: nil)
         } else {
             checkFormValidation()
         }
-        
+        SpinnerView.sharedInstance.hideSpinView()
     }
     
     @IBAction func waterBtnPressed(_ sender: UIButton) {
@@ -181,17 +201,21 @@ class WeekDayController: UIViewController, UINavigationControllerDelegate, AKPic
         var validationMessages = ""
         if weekDays.isEmpty {
             isValid = false
+            applyDaysLbl.textColor = redColor
+            applyDaysLbl.shake()
             validationMessages += " - Please choose at least 1 day from the week\n"
         }
         if DateTimeUtils.isTimeIntervalLess(than: secondsFrom3Hours, betweenDate1: self.sleepAt!, andDate2: self.wakeUpAt!) {
             isValid = false
+            sleepAtLbl.textColor = redColor
+            sleepAtLbl.shake()
             validationMessages += "- Difference between wake up and sleep at times should be at least 3 hours\n"
         }
         
         if !isValid {
             let alert = UIAlertController(title: "Validation failed", message: validationMessages, preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            //self.present(alert, animated: true, completion: nil)
         } else {
             for day in weekDays {
                 let weekDay = WeekDay()

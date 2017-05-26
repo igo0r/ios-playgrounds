@@ -10,8 +10,6 @@ import UIKit
 
 class PickerLabel: UILabel {
 
-    let black = UIColor(hex: "000000", alpha: 0.7)
-    
     override func draw(_ rect: CGRect) {
        /* textColor = black
         backgroundColor = UIColor.clear

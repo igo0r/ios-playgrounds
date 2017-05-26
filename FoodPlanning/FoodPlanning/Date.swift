@@ -10,16 +10,16 @@ import Foundation
 
 extension Date {
     var yesterday: Date {
-        return Calendar.current.date(byAdding: .day, value: -1, to: self)!
+        return DateTimeUtils.currentCalendar.date(byAdding: .day, value: -1, to: self)!
     }
     var tomorrow: Date {
-        return Calendar.current.date(byAdding: .day, value: 1, to: self)!
+        return DateTimeUtils.currentCalendar.date(byAdding: .day, value: 1, to: self)!
     }
     var noon: Date {
-        return Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: self)!
+        return DateTimeUtils.currentCalendar.date(bySettingHour: 0, minute: 0, second: 0, of: self)!
     }
     var month: Int {
-        return Calendar.current.component(.month,  from: self)
+        return DateTimeUtils.currentCalendar.component(.month,  from: self)
     }
     var isLastDayOfMonth: Bool {
         return tomorrow.month != month

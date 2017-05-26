@@ -13,8 +13,6 @@ class WeekDayFormBtn: UIButton {
     
     var isActiveWeekDay = false
     
-    let green = UIColor(hex: "A7E6A0")
-    let white = UIColor(hex: "E4E0E0")
     let checkImg = UIImage(named: "CheckWeekDay")
     
     override func draw(_ rect: CGRect) {
@@ -27,7 +25,6 @@ class WeekDayFormBtn: UIButton {
         
         setTitle(weekStr, for: .normal)
         tintColor = green
-        //layer.borderColor = white.cgColor
     }
     
     func setActive(_ active: Bool) {

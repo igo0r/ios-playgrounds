@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FoodPlanning/WeekDayBtn.swift"
-            timestampString = "516127705.169625"
+            timestampString = "517252214.979928"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "setButtonActive(_:withTag:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FoodPlanning/DateTimeUtils.swift"
-            timestampString = "516206214.972844"
+            timestampString = "517424538.947291"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "getCurrentWeekDayNumber()"
             landmarkType = "7">
          </BreakpointContent>
@@ -54,47 +54,143 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodPlanning/WeekDayController.swift"
+            timestampString = "517512379.502939"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "timeChangedAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FoodPlanning/RealmManager.swift"
-            timestampString = "517085490.692647"
+            timestampString = "517426058.867838"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "writeWeekDay(obj:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodPlanning/RealmManager.swift"
+            timestampString = "517426197.644205"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "writeWeekDay(obj:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodPlanning/LocalNotificationUtils.swift"
+            timestampString = "517431149.361343"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "removeLocalNotificationsWith(identifier:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodPlanning/TimeEvent.swift"
+            timestampString = "517431149.361343"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "createLocalNotification()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodPlanning/LocalNotificationUtils.swift"
+            timestampString = "517431149.361343"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "composeNotificationIdentifierFor(dayOfWeek:date:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodPlanning/LocalNotificationUtils.swift"
+            timestampString = "517431149.361343"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "composeNotificationIdentifierFor(dayOfWeek:date:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "No"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "static FoodPlanning.RealmManager.(writeWeekDay (obj : FoodPlanning.WeekDay) -&gt; ()).(closure #1)"
+                  symbolName = "static FoodPlanning.LocalNotificationUtils.composeNotificationIdentifierFor (dayOfWeek : FoodPlanning.WeekDays, date : Swift.Optional&lt;Foundation.Date&gt;) -&gt; Swift.String"
                   moduleName = "FoodPlanning"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ilantushenko/sites/iOS/FoodPlanning/FoodPlanning/RealmManager.swift"
-                  timestampString = "517072348.027159"
+                  urlString = "file:///Users/ilantushenko/sites/iOS/FoodPlanning/FoodPlanning/LocalNotificationUtils.swift"
+                  timestampString = "517514669.854188"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "674">
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "270">
                </Location>
                <Location
-                  shouldBeEnabled = "No"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "static FoodPlanning.RealmManager.(writeWeekDay (obj : FoodPlanning.WeekDay) -&gt; ()).(closure #1).(closure #2)"
+                  symbolName = "static FoodPlanning.LocalNotificationUtils.composeNotificationIdentifierFor (dayOfWeek : FoodPlanning.WeekDays, date : Swift.Optional&lt;Foundation.Date&gt;) -&gt; Swift.String"
                   moduleName = "FoodPlanning"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ilantushenko/sites/iOS/FoodPlanning/FoodPlanning/RealmManager.swift"
-                  timestampString = "517072348.028867"
+                  urlString = "file:///Users/ilantushenko/sites/iOS/FoodPlanning/FoodPlanning/LocalNotificationUtils.swift"
+                  timestampString = "517514669.857163"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "40"
-                  endingLineNumber = "40"
-                  offsetFromSymbolStart = "19">
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "320">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -105,13 +201,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FoodPlanning/WeekDayController.swift"
-            timestampString = "517240082.684685"
+            filePath = "FoodPlanning/LocalNotificationUtils.swift"
+            timestampString = "517426583.404219"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "184"
-            endingLineNumber = "184"
-            landmarkName = "checkFormValidation()"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "performNotificationCreationWith(title:body:date:identifier:dayOfWeek:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -121,13 +217,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FoodPlanning/WeekDayController.swift"
-            timestampString = "517240082.684685"
+            filePath = "FoodPlanning/LocalNotificationUtils.swift"
+            timestampString = "517431149.361343"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "202"
-            endingLineNumber = "202"
-            landmarkName = "checkFormValidation()"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "scheduleNotificationWith(identifier:content:trigger:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -137,13 +233,93 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FoodPlanning/WeekDayController.swift"
-            timestampString = "517240082.684685"
+            filePath = "FoodPlanning/LocalNotificationUtils.swift"
+            timestampString = "517431149.361343"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "timeChangedAction(_:)"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "scheduleNotificationWith(identifier:content:trigger:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodPlanning/LocalNotificationUtils.swift"
+            timestampString = "517432696.817499"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "removeLocalNotificationsWith(identifier:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodPlanning/LocalNotificationUtils.swift"
+            timestampString = "517432696.817499"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "removeLocalNotificationsWith(identifier:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodPlanning/NotificationCenterDelegate.swift"
+            timestampString = "517513762.775375"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "userNotificationCenter(_:willPresent:withCompletionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodPlanning/NotificationCenterDelegate.swift"
+            timestampString = "517513996.018437"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "userNotificationCenter(_:didReceive:withCompletionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodPlanning/LocalNotificationUtils.swift"
+            timestampString = "517514649.620924"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "createCalendarTrigerFor(date:dayOfWeek:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

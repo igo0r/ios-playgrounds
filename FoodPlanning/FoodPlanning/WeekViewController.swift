@@ -22,6 +22,8 @@ class WeekViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        SpinnerView.sharedInstance.showSpinnerFor(view: view)
+        
         eventsTableView.delegate = self
         eventsTableView.dataSource = self
         
@@ -39,15 +41,22 @@ class WeekViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
         loadDayEventsFor(day: defaultDate)
+        SpinnerView.sharedInstance.hideSpinView()
+    }
+    override func viewDidLayoutSubviews() {
+        SpinnerView.sharedInstance.hideSpinView()
     }
     
     @IBAction func weekDayBtnPressed(_ sender: WeekDayBtn) {
+        SpinnerView.sharedInstance.showSpinnerFor(view: view.superview ?? view)
+        
         defaultDate = WeekDays(rawValue: sender.tag)!
         
         setInactiveWeekDayBtns()
         sender.setButtonActive(true)
         
         loadDayEventsFor(day: defaultDate)
+        SpinnerView.sharedInstance.hideSpinView()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -130,8 +139,8 @@ class WeekViewController: UIViewController, UITableViewDelegate, UITableViewData
             let navBar = navigationController?.navigationBar
             navBar?.isTranslucent = false
             
-            navItem.title = "Calendar"
-            navItem.setLeftBarButton(UIBarButtonItem(image: UIImage(named: "menu.png"), style: UIBarButtonItemStyle.plain, target: nil, action: nil), animated: false)
+            navItem.title = "Meal schedule"
+            //navItem.setLeftBarButton(UIBarButtonItem(image: UIImage(named: "menu.png"), style: UIBarButtonItemStyle.plain, target: nil, action: nil), animated: false)
             navItem.leftBarButtonItem?.tintColor = UIColor(hex: "E4E0E0", alpha: 1)
         }
     }

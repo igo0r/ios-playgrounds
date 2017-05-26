@@ -9,10 +9,6 @@
 import UIKit
 
 class WeekDayBtn: UIButton {
-    
-    let whiteColor = UIColor(hex: "EEEEEE")
-    let grayColor = UIColor(hex: "9B9B9B")
-    let redColor = UIColor(hex: "F0554A")
   
     override func draw(_ rect: CGRect) {
         titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping

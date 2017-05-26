@@ -1,36 +1,21 @@
 //
 //  AppDelegate.swift
-//  FoodPlanning
+//  qwertyui
 //
-//  Created by Igor Lantushenko on 24/04/2017.
+//  Created by Igor Lantushenko on 23/05/2017.
 //  Copyright © 2017 Igor Lantushenko. All rights reserved.
 //
 
 import UIKit
-import RealmSwift
-import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let notificationDelegate = NotificationCenterDelegate()
-    
+
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        
-        UINavigationBar.appearance().barTintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
-        UINavigationBar.appearance().tintColor = UIColor.white
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: white, NSFontAttributeName: UIFont(name: "AvenirNext-Medium", size: 21)!]
-        
-        UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
-        
-        let center = UNUserNotificationCenter.current()
-        center.delegate = notificationDelegate
-        let category = getNotificationActionsWithCategory()
-        center.setNotificationCategories([category])
-        
         return true
     }
 
@@ -55,13 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-    
-    func getNotificationActionsWithCategory() -> UNNotificationCategory {
-        let okAction = UNNotificationAction(identifier: "Ok", title: "Ok", options: [])
-        //let okAction = UNNotificationAction(identifier: "Snooze", title: "Snooze", options: [])
-        let category = UNNotificationCategory(identifier: okNotificationCategory,                                        actions: [okAction], intentIdentifiers: [], options: [])
-        
-        return category
-    }
+
+
 }
 

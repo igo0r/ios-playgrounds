@@ -13,13 +13,14 @@ class DateTimeUtils {
     static let firstWeekday = 2
     static let currentDate = Date()
     static var currentWeek = [Date]()
+    static var currentCalendar = Calendar.current
     
     static func getCurrentWeek() -> [Date] {
         if !currentWeek.isEmpty {
             return currentWeek
         }
         
-        var calendar = Calendar.current
+        var calendar = currentCalendar
         calendar.firstWeekday = firstWeekday
         
         let today = getCurrentDate()
@@ -40,13 +41,11 @@ class DateTimeUtils {
      Starts from 0 = Monday
      */
     static func getCurrentWeekDayNumber() -> WeekDays {
-        var calendar = Calendar.current
+        var calendar = currentCalendar
         calendar.firstWeekday = firstWeekday
         let today = getCurrentDate()
         var dayOfWeek = calendar.component(.weekday, from: today) - (calendar.firstWeekday - 1)
-        if dayOfWeek < 1 {
-            dayOfWeek = 7
-        }
+        dayOfWeek = weekDayFormaterFromSunToMon(weekDay: dayOfWeek)
 
         return WeekDays(rawValue: (dayOfWeek - 1))!
     }
@@ -57,6 +56,14 @@ class DateTimeUtils {
     
     static func getCurrentDate() -> Date {
         return currentDate
+    }
+    
+    static func weekDayFormaterFromMonToSun(weekDay: Int) -> Int {
+        return weekDay > 7 ? 1 : weekDay
+    }
+    
+    static func weekDayFormaterFromSunToMon(weekDay: Int) -> Int {
+        return weekDay < 1 ? 7 : weekDay
     }
     
     static func getTomorrowNoon() {
