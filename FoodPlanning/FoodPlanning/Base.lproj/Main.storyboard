@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XRS-eX-yvB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sVD-aE-ZGI">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,10 +10,131 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Settings-->
+        <scene sceneID="Vef-yI-fAf">
+            <objects>
+                <tableViewController id="fIz-Nf-OeD" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="amB-mQ-WQp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.68362050510000005" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="1" green="1" blue="1" alpha="0.68362050513698636" colorSpace="calibratedRGB"/>
+                        <view key="tableFooterView" alpha="0.68000000715255737" contentMode="scaleToFill" id="981-bO-N72">
+                            <rect key="frame" x="0.0" y="236.5" width="320" height="519"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                        <sections>
+                            <tableViewSection headerTitle="General" id="RXl-hv-kf8">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="75" id="cLQ-TD-DuL">
+                                        <rect key="frame" x="0.0" y="55.5" width="320" height="75"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cLQ-TD-DuL" id="aDH-EV-jbu">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="74.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Minutes for water before meal" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJU-mu-qhL">
+                                                    <rect key="frame" x="8" y="12" width="143" height="49"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="0.71334546232876717" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="HXn-JR-A1J" customClass="CustomDatePicker" customModule="FoodPlanning" customModuleProvider="target">
+                                                    <rect key="frame" x="159" y="2" width="144" height="70"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                    <date key="date" timeIntervalSinceReferenceDate="517686105.26749301">
+                                                        <!--2017-05-28 17:41:45 +0000-->
+                                                    </date>
+                                                    <date key="minimumDate" timeIntervalSinceReferenceDate="-978310800">
+                                                        <!--1969-12-31 23:00:00 +0000-->
+                                                    </date>
+                                                    <date key="maximumDate" timeIntervalSinceReferenceDate="-978309000">
+                                                        <!--1969-12-31 23:30:00 +0000-->
+                                                    </date>
+                                                </datePicker>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="RPU-fq-a8a">
+                                        <rect key="frame" x="0.0" y="130.5" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RPU-fq-a8a" id="Nf1-zz-q7n">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="cdx-eU-6eo">
+                                        <rect key="frame" x="0.0" y="174.5" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cdx-eU-6eo" id="eX3-J9-PxU">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="fIz-Nf-OeD" id="uzE-Bu-nIT"/>
+                            <outlet property="delegate" destination="fIz-Nf-OeD" id="83L-Oy-3Vb"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Settings" image="Settings" id="nyK-GB-9ip"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zjv-re-vGe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1873.125" y="34.859154929577464"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="F2X-Ck-Ean">
+            <objects>
+                <viewController id="sVD-aE-ZGI" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TH4-JG-NgS"/>
+                        <viewControllerLayoutGuide type="bottom" id="RE5-yn-TxB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dX7-3e-6s2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4UZ-LQ-qn8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2338" y="-753"/>
+        </scene>
+        <!--Meal Tab Bar Controller-->
+        <scene sceneID="yG0-e6-lql">
+            <objects>
+                <tabBarController storyboardIdentifier="mealTabBar" id="HnE-uA-KHZ" customClass="MealTabBarController" customModule="FoodPlanning" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Ocq-Ik-Lng">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.94117647059999998" green="0.33333333329999998" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.69656999143835618" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="0.94117647059999998" green="0.33333333329999998" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="XRS-eX-yvB" kind="relationship" relationship="viewControllers" id="bzm-sJ-ifT"/>
+                        <segue destination="fIz-Nf-OeD" kind="relationship" relationship="viewControllers" id="pFQ-w6-SZh"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Ia-Un-ZJd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1298" y="-753"/>
+        </scene>
+        <!--Meal planner-->
         <scene sceneID="Idu-13-hxS">
             <objects>
                 <navigationController id="XRS-eX-yvB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Meal planner" image="Schedule" id="ZZI-Oz-R6Z"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eyn-2D-c3v">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -102,12 +223,12 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lemons" translatesAutoresizingMaskIntoConstraints="NO" id="5RB-HB-K4r">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <view alpha="0.68000000000000005" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="znB-ud-MBE">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
@@ -185,13 +306,13 @@
                                 </constraints>
                             </view>
                             <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4nd-mJ-hq4">
-                                <rect key="frame" x="0.0" y="116" width="60" height="452"/>
+                                <rect key="frame" x="0.0" y="116" width="60" height="403"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="9Oh-rC-SVG">
-                                        <rect key="frame" x="0.0" y="0.0" width="60" height="452"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="403"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gky-iY-Bsr" customClass="WeekDayBtn" customModule="FoodPlanning" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="60" height="64.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="57.5"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="11"/>
                                                 <state key="normal" title="MON 07">
                                                     <color key="titleColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -212,7 +333,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yid-sP-368" customClass="WeekDayBtn" customModule="FoodPlanning" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="64.5" width="60" height="64.5"/>
+                                                <rect key="frame" x="0.0" y="57.5" width="60" height="57.5"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="11"/>
                                                 <state key="normal" title="MON 07">
                                                     <color key="titleColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -233,7 +354,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qS-OJ-nmr" customClass="WeekDayBtn" customModule="FoodPlanning" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="129" width="60" height="64.5"/>
+                                                <rect key="frame" x="0.0" y="115" width="60" height="57.5"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="11"/>
                                                 <state key="normal" title="MON 07">
                                                     <color key="titleColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -254,7 +375,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9DC-VD-9nI" customClass="WeekDayBtn" customModule="FoodPlanning" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="193.5" width="60" height="65"/>
+                                                <rect key="frame" x="0.0" y="172.5" width="60" height="58"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="11"/>
                                                 <state key="normal" title="MON 07">
                                                     <color key="titleColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -275,7 +396,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wD2-5S-TGc" customClass="WeekDayBtn" customModule="FoodPlanning" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="258.5" width="60" height="64.5"/>
+                                                <rect key="frame" x="0.0" y="230.5" width="60" height="57.5"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="11"/>
                                                 <state key="normal" title="MON 07">
                                                     <color key="titleColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -296,7 +417,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFc-14-cRV" customClass="WeekDayBtn" customModule="FoodPlanning" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="323" width="60" height="64.5"/>
+                                                <rect key="frame" x="0.0" y="288" width="60" height="57.5"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="11"/>
                                                 <state key="normal" title="MON 07">
                                                     <color key="titleColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -317,7 +438,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTl-et-j0h" customClass="WeekDayBtn" customModule="FoodPlanning" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="387.5" width="60" height="64.5"/>
+                                                <rect key="frame" x="0.0" y="345.5" width="60" height="57.5"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="11"/>
                                                 <state key="normal" title="MON 07">
                                                     <color key="titleColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -350,7 +471,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="srV-Su-sCA">
-                                <rect key="frame" x="60" y="116" width="260" height="452"/>
+                                <rect key="frame" x="60" y="116" width="260" height="403"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -418,7 +539,7 @@
                                 </prototypes>
                             </tableView>
                             <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IfF-VK-XUT">
-                                <rect key="frame" x="104" y="131" width="2" height="422"/>
+                                <rect key="frame" x="104" y="131" width="2" height="373"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="2" id="EZy-FJ-Kfa"/>
@@ -1082,6 +1203,8 @@
     <resources>
         <image name="Cancel" width="14" height="14"/>
         <image name="Path" width="21" height="16"/>
+        <image name="Schedule" width="25" height="25"/>
+        <image name="Settings" width="25" height="25"/>
         <image name="lemons" width="320" height="568"/>
         <image name="oval" width="8" height="8"/>
     </resources>

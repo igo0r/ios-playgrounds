@@ -170,7 +170,7 @@
                   moduleName = "FoodPlanning"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ilantushenko/sites/iOS/FoodPlanning/FoodPlanning/LocalNotificationUtils.swift"
-                  timestampString = "517514669.854188"
+                  timestampString = "517854681.647827"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "73"
@@ -185,7 +185,7 @@
                   moduleName = "FoodPlanning"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ilantushenko/sites/iOS/FoodPlanning/FoodPlanning/LocalNotificationUtils.swift"
-                  timestampString = "517514669.857163"
+                  timestampString = "517854681.651688"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "73"
@@ -320,6 +320,22 @@
             startingLineNumber = "49"
             endingLineNumber = "49"
             landmarkName = "createCalendarTrigerFor(date:dayOfWeek:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodPlanning/AppDelegate.swift"
+            timestampString = "517854680.477444"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "runAnimation()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
