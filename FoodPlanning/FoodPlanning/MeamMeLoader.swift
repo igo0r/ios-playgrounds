@@ -21,6 +21,11 @@ public class MeamMeLoader : NSObject {
 
     public dynamic class func drawCanvas2(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 320, height: 568), resizing: ResizingBehavior = .aspectFit, minutesAngle: CGFloat = 0) {
         //// General Declarations
+        //let trys = UIGraphicsBeginImageContextWithOptions(targetFrame.size, true, 0)
+        
+        if UIGraphicsGetCurrentContext() == nil {
+            return
+        }
         let context = UIGraphicsGetCurrentContext()!
         
         //// Resize to Target Frame

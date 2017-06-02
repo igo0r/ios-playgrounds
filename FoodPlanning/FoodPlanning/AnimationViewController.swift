@@ -7,29 +7,61 @@
 //
 
 import UIKit
+import Foundation
 
 class AnimationViewController: UIViewController {
 
+    @IBOutlet weak var animatedView: MealMeLoaderView!
+    
+    weak var timer: Timer?
+
+    var angle: Double = 0
+    var counter = 0
+    var isSeguePerformed = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        sleep(5)
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if timer == nil {
+            timer = Timer.scheduledTimer(timeInterval: 0.00001, target: self, selector: #selector(AnimationViewController.runAnimation), userInfo: nil, repeats: true)
+        }
+        
+    }
 
-        // Do any additional setup after loading the view.
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.runAnimation()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
+
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func runAnimation() {
+        if angle < -335  && !isSeguePerformed {
+            performSegue(withIdentifier: "mainLine", sender: nil)
+            isSeguePerformed = true
+        }
+        
+        if angle < -359 {
+            timer?.invalidate()
+            return
+        }
+        
+        counter = counter + 1
+        if counter < 9 {
+            angle = angle - 0.05
+        } else {
+            angle = angle - 15
+        }
+        
+        animatedView.angle = angle
+        animatedView.setNeedsDisplay()
     }
-    */
 
 }

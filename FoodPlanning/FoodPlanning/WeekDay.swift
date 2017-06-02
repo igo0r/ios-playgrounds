@@ -16,6 +16,11 @@ class WeekDay: Object {
     dynamic var withWater = false
     dynamic var mealsCount = 3
     
+    override static func primaryKey() -> String? {
+        return "weekDay"
+    }
+
+    
     func getWakeUpAt() -> Date {
         return wakeUpAt as Date
     }
@@ -62,6 +67,7 @@ class WeekDay: Object {
         for event in events {
             event.createLocalNotification()
         }
+       // LocalNotificationUtils.printPendingLocalNotifications()
     }
     
     func deleteLocalNotificationsForCurrentDay() {

@@ -226,9 +226,10 @@ class WeekDayController: UIViewController, UINavigationControllerDelegate, AKPic
                 weekDay.withWater = self.withWater
                 
                 RealmManager.writeWeekDay(obj: weekDay)
-                self.dismiss(animated: true, completion: nil)
             }
             
+            self.dismiss(animated: true, completion: nil)
+            LocalNotificationManager.buildLocalNotifications()
         }
     }
 }

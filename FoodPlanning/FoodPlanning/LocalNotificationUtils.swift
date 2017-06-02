@@ -28,10 +28,16 @@ class LocalNotificationUtils {
         return isAuth
     }
     
-    static func performNotificationCreationWith(title: String, body: String, date: Date, identifier: String, dayOfWeek: WeekDays) -> Bool {
+    static func performNotificationCreationWith(title: String, body: String, date: Date, identifier: String, dayOfWeek: WeekDays) {
+        let request = createNotificationRequestWith(title: title, body: body, date: date, identifier: identifier, dayOfWeek: dayOfWeek)
+        scheduleNotificationWith(request: request)
+    }
+    
+    static func createNotificationRequestWith(title: String, body: String, date: Date, identifier: String, dayOfWeek: WeekDays) -> UNNotificationRequest {
         let content = createNotificationWith(title: title, body: body)
         let trigger = createCalendarTrigerFor(date: date, dayOfWeek: dayOfWeek)
-        return scheduleNotificationWith(identifier: identifier, content: content, trigger: trigger)
+        
+        return UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
     }
     
     static func createNotificationWith(title: String, body: String) -> UNMutableNotificationContent {
@@ -53,19 +59,17 @@ class LocalNotificationUtils {
         return trigger
     }
     
-    static func scheduleNotificationWith(identifier: String, content: UNMutableNotificationContent, trigger: UNCalendarNotificationTrigger) -> Bool {
-        var isSuccess = false
-        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-        notificationCenter.add(request, withCompletionHandler: { (error) in
-            print("Added identifier: \(request.identifier)")
-            if let error = error {
-                print("Add request ERROR! \(error)")
-                //TODO: Add logger action
-                isSuccess = false
+    static func scheduleNotificationWith(request: UNNotificationRequest) {
+        //removeFarthestNotificationIfNeeded (forRequest: request) { () in
+            notificationCenter.add(request) { (error) in
+                if let error = error {
+                    print("Add request ERROR! \(error)")
+                    //TODO: Add logger action
+                } else {
+                    print("Added identifier: \(request.identifier)")
+                }
             }
-        })
-        
-        return isSuccess
+        //}
     }
     
     static func composeNotificationIdentifierFor(dayOfWeek: WeekDays, date: Date?) -> String {
@@ -94,12 +98,104 @@ class LocalNotificationUtils {
             }
             print("Identifiers to remove: \(identifiers)")
             notificationCenter.removePendingNotificationRequests(withIdentifiers: identifiers)
+            notificationCenter.removeDeliveredNotifications(withIdentifiers: identifiers)
         }
     }
     
+    static func removeAllLocalNotifications() {
+        notificationCenter.removeAllPendingNotificationRequests()
+    }
+    
+    /*
+     Remove notifications for 0 - monday .. 6 - sunday
+     */
     static func removeLocalNotificationsFor(dayOfWeek: WeekDays) {
         let identifier = composeNotificationIdentifierFor(dayOfWeek: dayOfWeek, date: nil)
         removeLocalNotificationsWith(identifier: identifier)
+    }
+    
+    static func removeFarthestNotificationIfNeeded(forRequest request: UNNotificationRequest, completionHandler: @escaping () -> ()) {
+        if let trigger = request.trigger as? UNCalendarNotificationTrigger {
+            if let newNotificationDate = trigger.nextTriggerDate() {
+                getFarthestNotificationWithCount(fromDate: Date()) { (identifier, notificationsCount, existNotificationDate) in
+                    print("TRY to REMOVE!count \(notificationsCount) exist \(existNotificationDate) new \(newNotificationDate)")
+                    if notificationsCount > 50 {
+                        if let notificationIdentifier = identifier {
+                            if let existNotificationDate = existNotificationDate {
+                                if newNotificationDate <= existNotificationDate {
+                                    print("GONNA to REMOVE farthest \(notificationIdentifier)")
+                                    notificationCenter.removePendingNotificationRequests(withIdentifiers: [notificationIdentifier])
+                                    waitTillLocalNotificationGone(withIdentifier: notificationIdentifier) {
+                                        completionHandler()
+                                    }
+                                }
+                            }
+
+                        }
+                    } else {
+                        completionHandler()
+                    }
+                    
+                }
+            }
+        }
+    }
+    
+    /*
+     Get the farthest from now
+     */
+    static func getFarthestNotificationWithCount(fromDate: Date = Date(), completionHandler: @escaping (String?, Int, Date?) -> ()) {
+        var farthestNotification: String? = nil
+        var notificationDate: Date? = nil
+        var diff = 0
+        var notificationsCount = 0
+        notificationCenter.getPendingNotificationRequests { (requests) in
+            notificationsCount = requests.count
+            for request in requests {
+                if let trigger = request.trigger as? UNCalendarNotificationTrigger {
+                    if let date = trigger.nextTriggerDate() {
+                        let difference = date.seconds(fromDate: fromDate)
+                        if difference > diff {
+                            diff = difference
+                            farthestNotification = request.identifier
+                            notificationDate = date
+                        }
+                    }
+                }
+            }
+            completionHandler(farthestNotification, notificationsCount, notificationDate)
+        }
+    }
+    
+    static func waitTillLocalNotificationGone(withIdentifier identifier: String, completionHandler: @escaping () -> ()) {
+        notificationCenter.getPendingNotificationRequests { (requests) in
+            for request in requests {
+                
+                if request.identifier == identifier {
+                    waitTillLocalNotificationGone(withIdentifier: identifier) {}
+                    return
+                }
+            }
+            completionHandler()
+        }
+    }
+    
+    static func printPendingLocalNotifications() {
+        notificationCenter.getPendingNotificationRequests { (requests) in
+            for request in requests {
+                let identif = request.identifier
+                print("||=> Existing identifier is \(identif)")
+            }
+        }
+    }
+    
+    static func printDeliveredLocalNotifications() {
+        notificationCenter.getDeliveredNotifications { (requests) in
+            for request in requests {
+                let identif = request.date
+                print("||=> Delivered identifier is \(identif)")
+            }
+        }
     }
     
 }

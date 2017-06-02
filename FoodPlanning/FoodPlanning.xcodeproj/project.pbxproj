@@ -15,6 +15,7 @@
 		C00E01851EBBA1850098B9D5 /* TimeEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00E01841EBBA1850098B9D5 /* TimeEvent.swift */; };
 		C00E01871EBBB6C70098B9D5 /* WeekDayBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00E01861EBBB6C70098B9D5 /* WeekDayBtn.swift */; };
 		C00E01891EBBC9FB0098B9D5 /* WeekDays.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00E01881EBBC9FB0098B9D5 /* WeekDays.swift */; };
+		C0142EDE1EE1FC380080C39C /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0142EDD1EE1FC380080C39C /* LocalNotificationManager.swift */; };
 		C03B68751ECDFB2A00830DCA /* PickerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03B68741ECDFB2A00830DCA /* PickerLabel.swift */; };
 		C03B68EF1ED0A07D00830DCA /* AKPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03B68EE1ED0A07D00830DCA /* AKPickerView.swift */; };
 		C03B68F11ED0A17300830DCA /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03B68F01ED0A17300830DCA /* UIImage+Resize.swift */; };
@@ -33,6 +34,7 @@
 		C0A696AC1EAE9160001EBFB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0A696AA1EAE9160001EBFB4 /* LaunchScreen.storyboard */; };
 		C0A696B71EAE9161001EBFB4 /* FoodPlanningTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A696B61EAE9161001EBFB4 /* FoodPlanningTests.swift */; };
 		C0AA60571EDDD7FB00E6DFB5 /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AA60561EDDD7FB00E6DFB5 /* AnimationViewController.swift */; };
+		C0AA60591EDDE08C00E6DFB5 /* MealMeLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AA60581EDDE08C00E6DFB5 /* MealMeLoaderView.swift */; };
 		C0AEEEF11EDB3E4D00FBE6FB /* UITabBarControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AEEEF01EDB3E4D00FBE6FB /* UITabBarControllerExt.swift */; };
 		C0AEEEF31EDB3F3200FBE6FB /* MealTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AEEEF21EDB3F3200FBE6FB /* MealTabBarController.swift */; };
 		C0B1C0311EDCBAAA0023B13E /* MeamMeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B1C0301EDCBAAA0023B13E /* MeamMeLoader.swift */; };
@@ -69,6 +71,7 @@
 		C00E01841EBBA1850098B9D5 /* TimeEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeEvent.swift; sourceTree = "<group>"; };
 		C00E01861EBBB6C70098B9D5 /* WeekDayBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekDayBtn.swift; sourceTree = "<group>"; };
 		C00E01881EBBC9FB0098B9D5 /* WeekDays.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekDays.swift; sourceTree = "<group>"; };
+		C0142EDD1EE1FC380080C39C /* LocalNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 		C03B68741ECDFB2A00830DCA /* PickerLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerLabel.swift; sourceTree = "<group>"; };
 		C03B68EE1ED0A07D00830DCA /* AKPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPickerView.swift; sourceTree = "<group>"; };
 		C03B68F01ED0A17300830DCA /* UIImage+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
@@ -91,6 +94,7 @@
 		C0A696B61EAE9161001EBFB4 /* FoodPlanningTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPlanningTests.swift; sourceTree = "<group>"; };
 		C0A696B81EAE9161001EBFB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0AA60561EDDD7FB00E6DFB5 /* AnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
+		C0AA60581EDDE08C00E6DFB5 /* MealMeLoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealMeLoaderView.swift; sourceTree = "<group>"; };
 		C0AEEEF01EDB3E4D00FBE6FB /* UITabBarControllerExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITabBarControllerExt.swift; sourceTree = "<group>"; };
 		C0AEEEF21EDB3F3200FBE6FB /* MealTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTabBarController.swift; sourceTree = "<group>"; };
 		C0B1C0301EDCBAAA0023B13E /* MeamMeLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeamMeLoader.swift; sourceTree = "<group>"; };
@@ -139,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				C0045E8A1EBF833200C01BFA /* RealmManager.swift */,
+				C0142EDD1EE1FC380080C39C /* LocalNotificationManager.swift */,
 			);
 			name = ModelManager;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 		C0A696A01EAE9160001EBFB4 /* FoodPlanning */ = {
 			isa = PBXGroup;
 			children = (
+				C0DA583E1EE014A400820A46 /* New Group */,
 				C0045E891EBF82F800C01BFA /* ModelManager */,
 				C063966F1EBE7261008F9F2B /* Extensions */,
 				C0478A331EB1363200E13300 /* Utils */,
@@ -219,6 +225,13 @@
 			path = FoodPlanningTests;
 			sourceTree = "<group>";
 		};
+		C0DA583E1EE014A400820A46 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
 		C0E12D671EAFC917005E5C0F /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +249,7 @@
 				C0E9528C1EBB9C4200182620 /* EventTimeTableCell.swift */,
 				C00E01861EBBB6C70098B9D5 /* WeekDayBtn.swift */,
 				C0B1C0301EDCBAAA0023B13E /* MeamMeLoader.swift */,
+				C0AA60581EDDE08C00E6DFB5 /* MealMeLoaderView.swift */,
 				C043379E1EC742F500FA0616 /* WeekDayFormBtn.swift */,
 				C0810C471ECA40670041721A /* CustomDatePicker.swift */,
 				C03B68741ECDFB2A00830DCA /* PickerLabel.swift */,
@@ -485,7 +499,9 @@
 				C08DDE8C1ED882F80065AA04 /* SpinnerView.swift in Sources */,
 				C00E01871EBBB6C70098B9D5 /* WeekDayBtn.swift in Sources */,
 				C03B68EF1ED0A07D00830DCA /* AKPickerView.swift in Sources */,
+				C0142EDE1EE1FC380080C39C /* LocalNotificationManager.swift in Sources */,
 				C03B68751ECDFB2A00830DCA /* PickerLabel.swift in Sources */,
+				C0AA60591EDDE08C00E6DFB5 /* MealMeLoaderView.swift in Sources */,
 				C00E01851EBBA1850098B9D5 /* TimeEvent.swift in Sources */,
 				C0E949AE1ED6168000FA5B09 /* NotificationCenterDelegate.swift in Sources */,
 				C0AEEEF31EDB3F3200FBE6FB /* MealTabBarController.swift in Sources */,

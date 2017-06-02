@@ -12,6 +12,7 @@ import RealmSwift
 class RealmManager {
     static let sharedInstance = RealmManager()
     private let realm: Realm
+    static let dq = DispatchQueue.global(qos: .userInteractive)
     
     private init() {
         realm = try! Realm()
@@ -19,33 +20,64 @@ class RealmManager {
     
     static func loadEventsFor(day: WeekDays, _ completionHandler: @escaping (WeekDay?) -> ()) {
         //return realm.objects(WeekDay.self).filter("weekDay == \(day.rawValue)")
-        DispatchQueue.main.async {
+        //DispatchQueue.main.async {
+        dq.sync {
             let realm = try! Realm()
             let obj = realm.objects(WeekDay.self).filter("weekDay == \(day.rawValue)").first
         
-            completionHandler(obj)
+            //DispatchQueue.main.async {
+                completionHandler(obj)
+            //}
         }
     }
     
     static func writeWeekDay(obj: WeekDay) {
-        DispatchQueue.main.async {
+        //DispatchQueue.main.async {
+        dq.sync {
             let realm = try! Realm()
-            let days = realm.objects(WeekDay.self).filter("weekDay == \(obj.weekDay)")
+            let days = loadWeekDay(forDay: obj.weekDay)
+            //let group  = DispatchGroup()
+            //group.enter()
             for day in days {
+                removeWeekDayWithNotification(forDay: day)
+            }
+            
+            //group.leave()
+            //group.notify(queue: DispatchQueue.main) { () in
+                print("Before SAVE OBJ ============")
                 try! realm.write {
-                    let dayOfWeek = WeekDays(rawValue: day.weekDay)!
-                    realm.delete(day)
-                    LocalNotificationUtils.removeLocalNotificationsFor(dayOfWeek: dayOfWeek)
+                    realm.add(obj)
+                    //obj.createLocalNotificationsForCurrentDay()
                 }
-            }
-            try! realm.write {
-                realm.add(obj)
-                obj.createLocalNotificationsForCurrentDay()
-            }
+            //}
         }
     }
     
-    static func getAllWeekDays(realm: Realm) -> Results<WeekDay> {
+    /*
+     forDay from 0 ... 6 mon - sun
+     */
+    static func removeWeekDayWithNotification(forDay day: WeekDay) {
+        let realm = try! Realm()
+        
+        try! realm.write {
+            //let dayOfWeek = WeekDays(rawValue: day.weekDay)!
+            realm.delete(day)
+            
+            //LocalNotificationUtils.removeLocalNotificationsFor(dayOfWeek: dayOfWeek)
+        }
+    }
+
+    
+    /*
+     forDay from 0 ... 6 mon - sun
+     */
+    static func loadWeekDay(forDay: Int) -> Results<WeekDay> {
+        let realm = try! Realm()
+        return realm.objects(WeekDay.self).filter("weekDay == \(forDay)")
+    }
+    
+    static func getAllWeekDays() -> Results<WeekDay> {
+        let realm = try! Realm()
         return realm.objects(WeekDay.self)
     }
     

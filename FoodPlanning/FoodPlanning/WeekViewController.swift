@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WeekViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class WeekViewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var eventsTableView: UITableView!
     @IBOutlet weak var weekCalendarBtn: UIButton!
@@ -29,6 +29,8 @@ class WeekViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         configureNavBar()
         configureCalendarBtn(weekCalendarBtn)
+        
+        //LocalNotificationManager.buildLocalNotifications()
     }
     
     override func viewDidAppear(_ animated: Bool) {

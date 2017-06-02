@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sVD-aE-ZGI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HnE-uA-KHZ">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -91,10 +91,10 @@
             </objects>
             <point key="canvasLocation" x="-1873.125" y="34.859154929577464"/>
         </scene>
-        <!--View Controller-->
+        <!--Animation View Controller-->
         <scene sceneID="F2X-Ck-Ean">
             <objects>
-                <viewController id="sVD-aE-ZGI" sceneMemberID="viewController">
+                <viewController id="sVD-aE-ZGI" customClass="AnimationViewController" customModule="FoodPlanning" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TH4-JG-NgS"/>
                         <viewControllerLayoutGuide type="bottom" id="RE5-yn-TxB"/>
@@ -102,12 +102,30 @@
                     <view key="view" contentMode="scaleToFill" id="dX7-3e-6s2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="shD-0L-gKj" customClass="MealMeLoaderView" customModule="FoodPlanning" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" red="0.26666666666666666" green="0.17647058823529413" blue="0.17647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="shD-0L-gKj" firstAttribute="leading" secondItem="dX7-3e-6s2" secondAttribute="leading" id="GJL-Jz-jUD"/>
+                            <constraint firstItem="shD-0L-gKj" firstAttribute="top" secondItem="dX7-3e-6s2" secondAttribute="top" id="Ini-Xw-VeV"/>
+                            <constraint firstAttribute="trailing" secondItem="shD-0L-gKj" secondAttribute="trailing" id="QrK-R9-2qe"/>
+                            <constraint firstItem="RE5-yn-TxB" firstAttribute="top" secondItem="shD-0L-gKj" secondAttribute="bottom" id="VUx-tP-P0v"/>
+                            <constraint firstItem="shD-0L-gKj" firstAttribute="centerX" secondItem="dX7-3e-6s2" secondAttribute="centerX" id="aN0-g4-19f"/>
+                            <constraint firstItem="shD-0L-gKj" firstAttribute="centerY" secondItem="dX7-3e-6s2" secondAttribute="centerY" id="d78-5T-r2C"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="animatedView" destination="shD-0L-gKj" id="UYD-iR-Dav"/>
+                        <segue destination="HnE-uA-KHZ" kind="show" identifier="mainLine" id="968-OL-JXe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4UZ-LQ-qn8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2338" y="-753"/>
+            <point key="canvasLocation" x="-1299" y="-1695"/>
         </scene>
         <!--Meal Tab Bar Controller-->
         <scene sceneID="yG0-e6-lql">
@@ -150,7 +168,7 @@
         <!--Meal schedule-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="WeekViewController" customModule="FoodPlanning" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WeekViewVC" customModule="FoodPlanning" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>

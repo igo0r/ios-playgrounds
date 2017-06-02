@@ -21,6 +21,10 @@ extension Date {
     var month: Int {
         return DateTimeUtils.currentCalendar.component(.month,  from: self)
     }
+    /// Returns the amount of seconds from another date
+    func seconds(fromDate date: Date) -> Int {
+        return DateTimeUtils.currentCalendar.dateComponents([.second], from: date, to: self).second ?? 0
+    }
     var isLastDayOfMonth: Bool {
         return tomorrow.month != month
     }

@@ -31,7 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let category = getNotificationActionsWithCategory()
         center.setNotificationCategories([category])
         
-        runAnimation()
+        LocalNotificationManager.buildLocalNotifications()
+        
         return true
     }
 
@@ -62,32 +63,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let category = UNNotificationCategory(identifier: okNotificationCategory,                                        actions: [okAction], intentIdentifiers: [], options: [])
         
         return category
-    }
-    
-    func runAnimation() {
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window!.makeKeyAndVisible()
-        
-        // rootViewController from StoryBoard
-        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let navigationController = mainStoryboard.instantiateViewController(withIdentifier: "mealTabBar")
-        self.window!.rootViewController = navigationController
-        var maskBgView = UIView(frame: navigationController.view.frame)
-        
-        navigationController.view.addSubview(maskBgView)
-        navigationController.view.bringSubview(toFront: maskBgView)
-        
-        var angle = 0
-        var counter = 0
-        while angle < 720 {
-            if counter % 6 == 0 {
-                MeamMeLoader.drawCanvas2(frame: maskBgView.frame, resizing: .aspectFill, minutesAngle: CGFloat(angle))
-                angle = angle + 1
-                navigationController.view.layoutIfNeeded()
-            }
-            counter = counter + 1
-        }
-        
     }
 }
 

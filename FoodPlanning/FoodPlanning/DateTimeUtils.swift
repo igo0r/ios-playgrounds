@@ -15,6 +15,9 @@ class DateTimeUtils {
     static var currentWeek = [Date]()
     static var currentCalendar = Calendar.current
     
+    /*
+     Array from 1 to 7
+     */
     static func getCurrentWeek() -> [Date] {
         if !currentWeek.isEmpty {
             return currentWeek
@@ -58,10 +61,18 @@ class DateTimeUtils {
         return currentDate
     }
     
+    /*
+     weekDay = 1...7
+     return 0...6
+     */
     static func weekDayFormaterFromMonToSun(weekDay: Int) -> Int {
         return weekDay > 7 ? 1 : weekDay
     }
     
+    /*
+     weekDay = 0...6
+     return 1...7
+     */
     static func weekDayFormaterFromSunToMon(weekDay: Int) -> Int {
         return weekDay < 1 ? 7 : weekDay
     }
