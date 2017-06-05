@@ -18,6 +18,9 @@ extension Date {
     var noon: Date {
         return DateTimeUtils.currentCalendar.date(bySettingHour: 0, minute: 0, second: 0, of: self)!
     }
+    var nine: Date {
+        return DateTimeUtils.currentCalendar.date(bySettingHour: 9, minute: 0, second: 0, of: self)!
+    }
     var month: Int {
         return DateTimeUtils.currentCalendar.component(.month,  from: self)
     }

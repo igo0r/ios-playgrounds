@@ -18,6 +18,7 @@ class WeekDayController: UIViewController, UINavigationControllerDelegate, AKPic
     @IBOutlet weak var applyDaysLbl: UILabel!
     @IBOutlet weak var sleepAtLbl: UILabel!
     @IBOutlet weak var saveBtn: UIBarButtonItem!
+    @IBOutlet weak var waterMinutesLbl: UILabel!
     
     //Validation lbls
     @IBOutlet weak var validationSleepLbl: UILabel!
@@ -58,9 +59,7 @@ class WeekDayController: UIViewController, UINavigationControllerDelegate, AKPic
         pickerView.delegate = self
         pickerView.dataSource = self
         
-        checkNotificationPermissions()
-        
-        configureNavBar()
+        configureNavBar(withTitle: "Day plan")
         configureDayForm()
     }
     
@@ -139,6 +138,7 @@ class WeekDayController: UIViewController, UINavigationControllerDelegate, AKPic
             wakeUpAt = day.getWakeUpAt()
             sleepAt = day.getSleepAt()
         }
+        waterMinutesLbl.text = "\(UserDefaultsUtils.getWaterTime()) minutes before meal. You can change it in settings"
         configureMealsPicker()
     }
     
@@ -176,23 +176,6 @@ class WeekDayController: UIViewController, UINavigationControllerDelegate, AKPic
         pickerView.maskDisabled = true
         pickerView.reloadData()
     }
-
-    func configureNavBar() {
-        if let navItem = self.navigationController?.navigationBar.topItem {
-            let navBar = navigationController?.navigationBar
-            navBar?.isTranslucent = false
-            navItem.title = "Day plan"
-            UIApplication.shared.statusBarStyle = .lightContent    
-        }
-    }
-    
-    func checkNotificationPermissions() {
-        /*if !LocalNotificationUtils.isAuthorized() {
-            openAppSettings()
-        }*/
-        
-        LocalNotificationUtils.askNotificationPermissions()
-    }
     
     func checkFormValidation() {
         var isValid = true
@@ -216,7 +199,7 @@ class WeekDayController: UIViewController, UINavigationControllerDelegate, AKPic
             let alert = UIAlertController(title: "Validation failed", message: validationMessages, preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
             //self.present(alert, animated: true, completion: nil)
-        } else {
+        } else {            
             for day in weekDays {
                 let weekDay = WeekDay()
                 weekDay.mealsCount = mealsCount!
@@ -228,8 +211,17 @@ class WeekDayController: UIViewController, UINavigationControllerDelegate, AKPic
                 RealmManager.writeWeekDay(obj: weekDay)
             }
             
-            self.dismiss(animated: true, completion: nil)
             LocalNotificationManager.buildLocalNotifications()
+            //if let alert = askNotificationPermissionsIfNeeded(withDismiss: true) {
+            askNotificationPermissionsIfNeeded(withDismiss: true) { (alert) in
+                if let alert = alert {
+                    self.present(alert, animated: true, completion: nil)
+                } else {
+                self.dismiss(animated: true, completion: nil)
+                }
+            }
+            
+            UserDefaultsUtils.increasSavePlanCounter()
         }
     }
 }

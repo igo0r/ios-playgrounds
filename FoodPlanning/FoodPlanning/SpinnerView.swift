@@ -17,12 +17,16 @@ class SpinnerView {
     var activityIndicator = UIActivityIndicatorView()
     
     func showSpinnerFor(view: UIView) {
-        containerView.frame = view.frame
-        containerView.center = view.center
+        //containerView.frame = view.frame
+        containerView.frame  = UIScreen.main.bounds
+        //containerView.center = view.center
+        let mainScreenCenter = CGPoint(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height/2)
+        containerView.center = mainScreenCenter
         containerView.backgroundColor = UIColor(hex: "3D3939", alpha: 0.6)
         
         progressView.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
-        progressView.center = view.center
+        //progressView.center = view.center
+        progressView.center = mainScreenCenter
         progressView.backgroundColor = UIColor(hex: "000000", alpha: 0.7)
         progressView.clipsToBounds = true
         progressView.layer.cornerRadius = 10

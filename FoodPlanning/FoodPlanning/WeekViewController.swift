@@ -27,7 +27,7 @@ class WeekViewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         eventsTableView.delegate = self
         eventsTableView.dataSource = self
         
-        configureNavBar()
+        configureNavBar(withTitle: "Meal schedule")
         configureCalendarBtn(weekCalendarBtn)
         
         //LocalNotificationManager.buildLocalNotifications()
@@ -120,7 +120,7 @@ class WeekViewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 self.weekDay?.weekDay = day.rawValue
                 
                 self.timeLine.isHidden = true
-                self.timeEvents = [TimeEvent(startAt: Date(), description: "Tap to create your meal plan", weekDay: nil)]
+                self.timeEvents = [TimeEvent(startAt: Date(), description: "Tap to create your meal plan", notificationDescription: "", weekDay: nil)]
             }
             
             self.eventsTableView.reloadData()
@@ -134,17 +134,6 @@ class WeekViewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             }
         }
 
-    }
-    
-    func configureNavBar() {
-        if let navItem = self.navigationController?.navigationBar.topItem {
-            let navBar = navigationController?.navigationBar
-            navBar?.isTranslucent = false
-            
-            navItem.title = "Meal schedule"
-            //navItem.setLeftBarButton(UIBarButtonItem(image: UIImage(named: "menu.png"), style: UIBarButtonItemStyle.plain, target: nil, action: nil), animated: false)
-            navItem.leftBarButtonItem?.tintColor = UIColor(hex: "E4E0E0", alpha: 1)
-        }
     }
     
     func configureCalendarBtn(_ btn: UIButton) {

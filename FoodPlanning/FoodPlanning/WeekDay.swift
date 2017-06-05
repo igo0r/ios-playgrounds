@@ -34,12 +34,14 @@ class WeekDay: Object {
         var events = [TimeEvent]()
         
         let sleepAt = getSleepAt()
-        let halfAnHour = TimeInterval(60 * 30)
+        let waterTime = TimeInterval(60 * UserDefaultsUtils.getWaterTime())
+        
+        let waterDescription = "Water time!\n <== Swipe to confirm the action"
         
         if self.withWater {
-            events.append(TimeEvent(startAt: wakeUpAt, description: "Water time!", weekDay: self))
-            events.append(TimeEvent(startAt: sleepAt.addingTimeInterval(-halfAnHour), description: "Water time!", weekDay: self))
-            wakeUpAt = wakeUpAt.addingTimeInterval(halfAnHour)
+            events.append(TimeEvent(startAt: wakeUpAt, description: "Water time!", notificationDescription: waterDescription, weekDay: self))
+            events.append(TimeEvent(startAt: sleepAt.addingTimeInterval(-waterTime), description: "Water time!", notificationDescription: waterDescription, weekDay: self))
+            wakeUpAt = wakeUpAt.addingTimeInterval(waterTime)
         }
         
         let difference = sleepAt.timeIntervalSince(wakeUpAt)
@@ -48,15 +50,15 @@ class WeekDay: Object {
         for counter in 0..<mealsCount {
             let currentInterval = TimeInterval(counter * stepBetweenMeals)
             let mealTime = wakeUpAt.addingTimeInterval(currentInterval)
-            events.append(TimeEvent(startAt: mealTime, description: "Enjoy your \(counter + 1) meal!", weekDay: self))
+            events.append(TimeEvent(startAt: mealTime, description: "\(counter + 1) meal", notificationDescription: "Your \(counter + 1) meal is comming:) Bon appetit! \n <== Swipe to confirm the action", weekDay: self))
             
             if withWater && counter > 0 {
-                let waterTime = wakeUpAt.addingTimeInterval(currentInterval - halfAnHour)
-                events.append(TimeEvent(startAt: waterTime, description: "Water time!", weekDay: self))
+                let waterTime = wakeUpAt.addingTimeInterval(currentInterval - waterTime)
+                events.append(TimeEvent(startAt: waterTime, description: "Water time!", notificationDescription: waterDescription, weekDay: self))
             }
         }
         
-        events.append(TimeEvent(startAt: sleepAt, description: "Its time to go to bed!", weekDay: self))
+        events.append(TimeEvent(startAt: sleepAt, description: "Time to go to bed!", notificationDescription: "Its time to go to bed!\n <== Swipe to confirm the action", weekDay: self))
         events.sort(by: {$0.startAt < $1.startAt})
         
         return events

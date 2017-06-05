@@ -38,6 +38,7 @@
 		C0AEEEF11EDB3E4D00FBE6FB /* UITabBarControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AEEEF01EDB3E4D00FBE6FB /* UITabBarControllerExt.swift */; };
 		C0AEEEF31EDB3F3200FBE6FB /* MealTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AEEEF21EDB3F3200FBE6FB /* MealTabBarController.swift */; };
 		C0B1C0311EDCBAAA0023B13E /* MeamMeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B1C0301EDCBAAA0023B13E /* MeamMeLoader.swift */; };
+		C0D140881EE368BC00940DBA /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D140871EE368BC00940DBA /* SettingViewController.swift */; };
 		C0E12D6B1EAFC98C005E5C0F /* WeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E12D6A1EAFC98C005E5C0F /* WeekViewController.swift */; };
 		C0E12D6D1EAFDC43005E5C0F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E12D6C1EAFDC43005E5C0F /* UIColor.swift */; };
 		C0E949881ED369E500FA5B09 /* LocalNotificationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E949871ED369E500FA5B09 /* LocalNotificationUtils.swift */; };
@@ -46,6 +47,7 @@
 		C0E949AC1ED4A9C800FA5B09 /* WeekDayControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E949AB1ED4A9C800FA5B09 /* WeekDayControllerExt.swift */; };
 		C0E949AE1ED6168000FA5B09 /* NotificationCenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E949AD1ED6168000FA5B09 /* NotificationCenterDelegate.swift */; };
 		C0E9528D1EBB9C4200182620 /* EventTimeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9528C1EBB9C4200182620 /* EventTimeTableCell.swift */; };
+		C0EB8C1C1EE4B383006BFA3C /* RateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EB8C1B1EE4B383006BFA3C /* RateApp.swift */; };
 		C0F147021EB52C0200FB2A19 /* WeekDayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F147011EB52C0200FB2A19 /* WeekDayController.swift */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +100,7 @@
 		C0AEEEF01EDB3E4D00FBE6FB /* UITabBarControllerExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITabBarControllerExt.swift; sourceTree = "<group>"; };
 		C0AEEEF21EDB3F3200FBE6FB /* MealTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTabBarController.swift; sourceTree = "<group>"; };
 		C0B1C0301EDCBAAA0023B13E /* MeamMeLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeamMeLoader.swift; sourceTree = "<group>"; };
+		C0D140871EE368BC00940DBA /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		C0E12D6A1EAFC98C005E5C0F /* WeekViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekViewController.swift; sourceTree = "<group>"; };
 		C0E12D6C1EAFDC43005E5C0F /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		C0E949871ED369E500FA5B09 /* LocalNotificationUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationUtils.swift; sourceTree = "<group>"; };
@@ -106,6 +109,7 @@
 		C0E949AB1ED4A9C800FA5B09 /* WeekDayControllerExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekDayControllerExt.swift; sourceTree = "<group>"; };
 		C0E949AD1ED6168000FA5B09 /* NotificationCenterDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCenterDelegate.swift; sourceTree = "<group>"; };
 		C0E9528C1EBB9C4200182620 /* EventTimeTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTimeTableCell.swift; sourceTree = "<group>"; };
+		C0EB8C1B1EE4B383006BFA3C /* RateApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateApp.swift; sourceTree = "<group>"; };
 		C0F147011EB52C0200FB2A19 /* WeekDayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekDayController.swift; sourceTree = "<group>"; };
 		F71CA9672736C6B6AA4489B2 /* Pods-FoodPlanningTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodPlanningTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodPlanningTests/Pods-FoodPlanningTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,6 +161,7 @@
 				C06BDB071EC4AC7C0053B60C /* UserDefaultUtils.swift */,
 				C0E949871ED369E500FA5B09 /* LocalNotificationUtils.swift */,
 				C08DDE8B1ED882F80065AA04 /* SpinnerView.swift */,
+				C0EB8C1B1EE4B383006BFA3C /* RateApp.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -200,7 +205,6 @@
 		C0A696A01EAE9160001EBFB4 /* FoodPlanning */ = {
 			isa = PBXGroup;
 			children = (
-				C0DA583E1EE014A400820A46 /* New Group */,
 				C0045E891EBF82F800C01BFA /* ModelManager */,
 				C063966F1EBE7261008F9F2B /* Extensions */,
 				C0478A331EB1363200E13300 /* Utils */,
@@ -223,13 +227,6 @@
 				C0A696B81EAE9161001EBFB4 /* Info.plist */,
 			);
 			path = FoodPlanningTests;
-			sourceTree = "<group>";
-		};
-		C0DA583E1EE014A400820A46 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "New Group";
 			sourceTree = "<group>";
 		};
 		C0E12D671EAFC917005E5C0F /* Model */ = {
@@ -265,6 +262,7 @@
 				C0AEEEF21EDB3F3200FBE6FB /* MealTabBarController.swift */,
 				C08721B91EDCB681004DAA49 /* LaunchViewController.swift */,
 				C0AA60561EDDD7FB00E6DFB5 /* AnimationViewController.swift */,
+				C0D140871EE368BC00940DBA /* SettingViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -491,6 +489,7 @@
 				C0E12D6B1EAFC98C005E5C0F /* WeekViewController.swift in Sources */,
 				C0478A351EB1365500E13300 /* UIView+Inspectable.swift in Sources */,
 				C0AEEEF11EDB3E4D00FBE6FB /* UITabBarControllerExt.swift in Sources */,
+				C0D140881EE368BC00940DBA /* SettingViewController.swift in Sources */,
 				C0045E8D1EBF844400C01BFA /* UIViewControllerExt.swift in Sources */,
 				C06BDB061EC4AC2B0053B60C /* Constants.swift in Sources */,
 				C043379F1EC742F500FA0616 /* WeekDayFormBtn.swift in Sources */,
@@ -507,6 +506,7 @@
 				C0AEEEF31EDB3F3200FBE6FB /* MealTabBarController.swift in Sources */,
 				C00E01891EBBC9FB0098B9D5 /* WeekDays.swift in Sources */,
 				C0E949881ED369E500FA5B09 /* LocalNotificationUtils.swift in Sources */,
+				C0EB8C1C1EE4B383006BFA3C /* RateApp.swift in Sources */,
 				C0E949AC1ED4A9C800FA5B09 /* WeekDayControllerExt.swift in Sources */,
 				C0AA60571EDDD7FB00E6DFB5 /* AnimationViewController.swift in Sources */,
 				C0E9498C1ED49B9400FA5B09 /* UIView.swift in Sources */,

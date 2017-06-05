@@ -11,6 +11,7 @@ import Foundation
 struct TimeEvent {
     var startAt = Date()
     var description = ""
+    var notificationDescription = ""
     var weekDay: WeekDay?
     
     func createLocalNotification() {
