@@ -15,25 +15,25 @@ class RateApp {
     /*
      using agree and disagree counters determine wether we should show rate popup or not
      */
-    static func showRatePopupOnSuccessPath(forView: UIView) {
-        if UserDefaultsUtils.getAgreeToReview() == 0 && UserDefaultsUtils.getSuccessPathes() % 1 == 0 {
-            func askPreNotificationPermissions(withDismiss: Bool) -> UIAlertController {
-                let alertToShow = UIAlertController(title: "Would you like to rate us?", message: "It seeems you have fun with an application. Please, help us to build better product for you :)", preferredStyle: UIAlertControllerStyle.alert)
-                alertToShow.addAction(UIAlertAction(title: "Not Now", style: UIAlertActionStyle.cancel, handler: {(alert: UIAlertAction!) in
+    static func showRatePopupOnSuccessPath(forView: UIViewController) {
+        if UserDefaultsUtils.getDontAskToReview() == 0 && UserDefaultsUtils.getAgreeToReview() == 0 && UserDefaultsUtils.getSuccessPathes() % 20 == 0 {
+            let alertToShow = UIAlertController(title: "Would you like to review/rate us?", message: "It seems you have fun with an application. Please, help us to build a better product for you :)", preferredStyle: UIAlertControllerStyle.alert)
+            alertToShow.addAction(UIAlertAction(title: "Don't ask me again", style: UIAlertActionStyle.default, handler: {(alert: UIAlertAction!) in
+                UserDefaultsUtils.increaseDontAskToReview()
+            }))
+            alertToShow.addAction(UIAlertAction(title: "Not Now", style: UIAlertActionStyle.default, handler: {(alert: UIAlertAction!) in
                     UserDefaultsUtils.increasDisagreeToReview()
                 }))
-                alertToShow.addAction(UIAlertAction(title: "Rate Us", style: UIAlertActionStyle.default, handler: {(alert: UIAlertAction!) in
+            alertToShow.addAction(UIAlertAction(title: "Rate Us!", style: UIAlertActionStyle.destructive, handler: {(alert: UIAlertAction!) in
                     UserDefaultsUtils.increasAgreeToReview()
-                    
+                    RateApp.openRatingView()
                 }))
                 
-                
-                return alertToShow
-            }
+            forView.present(alertToShow, animated: true, completion: nil)
         }
     }
     
-    func openRatingView() {
+    static func openRatingView() {
         
         if #available(iOS 10.3, *) {
             

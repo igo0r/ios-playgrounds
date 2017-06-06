@@ -10,6 +10,7 @@ import UIKit
 
 class EventTimeTableCell: UITableViewCell {
 
+    @IBOutlet weak var clockView: UIImageView!
     @IBOutlet weak var timeLbl: UILabel!
     @IBOutlet weak var eventDescriptionLbl: UILabel!
     @IBOutlet weak var ovalCircle: UIImageView!
@@ -31,7 +32,12 @@ class EventTimeTableCell: UITableViewCell {
             hideCellElements(false)
             
             let formatter = DateFormatter()
-            formatter.dateFormat = "HH:mm"
+            if DateTimeUtils.currentCalendar.firstWeekday == 1 {
+                formatter.dateFormat = "h:mm a"
+            } else {
+                formatter.dateFormat = "HH:mm"
+            }
+            
             timeLbl.text =  formatter.string(from: timeEvent.startAt)
             
             eventDescriptionLbl.text = timeEvent.description
@@ -47,5 +53,6 @@ class EventTimeTableCell: UITableViewCell {
         ovalCircle.isHidden = hide
         
         emptyEventsLbl.isHidden = !hide
+        clockView.isHidden = !hide
     }
 }

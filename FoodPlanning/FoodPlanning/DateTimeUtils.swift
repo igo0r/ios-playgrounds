@@ -10,7 +10,7 @@ import Foundation
 
 class DateTimeUtils {
     
-    static let firstWeekday = 2
+    //static let firstWeekday = 1
     static let currentDate = Date()
     static var currentWeek = [Date]()
     static var currentCalendar = Calendar.current
@@ -24,7 +24,7 @@ class DateTimeUtils {
         }
         
         var calendar = currentCalendar
-        calendar.firstWeekday = firstWeekday
+        //calendar.firstWeekday = firstWeekday
         
         let today = getCurrentDate()
         var dayOfWeek = calendar.component(.weekday, from: today) - (calendar.firstWeekday - 1)
@@ -45,7 +45,7 @@ class DateTimeUtils {
      */
     static func getCurrentWeekDayNumber() -> WeekDays {
         var calendar = currentCalendar
-        calendar.firstWeekday = firstWeekday
+        //calendar.firstWeekday = firstWeekday
         let today = getCurrentDate()
         var dayOfWeek = calendar.component(.weekday, from: today) - (calendar.firstWeekday - 1)
         dayOfWeek = weekDayFormaterFromSunToMon(weekDay: dayOfWeek)

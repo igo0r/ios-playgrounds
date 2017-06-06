@@ -13,3 +13,4 @@ enum WeekDays: Int {
     
 }
 
+let weekDayNames = [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]

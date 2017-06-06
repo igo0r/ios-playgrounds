@@ -12,10 +12,9 @@ class UserDefaultsUtils {
     
     /*
      Return Starts from 1 to 7
-     FOR NOW ALWAYS RETURN CURRENT DATE
      */
     static func getDefaultUserDate() -> WeekDays {
-        /*let defaultDayStr = UserDefaults.standard.integer(forKey: defaultUserDayKey)
+        let defaultDayStr = UserDefaults.standard.integer(forKey: defaultUserDayKey)
 
         let weekDay:WeekDays
         if defaultDayStr == 0 {
@@ -24,8 +23,7 @@ class UserDefaultsUtils {
             weekDay = WeekDays(rawValue: defaultDayStr - 1)!
         }
         
-        return weekDay*/
-       return DateTimeUtils.getCurrentWeekDayNumber()
+        return weekDay
     }
     
     static func setDefaultUserDate(weekDay: WeekDays) {
@@ -60,11 +58,20 @@ class UserDefaultsUtils {
         UserDefaults.standard.set(minutes, forKey: waterTime)
     }
     
+    static func getDontAskToReview() -> Int {
+        return UserDefaults.standard.integer(forKey: dontAskToReview)
+    }
+    
+    static func increaseDontAskToReview() {
+        let currentValue = getDontAskToReview()
+        UserDefaults.standard.set(currentValue + 1, forKey: dontAskToReview)
+    }
+    
     static func getSuccessPathes() -> Int {
         return UserDefaults.standard.integer(forKey: successPathes)
     }
     
-    static func increasSuccessPathes() {
+    static func increaseSuccessPath() {
         let currentValue = getSuccessPathes()
         UserDefaults.standard.set(currentValue + 1, forKey: successPathes)
     }

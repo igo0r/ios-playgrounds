@@ -19,6 +19,7 @@ let secondsFrom13Hours: Double = (60 * 60 * 13)
 //Rate section
 let successPathes = "successPathes"
 let agreeToReview = "agreeToReview"
+let dontAskToReview = "dontAskToReview"
 let disagreeToReview = "disagreeToReview"
 
 //Water settings
@@ -29,6 +30,7 @@ let waterTimeRange = Array(5...50)
 let medium17 = UIFont(name: "AvenirNext-Medium", size: 17)!
 
 //Colors
+let opacity0 = UIColor(hex: "000000", alpha: 0)
 let black = UIColor(hex: "000000", alpha: 0.7)
 let blackHalf = UIColor(hex: "000000", alpha: 0.5)
 let white = UIColor(hex:"E4E0E0")

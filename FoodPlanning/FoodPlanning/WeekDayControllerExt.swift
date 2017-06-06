@@ -11,27 +11,28 @@ import Foundation
 extension WeekDayController {
     
     func isFormValid() -> Bool {
-        let isValid = validateDatePickers() && validateActiveWeekDays()
-        
-        if isValid {
+        let isValidDatePickers = validateDatePickers()
+        let isValidWeekDays = validateActiveWeekDays()
+        if isValidDatePickers && isValidWeekDays {
             saveBtn.tintColor = green
         } else {
             saveBtn.tintColor = redColor
         }
         
-        return isValid
+        return isValidDatePickers && isValidWeekDays
     }
     
     func validateDatePickers() -> Bool {
         var isValid = false
         if sleepAt != nil && wakeUpAt != nil {
+            validationSleepLbl.text = "At least 3 hours from wake up"
             if !DateTimeUtils.isTimeIntervalLess(than: secondsFrom3Hours, betweenDate1: sleepAt!, andDate2: wakeUpAt!) {
                 sleepAtLbl.textColor = white
-                validationSleepLbl.isHidden = true
+                validationSleepLbl.isHidden = false
+                validationSleepLbl.textColor = opacity0
                 isValid = true
             } else {
                 sleepAtLbl.textColor = redColor
-                validationSleepLbl.text = "At least 3 hours from wake up"
                 validationSleepLbl.textColor = redColor
                 validationSleepLbl.isHidden = false
                 isValid = false
@@ -51,7 +52,8 @@ extension WeekDayController {
             isValid = false
         } else {
             applyDaysLbl.textColor = white
-            validationWeekDaySLbl.isHidden = true
+            validationWeekDaySLbl.textColor = opacity0
+            //validationWeekDaySLbl.isHidden = true
             isValid = true
         }
         

@@ -138,7 +138,7 @@ class WeekDayController: UIViewController, UINavigationControllerDelegate, AKPic
             wakeUpAt = day.getWakeUpAt()
             sleepAt = day.getSleepAt()
         }
-        waterMinutesLbl.text = "\(UserDefaultsUtils.getWaterTime()) minutes before meal. You can change it in settings"
+        waterMinutesLbl.text = "\(UserDefaultsUtils.getWaterTime()) minutes before meal. Change it in settings"
         configureMealsPicker()
     }
     
@@ -168,10 +168,10 @@ class WeekDayController: UIViewController, UINavigationControllerDelegate, AKPic
     }
     
     func configureMealsPicker() {
-        pickerView.font = UIFont(name: "AvenirNext-DemiBold", size: 16)!
-        pickerView.highlightedFont = UIFont(name: "AvenirNext-DemiBold", size: 16)!
+        pickerView.font = UIFont(name: "AvenirNext-DemiBold", size: 17)!
+        pickerView.highlightedFont = UIFont(name: "AvenirNext-DemiBold", size: 18)!
         pickerView.highlightedTextColor = UIColor(hex: "E4E0E0")
-        pickerView.interitemSpacing = 10
+        pickerView.interitemSpacing = 14
         pickerView.pickerViewStyle = .flat
         pickerView.maskDisabled = true
         pickerView.reloadData()
@@ -186,13 +186,13 @@ class WeekDayController: UIViewController, UINavigationControllerDelegate, AKPic
             isValid = false
             applyDaysLbl.textColor = redColor
             applyDaysLbl.shake()
-            validationMessages += " - Please choose at least 1 day from the week\n"
+            validationMessages += " - At least 1 day from the week should be chosen\n"
         }
         if DateTimeUtils.isTimeIntervalLess(than: secondsFrom3Hours, betweenDate1: self.sleepAt!, andDate2: self.wakeUpAt!) {
             isValid = false
             sleepAtLbl.textColor = redColor
             sleepAtLbl.shake()
-            validationMessages += "- Difference between wake up and sleep at times should be at least 3 hours\n"
+            validationMessages += "- Wake up and sleep at times should differs for 3 hours at least\n"
         }
         
         if !isValid {
@@ -220,8 +220,8 @@ class WeekDayController: UIViewController, UINavigationControllerDelegate, AKPic
                 self.dismiss(animated: true, completion: nil)
                 }
             }
-            
             UserDefaultsUtils.increasSavePlanCounter()
+            UserDefaultsUtils.increaseSuccessPath()
         }
     }
 }

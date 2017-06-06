@@ -39,7 +39,7 @@ class RealmManager {
             //let group  = DispatchGroup()
             //group.enter()
             for day in days {
-                removeWeekDayWithNotification(forDay: day)
+                removeWeekDay(day, withNotifications: false)
             }
             
             //group.leave()
@@ -56,14 +56,14 @@ class RealmManager {
     /*
      forDay from 0 ... 6 mon - sun
      */
-    static func removeWeekDayWithNotification(forDay day: WeekDay) {
+    static func removeWeekDay(_ day: WeekDay, withNotifications: Bool) {
         let realm = try! Realm()
         
         try! realm.write {
-            //let dayOfWeek = WeekDays(rawValue: day.weekDay)!
             realm.delete(day)
-            
-            //LocalNotificationUtils.removeLocalNotificationsFor(dayOfWeek: dayOfWeek)
+        }
+        if withNotifications {
+            LocalNotificationManager.buildLocalNotifications()
         }
     }
 

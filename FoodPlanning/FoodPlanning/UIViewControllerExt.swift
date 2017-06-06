@@ -45,7 +45,7 @@ extension UIViewController {
      In case when user didnt allow send notifications but still uses the app
      */
     func askPostUnsuccessNotificationPermissions(withDismiss: Bool) -> UIAlertController {
-        let alert = UIAlertController(title: "Still disabled notifications :(", message: "Unfortunately we can't inform you about upcoming meals in time because notifications are disabled for our application.\n Howvever you can change it by following \"Settings\" button", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "Still disabled notifications :(", message: "Unfortunately we can't inform you about upcoming meals in time because notifications are disabled for our application.\n However you can change it by following \"Settings\" button", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Settings", style: UIAlertActionStyle.cancel, handler: {(alert: UIAlertAction!) in
             self.openAppSettings()
             UserDefaultsUtils.increasRequestPermissionsCounter()

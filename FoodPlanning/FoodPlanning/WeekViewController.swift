@@ -13,11 +13,16 @@ class WeekViewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var eventsTableView: UITableView!
     @IBOutlet weak var weekCalendarBtn: UIButton!
     
+    @IBOutlet weak var cleanWeekDatBtn: UIBarButtonItem!
     @IBOutlet weak var timeLine: UIView!
     @IBOutlet var weekDayBtns: [UIButton]!
     
     var weekDay: WeekDay?
-    var timeEvents = [TimeEvent]()
+    var timeEvents = [TimeEvent]() {
+        didSet {
+            cleanWeekDatBtn.isEnabled = timeEvents.count > 1
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +31,7 @@ class WeekViewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         eventsTableView.delegate = self
         eventsTableView.dataSource = self
+        eventsTableView.tableFooterView = UIView()
         
         configureNavBar(withTitle: "Meal schedule")
         configureCalendarBtn(weekCalendarBtn)
@@ -34,6 +40,8 @@ class WeekViewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
         let defDate = defaultDate.rawValue
         for btn in weekDayBtns {
             if let weekDayBtn = btn as? WeekDayBtn {
@@ -44,9 +52,24 @@ class WeekViewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
         loadDayEventsFor(day: defaultDate)
         SpinnerView.sharedInstance.hideSpinView()
+        
+        RateApp.showRatePopupOnSuccessPath(forView: self)
     }
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
         SpinnerView.sharedInstance.hideSpinView()
+    }
+    
+    @IBAction func cleanWeekDayBtnPressed(_ sender: UIBarButtonItem) {
+        if let weekDay = weekDay {
+            let dayOfWeek = weekDay.weekDay
+            AlertUtils.removeWeekDayWithAlert(withTitle: "Delete schedule for \(weekDayNames[dayOfWeek])", message: "Are you sure you want to delete your meal plan for \(weekDayNames[dayOfWeek])", forWeekDay: weekDay, inView: self) { (deleted) in
+                if deleted {
+                    self.loadDayEventsFor(day: WeekDays(rawValue: dayOfWeek)!)
+                }
+            }
+        }
     }
     
     @IBAction func weekDayBtnPressed(_ sender: WeekDayBtn) {
@@ -78,16 +101,14 @@ class WeekViewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        /*var height:CGFloat = CGFloat()
-        if indexPath.row == 1 {
-            height = 150
+        var height:CGFloat = CGFloat()
+        if timeEvents.count == 1 {
+            height = 200
+        } else {
+            height = 70
         }
-        else {
-            height = 50
-        }*/
         
-        //tableView.rowHeight = UITableViewAutomaticDimension
-        return 70
+        return height
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

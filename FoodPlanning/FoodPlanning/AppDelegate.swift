@@ -31,6 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let category = getNotificationActionsWithCategory()
         center.setNotificationCategories([category])
         
+        UserDefaultsUtils.increaseSuccessPath()
         LocalNotificationManager.buildLocalNotifications()
         
         return true
