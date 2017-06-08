@@ -152,7 +152,8 @@ class WeekDayController: UIViewController, UINavigationControllerDelegate, AKPic
         var result = [WeekDays]()
         for day in weekDays {
             if day.isActiveWeekDay {
-                result.append(WeekDays(rawValue: day.tag)!)
+                let btnWeekDay = DateTimeUtils.routeFromDayTagToWeekDays(btnTag: day.tag)
+                result.append(btnWeekDay)
             }
         }
         
@@ -161,7 +162,8 @@ class WeekDayController: UIViewController, UINavigationControllerDelegate, AKPic
     
     func setActiveWeekDay(_ active: Bool, withTag: Int) {
         for day in weekDays {
-            if day.tag == withTag {
+            let btnWeekDay = DateTimeUtils.routeFromDayTagToWeekDays(btnTag: day.tag)
+            if btnWeekDay.rawValue == withTag {
                 day.setActive(active)
             }
         }

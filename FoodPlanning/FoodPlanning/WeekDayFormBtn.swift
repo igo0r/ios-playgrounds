@@ -17,13 +17,19 @@ class WeekDayFormBtn: UIButton {
     
     override func draw(_ rect: CGRect) {
         let weekDays = DateTimeUtils.getCurrentWeek()
-        let date = weekDays[Int(tag)]
+        let btnWeekDay = DateTimeUtils.routeFromDayTagToWeekDays(btnTag: tag)
+        let date = weekDays[btnWeekDay]!
         
         let formatter = DateFormatter()
         formatter.dateFormat = " EE"
         let weekStr = formatter.string(from: date).lowercased()
         
         setTitle(weekStr, for: .normal)
+        if btnWeekDay == WeekDays(rawValue: 6) || btnWeekDay == WeekDays(rawValue: 5) {
+            setTitleColor(redColor, for: .normal)
+        } else {
+            setTitleColor(white, for: .normal)
+        }
         tintColor = green
     }
     

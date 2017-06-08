@@ -53,7 +53,7 @@ class LocalNotificationManager {
                 return trigger1.nextTriggerDate()! < trigger2.nextTriggerDate()!
             }
             
-            let slicedNotificationRequests = notificationRequests.prefix(upTo: notificationRequests.count > 63 ? 63 : notificationRequests.count - 1)
+            let slicedNotificationRequests = notificationRequests.prefix(upTo: notificationRequests.count > 63 ? 63 : notificationRequests.count)
             
             group.notify(queue: DispatchQueue.main) { () in
                     print("Print after remove!!")
@@ -95,7 +95,7 @@ class LocalNotificationManager {
         if let day = timeEvent.weekDay {
             let dayOfWeek = WeekDays(rawValue: day.weekDay)!
             let identifier = LocalNotificationUtils.composeNotificationIdentifierFor(dayOfWeek: dayOfWeek, date: timeEvent.startAt)
-            request = LocalNotificationUtils.createNotificationRequestWith(title: "Time is coming!", body: timeEvent.notificationDescription, date: timeEvent.startAt, identifier: identifier, dayOfWeek: dayOfWeek)
+            request = LocalNotificationUtils.createNotificationRequestWith(title: "The time has come :)", body: timeEvent.notificationDescription, date: timeEvent.startAt, identifier: identifier, dayOfWeek: dayOfWeek)
         } else {
             //TODO: add error handling
             print("Wrong weekDay for Event with starts at \(timeEvent.startAt)")

@@ -16,7 +16,7 @@ class AlertUtils {
             RealmManager.removeWeekDay(forWeekDay, withNotifications: true)
             cH(true)
         }))
-        alertToShow.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: {(alert: UIAlertAction!) in
+        alertToShow.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: {(alert: UIAlertAction!) in
             cH(false)
         }))
         

@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>MealWaterLab</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -17,9 +19,15 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSHumanReadableCopyright</key>
+	<string>2017 Igor Lantushenko</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Notifications may help you to take your meal in time according to your schedule.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Meal notifications help to keep you up to date according to your schedule.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -43,9 +51,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Meal notifications help to keep you up to date according to your schedule.</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Notifications may help you to take your meal in time according to your schedule.</string>
 </dict>
 </plist>

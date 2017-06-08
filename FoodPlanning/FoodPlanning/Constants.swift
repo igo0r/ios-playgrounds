@@ -8,7 +8,7 @@
 import UIKit
 
 //App id for rates
-let appID = "dvd"
+let appID = "1245564580"
 
 let defaultUserDayKey = "defaultUserDayKey"
 let notificationIdentifierPrefix = "MealMeNotify"

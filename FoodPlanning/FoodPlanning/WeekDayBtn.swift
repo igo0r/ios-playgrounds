@@ -20,7 +20,8 @@ class WeekDayBtn: UIButton {
     
     func composeAttributedStringForWeekBtn(withActiveState: Bool) -> NSAttributedString {
         let weekDays = DateTimeUtils.getCurrentWeek()
-        let date = weekDays[Int(tag)]
+        let weekDay = DateTimeUtils.routeFromDayTagToWeekDays(btnTag: tag)
+        let date = weekDays[weekDay]!
         
         let formatter = DateFormatter()
         formatter.dateFormat = "EE"

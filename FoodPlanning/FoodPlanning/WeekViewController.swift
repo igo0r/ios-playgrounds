@@ -22,7 +22,7 @@ class WeekViewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         didSet {
             cleanWeekDatBtn.isEnabled = timeEvents.count > 1
         }
-    }
+    } 
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,10 +42,10 @@ class WeekViewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let defDate = defaultDate.rawValue
         for btn in weekDayBtns {
             if let weekDayBtn = btn as? WeekDayBtn {
-                if  weekDayBtn.tag == defDate {
+                let btnWeekDay = DateTimeUtils.routeFromDayTagToWeekDays(btnTag: weekDayBtn.tag)
+                if  btnWeekDay == defaultDate {
                     weekDayBtn.setButtonActive(true)
                 }
             }
@@ -75,7 +75,7 @@ class WeekViewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBAction func weekDayBtnPressed(_ sender: WeekDayBtn) {
         SpinnerView.sharedInstance.showSpinnerFor(view: view.superview ?? view)
         
-        defaultDate = WeekDays(rawValue: sender.tag)!
+        defaultDate = DateTimeUtils.routeFromDayTagToWeekDays(btnTag: sender.tag)
         
         setInactiveWeekDayBtns()
         sender.setButtonActive(true)
@@ -159,8 +159,9 @@ class WeekViewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func configureCalendarBtn(_ btn: UIButton) {
         let weekDays = DateTimeUtils.getCurrentWeek()
-        let start = weekDays[0]
-        let end = weekDays[6]
+        let (startWeekDay, endWeekDay) = DateTimeUtils.getWeekStartEndAsWeekDays()
+        let start = weekDays[startWeekDay]!
+        let end = weekDays[endWeekDay]!
         
         let formatter = DateFormatter()
         formatter.dateFormat = "d"

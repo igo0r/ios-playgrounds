@@ -36,7 +36,7 @@ class WeekDay: Object {
         let sleepAt = getSleepAt()
         let waterTime = TimeInterval(60 * UserDefaultsUtils.getWaterTime())
         
-        let waterDescription = "Water time!\n <== Swipe to confirm the action"
+        let waterDescription = "Water time!\n Swipe or press to confirm the action"
         
         if self.withWater {
             events.append(TimeEvent(startAt: wakeUpAt, description: "Water time!", notificationDescription: waterDescription, weekDay: self))
@@ -50,7 +50,7 @@ class WeekDay: Object {
         for counter in 0..<mealsCount {
             let currentInterval = TimeInterval(counter * stepBetweenMeals)
             let mealTime = wakeUpAt.addingTimeInterval(currentInterval)
-            events.append(TimeEvent(startAt: mealTime, description: "\(counter + 1) meal", notificationDescription: "Your \(counter + 1) meal is comming:) Bon appetit! \n <== Swipe to confirm the action", weekDay: self))
+            events.append(TimeEvent(startAt: mealTime, description: "\(counter + 1) meal", notificationDescription: "Take your \(counter + 1) meal. Bon appetit! \n Swipe or press to confirm the action", weekDay: self))
             
             if withWater && counter > 0 {
                 let waterTime = wakeUpAt.addingTimeInterval(currentInterval - waterTime)
@@ -58,7 +58,7 @@ class WeekDay: Object {
             }
         }
         
-        events.append(TimeEvent(startAt: sleepAt, description: "Time to go to bed!", notificationDescription: "Its time to go to bed!\n <== Swipe to confirm the action", weekDay: self))
+        events.append(TimeEvent(startAt: sleepAt, description: "Time to go to bed!", notificationDescription: "Its time to go to bed!\n Swipe or press to confirm the action", weekDay: self))
         events.sort(by: {$0.startAt < $1.startAt})
         
         return events

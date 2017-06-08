@@ -12,30 +12,32 @@ class DateTimeUtils {
     
     //static let firstWeekday = 1
     static let currentDate = Date()
-    static var currentWeek = [Date]()
+    static var currentWeek = [WeekDays:Date]()
     static var currentCalendar = Calendar.current
     
     /*
      Array from 1 to 7
      */
-    static func getCurrentWeek() -> [Date] {
+    static func getCurrentWeek() -> [WeekDays:Date] {
         if !currentWeek.isEmpty {
             return currentWeek
         }
         
         var calendar = currentCalendar
-        //calendar.firstWeekday = firstWeekday
-        
         let today = getCurrentDate()
         var dayOfWeek = calendar.component(.weekday, from: today) - (calendar.firstWeekday - 1)
-        if dayOfWeek < 1 {
-            dayOfWeek = 7
-        }
+        dayOfWeek = weekDayFormaterFromSunToMon(weekDay: dayOfWeek)
         
         let weekdays = calendar.range(of: .weekday, in: .weekOfYear, for: today)!
         
-        currentWeek = (weekdays.lowerBound ..< weekdays.upperBound)
-            .flatMap { calendar.date(byAdding: .day, value: $0 - dayOfWeek, to: today) }
+        for index in (weekdays.lowerBound ..< weekdays.upperBound) {
+            if let date = calendar.date(byAdding: .day, value: index - dayOfWeek, to: today) {
+                let currentOriginWeekNumber = calendar.component(.weekday, from: date) - 2
+                if let weekDay = WeekDays(rawValue: currentOriginWeekNumber < 0 ? 6 : currentOriginWeekNumber) {
+                    currentWeek[weekDay] = date
+                }
+            }
+        }
         
         return currentWeek
     }
@@ -44,13 +46,10 @@ class DateTimeUtils {
      Starts from 0 = Monday
      */
     static func getCurrentWeekDayNumber() -> WeekDays {
-        var calendar = currentCalendar
-        //calendar.firstWeekday = firstWeekday
         let today = getCurrentDate()
-        var dayOfWeek = calendar.component(.weekday, from: today) - (calendar.firstWeekday - 1)
-        dayOfWeek = weekDayFormaterFromSunToMon(weekDay: dayOfWeek)
+        let dayOfWeek = currentCalendar.component(.weekday, from: today) - 2
 
-        return WeekDays(rawValue: (dayOfWeek - 1))!
+        return WeekDays(rawValue: dayOfWeek < 0 ? 6 : dayOfWeek)!
     }
     
     static func isTimeIntervalLess(than interval: Double, betweenDate1 date1: Date, andDate2 date2: Date) -> Bool {
@@ -59,6 +58,40 @@ class DateTimeUtils {
     
     static func getCurrentDate() -> Date {
         return currentDate
+    }
+    
+    /*
+     from btn tag to WeekDays take into account firstDayOfWeek
+     */
+    static func routeFromDayTagToWeekDays(btnTag: Int) -> WeekDays {
+        let (start, _) = getWeekStartEndAsWeekDays()
+        var finalWeekDay = start
+        var counter = 0
+        while counter != btnTag {
+            let rawVal = finalWeekDay.rawValue + 1
+            finalWeekDay = WeekDays(rawValue: rawVal > 6 ? 0 : rawVal)!
+            counter = counter + 1
+        }
+        
+        return finalWeekDay
+    }
+    
+    /*
+     return first and last week day as WeekDays
+     */
+    static func getWeekStartEndAsWeekDays() -> (WeekDays, WeekDays) {
+        let index = currentCalendar.firstWeekday - 2
+        let start = WeekDays(rawValue: weekDayFormaterLessZerro(weekDay: index))!
+        let end = WeekDays(rawValue: weekDayFormaterLessZerro(weekDay: start.rawValue - 1))!
+        return (start, end)
+    }
+    
+    /*
+     weekDay = -1...5
+     return 0...6
+     */
+    static func weekDayFormaterLessZerro(weekDay: Int) -> Int {
+        return weekDay < 0 ? 6 : weekDay
     }
     
     /*
@@ -74,7 +107,7 @@ class DateTimeUtils {
      return 1...7
      */
     static func weekDayFormaterFromSunToMon(weekDay: Int) -> Int {
-        return weekDay < 1 ? 7 : weekDay
+        return weekDay < 1 ? 7 + weekDay : weekDay
     }
     
     static func getTomorrowNoon() {
