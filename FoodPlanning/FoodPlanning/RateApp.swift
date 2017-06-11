@@ -51,7 +51,7 @@ class RateApp {
      build and open url for app rate
      */
     static func rateApp(completion: @escaping ((_ success: Bool)->())) {
-        guard let url = URL(string : "itms-apps://itunes.apple.com/app/" + appID + "?action=write-review") else {
+        guard let url = URL(string : "itms-apps://itunes.apple.com/app/id" + appID + "?action=write-review") else {
             completion(false)
             return
         }

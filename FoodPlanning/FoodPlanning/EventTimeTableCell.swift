@@ -10,6 +10,7 @@ import UIKit
 
 class EventTimeTableCell: UITableViewCell {
 
+    //@IBOutlet weak var progressView: UIView!
     @IBOutlet weak var clockView: UIImageView!
     @IBOutlet weak var timeLbl: UILabel!
     @IBOutlet weak var eventDescriptionLbl: UILabel!
@@ -41,6 +42,11 @@ class EventTimeTableCell: UITableViewCell {
             timeLbl.text =  formatter.string(from: timeEvent.startAt)
             
             eventDescriptionLbl.text = timeEvent.description
+            
+            /*if timeEvent.progressTime > 0 {
+                
+                progressView.addSubview()
+            }*/
         } else {
             hideCellElements(true)
             emptyEventsLbl.text = timeEvent.description

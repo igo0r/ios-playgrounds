@@ -22,6 +22,9 @@ let agreeToReview = "agreeToReview"
 let dontAskToReview = "dontAskToReview"
 let disagreeToReview = "disagreeToReview"
 
+//ProgressView
+let progressViewMaxValue: Double = 147
+
 //Water settings
 let waterTime = "waterTime"
 let waterTimeRange = Array(5...50)

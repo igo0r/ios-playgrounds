@@ -9,7 +9,7 @@
 import UIKit
 
 class WeekViewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     @IBOutlet weak var eventsTableView: UITableView!
     @IBOutlet weak var weekCalendarBtn: UIButton!
     
