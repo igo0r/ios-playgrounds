@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FoodPlanning/WeekDayBtn.swift"
-            timestampString = "518477742.086165"
+            timestampString = "518888270.798001"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "setButtonActive(_:withTag:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FoodPlanning/NotificationCenterDelegate.swift"
-            timestampString = "518371646.524136"
+            timestampString = "519147428.127773"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
             landmarkName = "userNotificationCenter(_:willPresent:withCompletionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FoodPlanning/NotificationCenterDelegate.swift"
-            timestampString = "518371646.524136"
+            timestampString = "519147428.127773"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
             landmarkName = "userNotificationCenter(_:didReceive:withCompletionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FoodPlanning/LocalNotificationUtils.swift"
-            timestampString = "518297381.891611"
+            timestampString = "519075983.679739"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "removeLocalNotificationsWith(identifier:)"
             landmarkType = "7">
             <Locations>
@@ -106,12 +106,12 @@
                   moduleName = "FoodPlanning"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ilantushenko/sites/iOS/FoodPlanning/FoodPlanning/LocalNotificationUtils.swift"
-                  timestampString = "518781176.416635"
+                  timestampString = "519154490.472889"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "146"
-                  endingLineNumber = "146"
-                  offsetFromSymbolStart = "225">
+                  startingLineNumber = "147"
+                  endingLineNumber = "147"
+                  offsetFromSymbolStart = "272">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -121,12 +121,12 @@
                   moduleName = "FoodPlanning"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ilantushenko/sites/iOS/FoodPlanning/FoodPlanning/LocalNotificationUtils.swift"
-                  timestampString = "518781176.418703"
+                  timestampString = "519154490.474729"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "146"
-                  endingLineNumber = "146"
-                  offsetFromSymbolStart = "1657">
+                  startingLineNumber = "147"
+                  endingLineNumber = "147"
+                  offsetFromSymbolStart = "1516">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FoodPlanning/SettingViewController.swift"
-            timestampString = "518345806.210806"
+            timestampString = "519147428.127773"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
             <Locations>
@@ -154,12 +154,12 @@
                   moduleName = "FoodPlanning"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ilantushenko/sites/iOS/FoodPlanning/FoodPlanning/SettingViewController.swift"
-                  timestampString = "518781176.422872"
+                  timestampString = "519154490.479056"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "67"
-                  endingLineNumber = "67"
-                  offsetFromSymbolStart = "53">
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "48">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -169,11 +169,11 @@
                   moduleName = "FoodPlanning"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ilantushenko/sites/iOS/FoodPlanning/FoodPlanning/SettingViewController.swift"
-                  timestampString = "518781176.424939"
+                  timestampString = "519154490.481004"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "69"
-                  endingLineNumber = "69"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
                   offsetFromSymbolStart = "12">
                </Location>
             </Locations>
@@ -185,13 +185,61 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+            filePath = "FoodPlanning/WeekDay.swift"
+            timestampString = "518896728.297117"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "prepareProgressTimeForToday(events:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodPlanning/AppDelegate.swift"
+            timestampString = "519147428.127773"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "applicationDidEnterBackground(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
             filePath = "FoodPlanning/WeekViewController.swift"
-            timestampString = "518623328.034796"
+            timestampString = "519151821.723122"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "weekDayBtnPressed(_:)"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodPlanning/EventTimeTableCell.swift"
+            timestampString = "519152428.343148"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "setCellProgress(withTimeEvent:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -202,45 +250,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FoodPlanning/WeekDay.swift"
-            timestampString = "518709449.018936"
+            timestampString = "519153049.020151"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "prepareTimeEvents(_:)"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "prepareProgressTimeForToday(events:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FoodPlanning.WeekDay.prepareTimeEvents (Swift.Bool) -&gt; Swift.Array&lt;FoodPlanning.TimeEvent&gt;"
-                  moduleName = "FoodPlanning"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ilantushenko/sites/iOS/FoodPlanning/FoodPlanning/WeekDay.swift"
-                  timestampString = "518781176.443277"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "68"
-                  endingLineNumber = "68"
-                  offsetFromSymbolStart = "4662">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FoodPlanning.WeekDay.prepareTimeEvents (Swift.Bool) -&gt; Swift.Array&lt;FoodPlanning.TimeEvent&gt;"
-                  moduleName = "FoodPlanning"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ilantushenko/sites/iOS/FoodPlanning/FoodPlanning/WeekDay.swift"
-                  timestampString = "518781176.44647"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "68"
-                  endingLineNumber = "68"
-                  offsetFromSymbolStart = "4793">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -249,13 +265,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FoodPlanning/WeekDay.swift"
-            timestampString = "518710944.19268"
+            filePath = "FoodPlanning/RealmManager.swift"
+            timestampString = "519154372.245052"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "prepareTimeEvents(_:)"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "loadEventsFor(day:_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

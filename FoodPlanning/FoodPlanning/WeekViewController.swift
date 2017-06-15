@@ -35,8 +35,6 @@ class WeekViewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         configureNavBar(withTitle: "Meal schedule")
         configureCalendarBtn(weekCalendarBtn)
-        
-        //LocalNotificationManager.buildLocalNotifications()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -50,7 +48,7 @@ class WeekViewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 }
             }
         }
-        loadDayEventsFor(day: defaultDate)
+        loadDayEventsFor(day: defaultDate, withProgress: true)
         SpinnerView.sharedInstance.hideSpinView()
         
         RateApp.showRatePopupOnSuccessPath(forView: self)
@@ -80,7 +78,7 @@ class WeekViewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         setInactiveWeekDayBtns()
         sender.setButtonActive(true)
         
-        loadDayEventsFor(day: defaultDate)
+        loadDayEventsFor(day: defaultDate, withProgress: true)
         SpinnerView.sharedInstance.hideSpinView()
     }
     
@@ -130,12 +128,13 @@ class WeekViewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
-    func loadDayEventsFor(day: WeekDays) {
+    
+    func loadDayEventsFor(day: WeekDays, withProgress: Bool = false) {
         RealmManager.loadEventsFor(day: day) { resultDay in
             if let weekDay = resultDay {
                 self.timeLine.isHidden = false
                 self.weekDay = weekDay
-                self.timeEvents = weekDay.prepareTimeEvents()
+                self.timeEvents = weekDay.prepareTimeEvents(withProgress)
             } else {
                 self.weekDay = WeekDay()
                 self.weekDay?.weekDay = day.rawValue

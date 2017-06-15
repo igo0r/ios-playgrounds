@@ -416,7 +416,7 @@
                                                     <action selector="weekDayBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ouS-yb-qhq"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qS-OJ-nmr" customClass="WeekDayBtn" customModule="FoodPlanning" customModuleProvider="target">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qS-OJ-nmr" customClass="WeekDayBtn" customModule="FoodPlanning" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="90" width="60" height="45"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="11"/>
                                                 <state key="normal" title="MON 07">
@@ -574,44 +574,77 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First meal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFA-d4-g4I">
-                                                    <rect key="frame" x="71" y="13" width="186" height="17"/>
+                                                    <rect key="frame" x="71" y="13" width="151" height="18.5"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                                     <color key="textColor" red="0.89411764705882346" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenCheck" translatesAutoresizingMaskIntoConstraints="NO" id="biK-wf-iHA">
+                                                    <rect key="frame" x="227" y="15" width="20" height="15"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="15" id="6cz-9l-gRa"/>
+                                                        <constraint firstAttribute="width" constant="20" id="D66-xT-VVe"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="onD-wT-L3h">
+                                                    <rect key="frame" x="71" y="36.5" width="150" height="2"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.77680864726027399" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="150" id="4My-g2-8sv"/>
+                                                        <constraint firstAttribute="height" constant="2" id="jkC-Hf-wGe"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K1L-c2-xxI">
+                                                    <rect key="frame" x="71" y="36.5" width="20" height="2"/>
+                                                    <color key="backgroundColor" red="0.65490196078431373" green="0.90196078431372551" blue="0.62745098039215685" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="qT0-rN-X8k"/>
+                                                        <constraint firstAttribute="height" constant="2" id="wlI-PQ-OBW"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="BFA-d4-g4I" firstAttribute="top" secondItem="xtS-OZ-cqL" secondAttribute="topMargin" constant="5" id="2LP-SS-bsV"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="BFA-d4-g4I" secondAttribute="bottom" constant="5" id="3HV-38-LZI"/>
+                                                <constraint firstItem="biK-wf-iHA" firstAttribute="centerY" secondItem="BFA-d4-g4I" secondAttribute="centerY" id="3Md-mj-Jt5"/>
                                                 <constraint firstItem="En0-Hy-XIX" firstAttribute="leading" secondItem="xtS-OZ-cqL" secondAttribute="leading" constant="3" id="5aI-un-DvY"/>
                                                 <constraint firstItem="lvq-Dx-wFu" firstAttribute="centerY" secondItem="xtS-OZ-cqL" secondAttribute="centerY" id="8Jd-0o-DRj"/>
                                                 <constraint firstItem="En0-Hy-XIX" firstAttribute="centerY" secondItem="xtS-OZ-cqL" secondAttribute="centerY" id="BKE-80-pGw"/>
+                                                <constraint firstItem="K1L-c2-xxI" firstAttribute="leading" secondItem="onD-wT-L3h" secondAttribute="leading" id="Bcy-sK-Yse"/>
                                                 <constraint firstAttribute="bottom" secondItem="2TJ-Dz-8zo" secondAttribute="bottom" constant="10" id="HSa-lh-LHv"/>
+                                                <constraint firstAttribute="bottom" secondItem="onD-wT-L3h" secondAttribute="bottom" constant="5" id="MpD-cT-iGi"/>
+                                                <constraint firstItem="onD-wT-L3h" firstAttribute="top" secondItem="BFA-d4-g4I" secondAttribute="bottom" constant="5" id="R4L-a1-Cc7"/>
                                                 <constraint firstItem="oBI-BF-k2n" firstAttribute="centerY" secondItem="xtS-OZ-cqL" secondAttribute="centerY" id="RSz-2G-Lo3"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="biK-wf-iHA" secondAttribute="trailing" constant="5" id="Swd-5Y-jXC"/>
                                                 <constraint firstItem="oBI-BF-k2n" firstAttribute="centerX" secondItem="xtS-OZ-cqL" secondAttribute="centerX" id="U5r-VW-55r"/>
                                                 <constraint firstItem="BFA-d4-g4I" firstAttribute="leading" secondItem="lvq-Dx-wFu" secondAttribute="trailing" constant="8" id="bW5-MK-lOe"/>
-                                                <constraint firstItem="BFA-d4-g4I" firstAttribute="trailing" secondItem="xtS-OZ-cqL" secondAttribute="trailingMargin" constant="5" id="bWc-VL-Nu9"/>
                                                 <constraint firstItem="lvq-Dx-wFu" firstAttribute="leading" secondItem="En0-Hy-XIX" secondAttribute="trailing" constant="2" id="j8o-87-Z7O"/>
+                                                <constraint firstItem="onD-wT-L3h" firstAttribute="leading" secondItem="lvq-Dx-wFu" secondAttribute="trailing" constant="8" id="pFj-4K-PoZ"/>
                                                 <constraint firstItem="2TJ-Dz-8zo" firstAttribute="centerX" secondItem="xtS-OZ-cqL" secondAttribute="centerX" id="pT7-tx-9c6"/>
+                                                <constraint firstItem="K1L-c2-xxI" firstAttribute="centerY" secondItem="onD-wT-L3h" secondAttribute="centerY" id="rY8-cE-HSP"/>
+                                                <constraint firstItem="biK-wf-iHA" firstAttribute="leading" secondItem="BFA-d4-g4I" secondAttribute="trailing" constant="5" id="vb5-uC-ESe"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
+                                            <outlet property="backgrndProgressLine" destination="onD-wT-L3h" id="lie-fh-0zy"/>
                                             <outlet property="clockView" destination="oBI-BF-k2n" id="Ibj-lG-Bmd"/>
                                             <outlet property="emptyEventsLbl" destination="2TJ-Dz-8zo" id="RNf-Ts-PlN"/>
                                             <outlet property="eventDescriptionLbl" destination="BFA-d4-g4I" id="XIf-kr-KZv"/>
+                                            <outlet property="mainLineWidth" destination="qT0-rN-X8k" id="F66-ib-IK4"/>
+                                            <outlet property="mainProgressLine" destination="K1L-c2-xxI" id="bgf-Kz-ImZ"/>
                                             <outlet property="ovalCircle" destination="lvq-Dx-wFu" id="lfZ-pP-Z5a"/>
+                                            <outlet property="progressDone" destination="biK-wf-iHA" id="Vke-Cd-cA3"/>
                                             <outlet property="timeLbl" destination="En0-Hy-XIX" id="8M9-Yc-lLg"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IfF-VK-XUT">
-                                <rect key="frame" x="118" y="131" width="2" height="285"/>
+                                <rect key="frame" x="119" y="131" width="1" height="285"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="2" id="EZy-FJ-Kfa"/>
+                                    <constraint firstAttribute="width" constant="1" id="EZy-FJ-Kfa"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -640,7 +673,7 @@
                             <constraint firstItem="Z9U-jW-RRN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cf1-UN-Yi4"/>
                             <constraint firstItem="znB-ud-MBE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ehg-2T-5m1"/>
                             <constraint firstItem="znB-ud-MBE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="lfG-W1-uRH"/>
-                            <constraint firstItem="IfF-VK-XUT" firstAttribute="leading" secondItem="4nd-mJ-hq4" secondAttribute="trailing" constant="58" id="m0s-Sb-TmQ"/>
+                            <constraint firstItem="IfF-VK-XUT" firstAttribute="leading" secondItem="4nd-mJ-hq4" secondAttribute="trailing" constant="59" id="m0s-Sb-TmQ"/>
                             <constraint firstItem="dAW-RD-3E8" firstAttribute="top" secondItem="Z9U-jW-RRN" secondAttribute="bottom" id="pvp-qP-DIo"/>
                             <constraint firstItem="M1U-5Z-hNf" firstAttribute="top" secondItem="dAW-RD-3E8" secondAttribute="bottom" id="rCP-lB-HK6"/>
                             <constraint firstAttribute="trailing" secondItem="Z9U-jW-RRN" secondAttribute="trailing" id="wBr-5g-mkk"/>
@@ -1006,18 +1039,18 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IrV-wf-xbi">
-                                                <rect key="frame" x="0.0" y="363" width="247" height="35"/>
+                                                <rect key="frame" x="0.0" y="363" width="237" height="35"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MBW-9A-Yij">
-                                                        <rect key="frame" x="0.0" y="0.0" width="25" height="35"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="25" id="R8P-q3-dAR"/>
+                                                            <constraint firstAttribute="width" constant="35" id="R8P-q3-dAR"/>
                                                             <constraint firstAttribute="height" constant="35" id="iq5-MN-Fg0"/>
                                                         </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cYs-6p-kFe">
-                                                        <rect key="frame" x="25" y="0.0" width="222" height="35"/>
+                                                        <rect key="frame" x="35" y="0.0" width="202" height="35"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="1" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vkg-M9-rW4" customClass="WeekDayFormBtn" customModule="FoodPlanning" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="43" height="35"/>
@@ -1045,7 +1078,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" tag="3" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w4e-0H-66u" customClass="WeekDayFormBtn" customModule="FoodPlanning" customModuleProvider="target">
-                                                                <rect key="frame" x="89.5" y="0.0" width="43" height="35"/>
+                                                                <rect key="frame" x="79.5" y="0.0" width="43" height="35"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="35" id="ZW4-zU-n4I"/>
                                                                     <constraint firstAttribute="width" constant="43" id="fys-4G-OKR"/>
@@ -1070,7 +1103,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" tag="5" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VMY-DG-NgI" customClass="WeekDayFormBtn" customModule="FoodPlanning" customModuleProvider="target">
-                                                                <rect key="frame" x="179" y="0.0" width="43" height="35"/>
+                                                                <rect key="frame" x="159" y="0.0" width="43" height="35"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="35" id="O9d-2e-0jY"/>
                                                                     <constraint firstAttribute="width" constant="43" id="oY5-1b-uh7"/>
@@ -1180,7 +1213,7 @@
                                             <constraint firstAttribute="bottom" secondItem="Arh-3h-kgj" secondAttribute="bottom" id="bEQ-xY-XbU"/>
                                             <constraint firstAttribute="trailing" secondItem="e2D-eR-8Zl" secondAttribute="trailing" id="dhe-5K-HpH"/>
                                             <constraint firstAttribute="trailing" secondItem="c6W-RS-TKS" secondAttribute="trailing" id="e1L-BS-Zki"/>
-                                            <constraint firstAttribute="trailing" secondItem="IrV-wf-xbi" secondAttribute="trailing" constant="25" id="fqI-cz-ahk"/>
+                                            <constraint firstAttribute="trailing" secondItem="IrV-wf-xbi" secondAttribute="trailing" constant="35" id="fqI-cz-ahk"/>
                                             <constraint firstItem="LOl-4H-tSQ" firstAttribute="top" secondItem="IXI-Me-gNF" secondAttribute="top" id="hpf-ib-bS4"/>
                                             <constraint firstItem="AHK-bw-jJY" firstAttribute="leading" secondItem="IXI-Me-gNF" secondAttribute="leading" id="izr-jL-NCC"/>
                                             <constraint firstItem="hlX-q2-1pX" firstAttribute="leading" secondItem="IXI-Me-gNF" secondAttribute="leading" id="jZr-Wd-x7l"/>
@@ -1319,6 +1352,7 @@
         <image name="Path" width="21" height="16"/>
         <image name="Schedule" width="25" height="25"/>
         <image name="Settings" width="25" height="25"/>
+        <image name="greenCheck" width="18" height="15"/>
         <image name="lemons" width="320" height="568"/>
         <image name="oval" width="8" height="8"/>
     </resources>

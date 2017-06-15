@@ -24,12 +24,23 @@ extension Date {
     var month: Int {
         return DateTimeUtils.currentCalendar.component(.month,  from: self)
     }
+    var isLastDayOfMonth: Bool {
+        return tomorrow.month != month
+    }
+    
+    /// Returns the amount of days from another date
+    func days(from date: Date) -> Int {
+        return Calendar.current.dateComponents([.day], from: date, to: self).day ?? 0
+    }
+    
+    func transformToCurrentDate() -> Date {
+        let daysDiff = self.days(from: DateTimeUtils.currentDate.tomorrow.noon)
+        return DateTimeUtils.currentCalendar.date(byAdding: .day, value: Swift.abs(daysDiff), to: self)!
+    }
+    
     /// Returns the amount of seconds from another date
     func seconds(fromDate date: Date) -> Int {
         return DateTimeUtils.currentCalendar.dateComponents([.second], from: date, to: self).second ?? 0
-    }
-    var isLastDayOfMonth: Bool {
-        return tomorrow.month != month
     }
     
     func addingTimeIntervalNotBiggerThanTomorrow(_ interval: TimeInterval) -> Date {

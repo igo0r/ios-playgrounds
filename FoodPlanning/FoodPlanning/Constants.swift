@@ -23,7 +23,8 @@ let dontAskToReview = "dontAskToReview"
 let disagreeToReview = "disagreeToReview"
 
 //ProgressView
-let progressViewMaxValue: Double = 147
+//let progressViewMaxValue: Double = 147
+let progressViewMaxValue: Double = 150
 
 //Water settings
 let waterTime = "waterTime"

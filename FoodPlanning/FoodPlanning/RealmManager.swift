@@ -63,7 +63,8 @@ class RealmManager {
             realm.delete(day)
         }
         if withNotifications {
-            LocalNotificationManager.buildLocalNotifications()
+            //LocalNotificationManager.buildLocalNotifications()
+            BackgroundTaskTracker.requestToUpdateNotifications()
         }
     }
 

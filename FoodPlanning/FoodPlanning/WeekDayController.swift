@@ -213,7 +213,9 @@ class WeekDayController: UIViewController, UINavigationControllerDelegate, AKPic
                 RealmManager.writeWeekDay(obj: weekDay)
             }
             
-            LocalNotificationManager.buildLocalNotifications()
+            //LocalNotificationManager.buildLocalNotifications()
+            BackgroundTaskTracker.requestToUpdateNotifications()
+            
             //if let alert = askNotificationPermissionsIfNeeded(withDismiss: true) {
             askNotificationPermissionsIfNeeded(withDismiss: true) { (alert) in
                 if let alert = alert {

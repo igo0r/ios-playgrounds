@@ -10,6 +10,13 @@ import UIKit
 
 class EventTimeTableCell: UITableViewCell {
 
+    //progress
+    @IBOutlet weak var mainLineWidth: NSLayoutConstraint!
+    @IBOutlet weak var mainProgressLine: UIView!
+    @IBOutlet weak var backgrndProgressLine: UIView!
+    @IBOutlet weak var progressDone: UIImageView!
+    
+    
     //@IBOutlet weak var progressView: UIView!
     @IBOutlet weak var clockView: UIImageView!
     @IBOutlet weak var timeLbl: UILabel!
@@ -29,6 +36,7 @@ class EventTimeTableCell: UITableViewCell {
     }
 
     func configureCellFor(timeEvent: TimeEvent) {
+        setCellProgress(withTimeEvent: timeEvent)
         if timeEvent.weekDay != nil {
             hideCellElements(false)
             
@@ -50,6 +58,23 @@ class EventTimeTableCell: UITableViewCell {
         } else {
             hideCellElements(true)
             emptyEventsLbl.text = timeEvent.description
+        }
+    }
+
+    fileprivate func setCellProgress(withTimeEvent timeEvent: TimeEvent) {
+        if timeEvent.progressTime == 0 {
+            progressDone.isHidden = true
+            backgrndProgressLine.isHidden = true
+            mainProgressLine.isHidden = true
+        } else if timeEvent.progressTime == progressViewMaxValue {
+            progressDone.isHidden = false
+            backgrndProgressLine.isHidden = true
+            mainProgressLine.isHidden = true
+        } else {
+            progressDone.isHidden = true
+            backgrndProgressLine.isHidden = false
+            mainProgressLine.isHidden = false
+            mainLineWidth.constant = CGFloat(timeEvent.progressTime)
         }
     }
     

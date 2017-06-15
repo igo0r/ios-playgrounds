@@ -12,6 +12,9 @@ class DateTimeUtils {
     
     //static let firstWeekday = 1
     static let currentDate = Date()
+    static var now: Date {
+        return Date()
+    }
     static var currentWeek = [WeekDays:Date]()
     static var currentCalendar = Calendar.current
     
@@ -110,8 +113,8 @@ class DateTimeUtils {
         return weekDay < 1 ? 7 + weekDay : weekDay
     }
     
-    static func getTomorrowNoon() {
-        
+    static func startOfToday() -> Date {
+        return currentCalendar.startOfDay(for: currentDate)
     }
 
 }

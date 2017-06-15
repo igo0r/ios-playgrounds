@@ -46,7 +46,10 @@ class SettingViewController: UITableViewController, UIPickerViewDelegate, UIPick
         let row = waterTimerPicker.selectedRow(inComponent: 0)
         
         UserDefaultsUtils.setWaterTime(minutes:  waterTimeRange[row])
-        LocalNotificationManager.buildLocalNotifications()
+        
+        //LocalNotificationManager.buildLocalNotifications()
+        BackgroundTaskTracker.requestToUpdateNotifications()
+        
         saveBtn.isEnabled = false
     }
     

@@ -29,6 +29,9 @@
 		C0810C481ECA40670041721A /* CustomDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0810C471ECA40670041721A /* CustomDatePicker.swift */; };
 		C08721BA1EDCB681004DAA49 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08721B91EDCB681004DAA49 /* LaunchViewController.swift */; };
 		C08DDE8C1ED882F80065AA04 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08DDE8B1ED882F80065AA04 /* SpinnerView.swift */; };
+		C09690111EF03F9B005391E1 /* BackgroundTaskTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09690101EF03F9A005391E1 /* BackgroundTaskTracker.swift */; };
+		C09690131EF07F0C005391E1 /* BackgroundTaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09690121EF07F0C005391E1 /* BackgroundTaskManager.swift */; };
+		C09690151EF086CC005391E1 /* LocalNotificationClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09690141EF086CC005391E1 /* LocalNotificationClass.swift */; };
 		C0A696A21EAE9160001EBFB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A696A11EAE9160001EBFB4 /* AppDelegate.swift */; };
 		C0A696A71EAE9160001EBFB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0A696A51EAE9160001EBFB4 /* Main.storyboard */; };
 		C0A696AC1EAE9160001EBFB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0A696AA1EAE9160001EBFB4 /* LaunchScreen.storyboard */; };
@@ -90,6 +93,9 @@
 		C0810C471ECA40670041721A /* CustomDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDatePicker.swift; sourceTree = "<group>"; };
 		C08721B91EDCB681004DAA49 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		C08DDE8B1ED882F80065AA04 /* SpinnerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
+		C09690101EF03F9A005391E1 /* BackgroundTaskTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundTaskTracker.swift; sourceTree = "<group>"; };
+		C09690121EF07F0C005391E1 /* BackgroundTaskManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundTaskManager.swift; sourceTree = "<group>"; };
+		C09690141EF086CC005391E1 /* LocalNotificationClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationClass.swift; sourceTree = "<group>"; };
 		C0A6969E1EAE9160001EBFB4 /* FoodPlanning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodPlanning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0A696A11EAE9160001EBFB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0A696A61EAE9160001EBFB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -154,6 +160,9 @@
 			children = (
 				C0045E8A1EBF833200C01BFA /* RealmManager.swift */,
 				C0142EDD1EE1FC380080C39C /* LocalNotificationManager.swift */,
+				C09690101EF03F9A005391E1 /* BackgroundTaskTracker.swift */,
+				C09690121EF07F0C005391E1 /* BackgroundTaskManager.swift */,
+				C09690141EF086CC005391E1 /* LocalNotificationClass.swift */,
 			);
 			name = ModelManager;
 			sourceTree = "<group>";
@@ -509,11 +518,14 @@
 				C00E01871EBBB6C70098B9D5 /* WeekDayBtn.swift in Sources */,
 				C03B68EF1ED0A07D00830DCA /* AKPickerView.swift in Sources */,
 				C0142EDE1EE1FC380080C39C /* LocalNotificationManager.swift in Sources */,
+				C09690151EF086CC005391E1 /* LocalNotificationClass.swift in Sources */,
 				C03B68751ECDFB2A00830DCA /* PickerLabel.swift in Sources */,
+				C09690111EF03F9B005391E1 /* BackgroundTaskTracker.swift in Sources */,
 				C0AA60591EDDE08C00E6DFB5 /* MealMeLoaderView.swift in Sources */,
 				C00E01851EBBA1850098B9D5 /* TimeEvent.swift in Sources */,
 				C0E949AE1ED6168000FA5B09 /* NotificationCenterDelegate.swift in Sources */,
 				C0AEEEF31EDB3F3200FBE6FB /* MealTabBarController.swift in Sources */,
+				C09690131EF07F0C005391E1 /* BackgroundTaskManager.swift in Sources */,
 				C00E01891EBBC9FB0098B9D5 /* WeekDays.swift in Sources */,
 				C0E949881ED369E500FA5B09 /* LocalNotificationUtils.swift in Sources */,
 				C0BE1A0B1EEAF27B00A6F2C2 /* TimeEventProgressView.swift in Sources */,

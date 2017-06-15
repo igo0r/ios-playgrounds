@@ -16,6 +16,7 @@ class WeekDayBtn: UIButton {
         
         let weekAttrString = composeAttributedStringForWeekBtn(withActiveState: false)
         self.setAttributedTitle(weekAttrString, for: .normal)
+        setButtonToday()
     }
     
     func composeAttributedStringForWeekBtn(withActiveState: Bool) -> NSAttributedString {
@@ -71,6 +72,16 @@ class WeekDayBtn: UIButton {
             
             self.setBackgroundColor(color: UIColor.clear, forState: .normal)
             self.setAttributedTitle(attrStr, for: .normal)
+        }
+    }
+    
+    func setButtonToday() {
+        let btnWeekDay = DateTimeUtils.routeFromDayTagToWeekDays(btnTag: tag)
+        let currentWeekDay = DateTimeUtils.getCurrentWeekDayNumber()
+        
+        if currentWeekDay == btnWeekDay {
+            layer.borderColor = white.cgColor
+            layer.borderWidth = 1
         }
     }
     

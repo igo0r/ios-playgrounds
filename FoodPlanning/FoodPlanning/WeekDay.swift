@@ -91,17 +91,17 @@ class WeekDay: Object {
     func prepareProgressTimeForToday(events: [TimeEvent]) -> [TimeEvent] {
         var events = events
         for (index, _) in events.enumerated() {
-            let previousEventTime = index == 0 ? DateTimeUtils.currentDate.noon : events[index - 1].startAt
-            let currentEventTime = events[index].startAt
-            let intervalFromNowToCurrentEvent = DateTimeUtils.currentDate.timeIntervalSince(currentEventTime)
-            let intervalFromNowToPreviousEvent = DateTimeUtils.currentDate.timeIntervalSince(previousEventTime)
+            let previousEventTime = index == 0 ? DateTimeUtils.startOfToday() : events[index - 1].startAt.transformToCurrentDate()
+            let currentEventTime = events[index].startAt.transformToCurrentDate()
+            let intervalFromNowToCurrentEvent = DateTimeUtils.now.timeIntervalSince(currentEventTime)
+            let intervalFromNowToPreviousEvent = DateTimeUtils.now.timeIntervalSince(previousEventTime)
             if intervalFromNowToPreviousEvent > 0 && intervalFromNowToCurrentEvent <= 0 {
                 let timeInterval = currentEventTime.timeIntervalSince(previousEventTime)
                 let progressIndex = progressViewMaxValue / timeInterval
                 events[index].progressTime = progressIndex * intervalFromNowToPreviousEvent
             }
             else if intervalFromNowToCurrentEvent < 0 {
-                events[index].progressTime = 1
+                events[index].progressTime = 2
             }
             else if intervalFromNowToCurrentEvent > 0 {
                 events[index].progressTime = progressViewMaxValue

@@ -56,7 +56,7 @@ class LocalNotificationUtils {
      */
     static func performNotificationCreationWith(title: String, body: String, date: Date, identifier: String, dayOfWeek: WeekDays) {
         let request = createNotificationRequestWith(title: title, body: body, date: date, identifier: identifier, dayOfWeek: dayOfWeek)
-        scheduleNotificationWith(request: request)
+        scheduleNotificationWith(request: request) {}
     }
     
     /*
@@ -97,7 +97,7 @@ class LocalNotificationUtils {
     /*
      add request to notification center
      */
-    static func scheduleNotificationWith(request: UNNotificationRequest) {
+    static func scheduleNotificationWith(request: UNNotificationRequest, cH: @escaping () -> ()) {
         //removeFarthestNotificationIfNeeded (forRequest: request) { () in
             notificationCenter.add(request) { (error) in
                 if let error = error {
@@ -106,6 +106,7 @@ class LocalNotificationUtils {
                 } else {
                     print("Added identifier: \(request.identifier)")
                 }
+                cH()
             }
         //}
     }

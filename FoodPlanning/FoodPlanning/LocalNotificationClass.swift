@@ -10,10 +10,9 @@ import Foundation
 import UIKit
 import UserNotifications
 
-class LocalNotificationManager {
-    //static let dq = DispatchQueue.global(qos: .userInteractive)
-    static let dq = DispatchQueue(label: "com.FoodPlannerApp")
-    static var dispatchWorkItem: DispatchWorkItem!
+class LocalNotificationClass {
+    //let dq = DispatchQueue.global(qos: .userInteractive)
+    let dq = DispatchQueue(label: "com.FoodPlannerApp")
     
     /*
      Remove all notifications
@@ -23,16 +22,14 @@ class LocalNotificationManager {
      Compose "Special" notification reminder for a 4 days ahead
      Add notifications to the center
      */
-    static func buildLocalNotifications() {
+    func buildLocalNotifications() {
         print("Gonna remove all notifications and print before remove")
         LocalNotificationUtils.printPendingLocalNotifications()
-        //dq.sync {
-        let bTM = BackgroundTaskManager(withName: "LocalNotificationsONly")
-        bTM.doBackgroundTask() { (cH) in
+        let taskManager = BackgroundTaskManager(withName: "LocalNotifications")
+        taskManager.doBackgroundTask() { (cH) in
             let group  = DispatchGroup()
-            group.enter()            
+            group.enter()
             LocalNotificationUtils.removeAllPendingLocalNotifications()
-            //sleep(1)
             group.leave()
             let weekDays = RealmManager.getAllWeekDays()
             var timeEvents: [TimeEvent] = []
@@ -41,11 +38,11 @@ class LocalNotificationManager {
             }
             var notificationRequests: [UNNotificationRequest] = []
             for timeEvent in timeEvents {
-                if let request = composeLocalNotificationRequest(forEvent: timeEvent) {
+                if let request = self.composeLocalNotificationRequest(forEvent: timeEvent) {
                     notificationRequests.append(request)
                 }
             }
-            notificationRequests.append(composeSpecialReminderNotificationRequest())
+            notificationRequests.append(self.composeSpecialReminderNotificationRequest())
             
             notificationRequests.sort {
                 let trigger1 = $0.trigger as! UNCalendarNotificationTrigger
@@ -53,13 +50,11 @@ class LocalNotificationManager {
                 
                 return trigger1.nextTriggerDate()! < trigger2.nextTriggerDate()!
             }
-
+            
             let slicedNotificationRequests = notificationRequests.prefix(upTo: notificationRequests.count > 63 ? 63 : notificationRequests.count)
             
-            //group.notify(queue: DispatchQueue.main) { () in
-            group.notify(queue: dq) { () in
+            group.notify(queue: self.dq) { () in
                 print("Print after remove!!")
-                //LocalNotificationUtils.printPendingLocalNotifications()
                 let notificationGroup  = DispatchGroup()
                 for request in slicedNotificationRequests {
                     notificationGroup.enter()
@@ -67,7 +62,7 @@ class LocalNotificationManager {
                         notificationGroup.leave()
                     }
                 }
-                notificationGroup.notify(queue: dq) { () in
+                notificationGroup.notify(queue: self.dq) { () in
                     cH()
                 }
             }
@@ -77,7 +72,7 @@ class LocalNotificationManager {
     /*
      Special reminder for 3 days ahead about openning an app for further notifications
      */
-    static func composeSpecialReminderNotificationRequest() -> UNNotificationRequest {
+    func composeSpecialReminderNotificationRequest() -> UNNotificationRequest {
         let date = Date().nine
         let weekDay = DateTimeUtils.getCurrentWeekDayNumber()
         let ahead3Days = (weekDay.rawValue + 3) > 6 ? (weekDay.rawValue + 3) % 7 : (weekDay.rawValue + 3)
@@ -95,7 +90,7 @@ class LocalNotificationManager {
     /*
      Compose notififcation request for exact time event
      */
-    static func composeLocalNotificationRequest(forEvent timeEvent: TimeEvent) -> UNNotificationRequest? {
+    func composeLocalNotificationRequest(forEvent timeEvent: TimeEvent) -> UNNotificationRequest? {
         var request: UNNotificationRequest? = nil
         if let day = timeEvent.weekDay {
             let dayOfWeek = WeekDays(rawValue: day.weekDay)!
