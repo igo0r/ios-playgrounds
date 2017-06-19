@@ -30,12 +30,12 @@ extension Date {
     
     /// Returns the amount of days from another date
     func days(from date: Date) -> Int {
-        return Calendar.current.dateComponents([.day], from: date, to: self).day ?? 0
+        return Calendar.current.dateComponents([.day], from: date.nine, to: self.nine).day ?? 0
     }
     
     func transformToCurrentDate() -> Date {
-        let daysDiff = self.days(from: DateTimeUtils.currentDate.tomorrow.noon)
-        return DateTimeUtils.currentCalendar.date(byAdding: .day, value: Swift.abs(daysDiff), to: self)!
+        let daysDiff = self.days(from: DateTimeUtils.currentDate)
+        return DateTimeUtils.currentCalendar.date(byAdding: .day, value: -daysDiff, to: self)!
     }
     
     /// Returns the amount of seconds from another date

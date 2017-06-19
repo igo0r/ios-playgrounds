@@ -10,8 +10,10 @@ import Foundation
 
 class DateTimeUtils {
     
-    //static let firstWeekday = 1
-    static let currentDate = Date()
+    static var currentDate: Date {
+        return Date()
+    }
+
     static var now: Date {
         return Date()
     }

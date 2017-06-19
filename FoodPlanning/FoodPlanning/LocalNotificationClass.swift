@@ -11,7 +11,6 @@ import UIKit
 import UserNotifications
 
 class LocalNotificationClass {
-    //let dq = DispatchQueue.global(qos: .userInteractive)
     let dq = DispatchQueue(label: "com.FoodPlannerApp")
     
     /*
@@ -31,25 +30,32 @@ class LocalNotificationClass {
             group.enter()
             LocalNotificationUtils.removeAllPendingLocalNotifications()
             group.leave()
-            let weekDays = RealmManager.getAllWeekDays()
+            //let weekDays = RealmManager.getAllWeekDays()
+            let weekDays = RealmManager.getAllWeekDaysSorted()
             var timeEvents: [TimeEvent] = []
             for weekDay in weekDays {
                 timeEvents.append(contentsOf: weekDay.prepareTimeEvents())
             }
             var notificationRequests: [UNNotificationRequest] = []
+            var todayPastNotificationRequests: [UNNotificationRequest] = []
             for timeEvent in timeEvents {
                 if let request = self.composeLocalNotificationRequest(forEvent: timeEvent) {
-                    notificationRequests.append(request)
+                    if timeEvent.isToday() && timeEvent.isTodayInThePast() {
+                        todayPastNotificationRequests.append(request)
+                    } else {
+                        notificationRequests.append(request)
+                    }
                 }
             }
-            notificationRequests.append(self.composeSpecialReminderNotificationRequest())
+            notificationRequests = notificationRequests + todayPastNotificationRequests
+            notificationRequests.insert(self.composeSpecialReminderNotificationRequest(), at: 0)
             
-            notificationRequests.sort {
+            /*notificationRequests.sort {
                 let trigger1 = $0.trigger as! UNCalendarNotificationTrigger
                 let trigger2 = $1.trigger as! UNCalendarNotificationTrigger
                 
                 return trigger1.nextTriggerDate()! < trigger2.nextTriggerDate()!
-            }
+            }*/
             
             let slicedNotificationRequests = notificationRequests.prefix(upTo: notificationRequests.count > 63 ? 63 : notificationRequests.count)
             

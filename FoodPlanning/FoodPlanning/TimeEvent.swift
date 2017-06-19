@@ -24,6 +24,24 @@ struct TimeEvent {
         self.weekDay = weekDay
     }
     
+    func isToday() -> Bool {
+        if let day = weekDay {
+            return WeekDays(rawValue: day.weekDay)! == DateTimeUtils.getCurrentWeekDayNumber()
+        }
+        return false
+    }
+    
+    func isTodayInThePast() -> Bool {
+        if let day = weekDay {
+            let dayOfWeek = WeekDays(rawValue: day.weekDay)!
+            if dayOfWeek == DateTimeUtils.getCurrentWeekDayNumber() {
+        
+                return startAt.transformToCurrentDate() < DateTimeUtils.now
+            }
+        }
+        return false
+    }
+    
     func createLocalNotification() {
         if let day = weekDay {
             let dayOfWeek = WeekDays(rawValue: day.weekDay)!

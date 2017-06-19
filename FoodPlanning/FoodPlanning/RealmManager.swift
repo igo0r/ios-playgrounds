@@ -63,7 +63,6 @@ class RealmManager {
             realm.delete(day)
         }
         if withNotifications {
-            //LocalNotificationManager.buildLocalNotifications()
             BackgroundTaskTracker.requestToUpdateNotifications()
         }
     }
@@ -75,6 +74,29 @@ class RealmManager {
     static func loadWeekDay(forDay: Int) -> Results<WeekDay> {
         let realm = try! Realm()
         return realm.objects(WeekDay.self).filter("weekDay == \(forDay)")
+    }
+    
+    /*
+     take today weekday. 
+     f.e. Tuesday = 1 and build array like 1,2,3...6,0
+     sorts from today
+     */
+    static func getAllWeekDaysSorted() -> [WeekDay] {
+        let realm = try! Realm()
+        let weekDay = DateTimeUtils.getCurrentWeekDayNumber()
+        let result = realm.objects(WeekDay.self)
+        
+        let sortedResult = result.sorted(by: { (lhd, rhd) -> Bool in
+            if lhd.weekDay >= weekDay.rawValue && rhd.weekDay < weekDay.rawValue {
+               return lhd.weekDay > rhd.weekDay
+            } else if lhd.weekDay < weekDay.rawValue && rhd.weekDay >= weekDay.rawValue {
+                return lhd.weekDay > rhd.weekDay
+            }
+            
+            return lhd.weekDay < rhd.weekDay
+        })
+        
+        return sortedResult
     }
     
     static func getAllWeekDays() -> Results<WeekDay> {

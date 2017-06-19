@@ -12,7 +12,6 @@ import UserNotifications
 class NotificationCenterDelegate: NSObject, UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         
-        //LocalNotificationManager.buildLocalNotifications()
         BackgroundTaskTracker.requestToUpdateNotifications()
         
         UserDefaultsUtils.increaseSuccessPath()
@@ -22,7 +21,6 @@ class NotificationCenterDelegate: NSObject, UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         print("Response receive for \(response.actionIdentifier)")
         
-        //LocalNotificationManager.buildLocalNotifications()
         BackgroundTaskTracker.requestToUpdateNotifications()
         
         UserDefaultsUtils.increaseSuccessPath()

@@ -15,8 +15,6 @@
 		C00E01851EBBA1850098B9D5 /* TimeEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00E01841EBBA1850098B9D5 /* TimeEvent.swift */; };
 		C00E01871EBBB6C70098B9D5 /* WeekDayBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00E01861EBBB6C70098B9D5 /* WeekDayBtn.swift */; };
 		C00E01891EBBC9FB0098B9D5 /* WeekDays.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00E01881EBBC9FB0098B9D5 /* WeekDays.swift */; };
-		C0142EDE1EE1FC380080C39C /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0142EDD1EE1FC380080C39C /* LocalNotificationManager.swift */; };
-		C03B68751ECDFB2A00830DCA /* PickerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03B68741ECDFB2A00830DCA /* PickerLabel.swift */; };
 		C03B68EF1ED0A07D00830DCA /* AKPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03B68EE1ED0A07D00830DCA /* AKPickerView.swift */; };
 		C03B68F11ED0A17300830DCA /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03B68F01ED0A17300830DCA /* UIImage+Resize.swift */; };
 		C043379D1EC71E4B00FA0616 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C043379C1EC71E4B00FA0616 /* Assets.xcassets */; };
@@ -27,7 +25,6 @@
 		C06BDB061EC4AC2B0053B60C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06BDB051EC4AC2B0053B60C /* Constants.swift */; };
 		C06BDB081EC4AC7C0053B60C /* UserDefaultUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06BDB071EC4AC7C0053B60C /* UserDefaultUtils.swift */; };
 		C0810C481ECA40670041721A /* CustomDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0810C471ECA40670041721A /* CustomDatePicker.swift */; };
-		C08721BA1EDCB681004DAA49 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08721B91EDCB681004DAA49 /* LaunchViewController.swift */; };
 		C08DDE8C1ED882F80065AA04 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08DDE8B1ED882F80065AA04 /* SpinnerView.swift */; };
 		C09690111EF03F9B005391E1 /* BackgroundTaskTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09690101EF03F9A005391E1 /* BackgroundTaskTracker.swift */; };
 		C09690131EF07F0C005391E1 /* BackgroundTaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09690121EF07F0C005391E1 /* BackgroundTaskManager.swift */; };
@@ -36,14 +33,9 @@
 		C0A696A71EAE9160001EBFB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0A696A51EAE9160001EBFB4 /* Main.storyboard */; };
 		C0A696AC1EAE9160001EBFB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0A696AA1EAE9160001EBFB4 /* LaunchScreen.storyboard */; };
 		C0A696B71EAE9161001EBFB4 /* FoodPlanningTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A696B61EAE9161001EBFB4 /* FoodPlanningTests.swift */; };
-		C0AA60571EDDD7FB00E6DFB5 /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AA60561EDDD7FB00E6DFB5 /* AnimationViewController.swift */; };
-		C0AA60591EDDE08C00E6DFB5 /* MealMeLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AA60581EDDE08C00E6DFB5 /* MealMeLoaderView.swift */; };
 		C0AEEEF11EDB3E4D00FBE6FB /* UITabBarControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AEEEF01EDB3E4D00FBE6FB /* UITabBarControllerExt.swift */; };
 		C0AEEEF31EDB3F3200FBE6FB /* MealTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AEEEF21EDB3F3200FBE6FB /* MealTabBarController.swift */; };
-		C0B1C0311EDCBAAA0023B13E /* MeamMeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B1C0301EDCBAAA0023B13E /* MeamMeLoader.swift */; };
-		C0BE1A0B1EEAF27B00A6F2C2 /* TimeEventProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BE1A0A1EEAF27B00A6F2C2 /* TimeEventProgressView.swift */; };
 		C0CA975C1EE570AE00F1572B /* AlertUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CA975B1EE570AE00F1572B /* AlertUtils.swift */; };
-		C0CA975E1EE5D89800F1572B /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CA975D1EE5D89800F1572B /* ProgressView.swift */; };
 		C0D140881EE368BC00940DBA /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D140871EE368BC00940DBA /* SettingViewController.swift */; };
 		C0E12D6B1EAFC98C005E5C0F /* WeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E12D6A1EAFC98C005E5C0F /* WeekViewController.swift */; };
 		C0E12D6D1EAFDC43005E5C0F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E12D6C1EAFDC43005E5C0F /* UIColor.swift */; };
@@ -79,8 +71,6 @@
 		C00E01841EBBA1850098B9D5 /* TimeEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeEvent.swift; sourceTree = "<group>"; };
 		C00E01861EBBB6C70098B9D5 /* WeekDayBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekDayBtn.swift; sourceTree = "<group>"; };
 		C00E01881EBBC9FB0098B9D5 /* WeekDays.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekDays.swift; sourceTree = "<group>"; };
-		C0142EDD1EE1FC380080C39C /* LocalNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
-		C03B68741ECDFB2A00830DCA /* PickerLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerLabel.swift; sourceTree = "<group>"; };
 		C03B68EE1ED0A07D00830DCA /* AKPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPickerView.swift; sourceTree = "<group>"; };
 		C03B68F01ED0A17300830DCA /* UIImage+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
 		C043379C1EC71E4B00FA0616 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -91,7 +81,6 @@
 		C06BDB051EC4AC2B0053B60C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C06BDB071EC4AC7C0053B60C /* UserDefaultUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultUtils.swift; sourceTree = "<group>"; };
 		C0810C471ECA40670041721A /* CustomDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDatePicker.swift; sourceTree = "<group>"; };
-		C08721B91EDCB681004DAA49 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		C08DDE8B1ED882F80065AA04 /* SpinnerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		C09690101EF03F9A005391E1 /* BackgroundTaskTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundTaskTracker.swift; sourceTree = "<group>"; };
 		C09690121EF07F0C005391E1 /* BackgroundTaskManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundTaskManager.swift; sourceTree = "<group>"; };
@@ -104,14 +93,9 @@
 		C0A696B21EAE9161001EBFB4 /* FoodPlanningTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodPlanningTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0A696B61EAE9161001EBFB4 /* FoodPlanningTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPlanningTests.swift; sourceTree = "<group>"; };
 		C0A696B81EAE9161001EBFB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C0AA60561EDDD7FB00E6DFB5 /* AnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
-		C0AA60581EDDE08C00E6DFB5 /* MealMeLoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealMeLoaderView.swift; sourceTree = "<group>"; };
 		C0AEEEF01EDB3E4D00FBE6FB /* UITabBarControllerExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITabBarControllerExt.swift; sourceTree = "<group>"; };
 		C0AEEEF21EDB3F3200FBE6FB /* MealTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTabBarController.swift; sourceTree = "<group>"; };
-		C0B1C0301EDCBAAA0023B13E /* MeamMeLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeamMeLoader.swift; sourceTree = "<group>"; };
-		C0BE1A0A1EEAF27B00A6F2C2 /* TimeEventProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeEventProgressView.swift; sourceTree = "<group>"; };
 		C0CA975B1EE570AE00F1572B /* AlertUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertUtils.swift; sourceTree = "<group>"; };
-		C0CA975D1EE5D89800F1572B /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		C0D140871EE368BC00940DBA /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		C0E12D6A1EAFC98C005E5C0F /* WeekViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekViewController.swift; sourceTree = "<group>"; };
 		C0E12D6C1EAFDC43005E5C0F /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -159,7 +143,6 @@
 			isa = PBXGroup;
 			children = (
 				C0045E8A1EBF833200C01BFA /* RealmManager.swift */,
-				C0142EDD1EE1FC380080C39C /* LocalNotificationManager.swift */,
 				C09690101EF03F9A005391E1 /* BackgroundTaskTracker.swift */,
 				C09690121EF07F0C005391E1 /* BackgroundTaskManager.swift */,
 				C09690141EF086CC005391E1 /* LocalNotificationClass.swift */,
@@ -178,7 +161,6 @@
 				C08DDE8B1ED882F80065AA04 /* SpinnerView.swift */,
 				C0EB8C1B1EE4B383006BFA3C /* RateApp.swift */,
 				C0CA975B1EE570AE00F1572B /* AlertUtils.swift */,
-				C0CA975D1EE5D89800F1572B /* ProgressView.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -192,6 +174,7 @@
 				C03B68F01ED0A17300830DCA /* UIImage+Resize.swift */,
 				C0E949891ED47EA300FA5B09 /* Date.swift */,
 				C0E9498B1ED49B9400FA5B09 /* UIView.swift */,
+				C0E12D6C1EAFDC43005E5C0F /* UIColor.swift */,
 				C0E949AB1ED4A9C800FA5B09 /* WeekDayControllerExt.swift */,
 				C0E949AD1ED6168000FA5B09 /* NotificationCenterDelegate.swift */,
 				C0AEEEF01EDB3E4D00FBE6FB /* UITabBarControllerExt.swift */,
@@ -259,15 +242,10 @@
 		C0E12D681EAFC91D005E5C0F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C0E12D6C1EAFDC43005E5C0F /* UIColor.swift */,
 				C0E9528C1EBB9C4200182620 /* EventTimeTableCell.swift */,
 				C00E01861EBBB6C70098B9D5 /* WeekDayBtn.swift */,
-				C0B1C0301EDCBAAA0023B13E /* MeamMeLoader.swift */,
-				C0AA60581EDDE08C00E6DFB5 /* MealMeLoaderView.swift */,
 				C043379E1EC742F500FA0616 /* WeekDayFormBtn.swift */,
 				C0810C471ECA40670041721A /* CustomDatePicker.swift */,
-				C03B68741ECDFB2A00830DCA /* PickerLabel.swift */,
-				C0BE1A0A1EEAF27B00A6F2C2 /* TimeEventProgressView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -278,8 +256,6 @@
 				C0E12D6A1EAFC98C005E5C0F /* WeekViewController.swift */,
 				C0F147011EB52C0200FB2A19 /* WeekDayController.swift */,
 				C0AEEEF21EDB3F3200FBE6FB /* MealTabBarController.swift */,
-				C08721B91EDCB681004DAA49 /* LaunchViewController.swift */,
-				C0AA60561EDDD7FB00E6DFB5 /* AnimationViewController.swift */,
 				C0D140871EE368BC00940DBA /* SettingViewController.swift */,
 			);
 			name = Controller;
@@ -500,8 +476,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0E9498A1ED47EA300FA5B09 /* Date.swift in Sources */,
-				C0B1C0311EDCBAAA0023B13E /* MeamMeLoader.swift in Sources */,
-				C08721BA1EDCB681004DAA49 /* LaunchViewController.swift in Sources */,
 				C0CA975C1EE570AE00F1572B /* AlertUtils.swift in Sources */,
 				C0045E8B1EBF833200C01BFA /* RealmManager.swift in Sources */,
 				C0478A371EB1382E00E13300 /* UIButtonExtension.swift in Sources */,
@@ -517,28 +491,22 @@
 				C08DDE8C1ED882F80065AA04 /* SpinnerView.swift in Sources */,
 				C00E01871EBBB6C70098B9D5 /* WeekDayBtn.swift in Sources */,
 				C03B68EF1ED0A07D00830DCA /* AKPickerView.swift in Sources */,
-				C0142EDE1EE1FC380080C39C /* LocalNotificationManager.swift in Sources */,
 				C09690151EF086CC005391E1 /* LocalNotificationClass.swift in Sources */,
-				C03B68751ECDFB2A00830DCA /* PickerLabel.swift in Sources */,
 				C09690111EF03F9B005391E1 /* BackgroundTaskTracker.swift in Sources */,
-				C0AA60591EDDE08C00E6DFB5 /* MealMeLoaderView.swift in Sources */,
 				C00E01851EBBA1850098B9D5 /* TimeEvent.swift in Sources */,
 				C0E949AE1ED6168000FA5B09 /* NotificationCenterDelegate.swift in Sources */,
 				C0AEEEF31EDB3F3200FBE6FB /* MealTabBarController.swift in Sources */,
 				C09690131EF07F0C005391E1 /* BackgroundTaskManager.swift in Sources */,
 				C00E01891EBBC9FB0098B9D5 /* WeekDays.swift in Sources */,
 				C0E949881ED369E500FA5B09 /* LocalNotificationUtils.swift in Sources */,
-				C0BE1A0B1EEAF27B00A6F2C2 /* TimeEventProgressView.swift in Sources */,
 				C0EB8C1C1EE4B383006BFA3C /* RateApp.swift in Sources */,
 				C0E949AC1ED4A9C800FA5B09 /* WeekDayControllerExt.swift in Sources */,
-				C0AA60571EDDD7FB00E6DFB5 /* AnimationViewController.swift in Sources */,
 				C0E9498C1ED49B9400FA5B09 /* UIView.swift in Sources */,
 				C03B68F11ED0A17300830DCA /* UIImage+Resize.swift in Sources */,
 				C0045E861EBF657700C01BFA /* WeekDay.swift in Sources */,
 				C063966E1EBCCAB8008F9F2B /* DateTimeUtils.swift in Sources */,
 				C0E12D6D1EAFDC43005E5C0F /* UIColor.swift in Sources */,
 				C0E9528D1EBB9C4200182620 /* EventTimeTableCell.swift in Sources */,
-				C0CA975E1EE5D89800F1572B /* ProgressView.swift in Sources */,
 				C0A696A21EAE9160001EBFB4 /* AppDelegate.swift in Sources */,
 				C0F147021EB52C0200FB2A19 /* WeekDayController.swift in Sources */,
 			);
@@ -686,7 +654,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = C63RZKM6PP;
 				INFOPLIST_FILE = FoodPlanning/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.FoodPlanning;
@@ -706,7 +674,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = C63RZKM6PP;
 				INFOPLIST_FILE = FoodPlanning/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.FoodPlanning;

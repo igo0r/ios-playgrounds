@@ -183,25 +183,18 @@ class WeekDayController: UIViewController, UINavigationControllerDelegate, AKPic
         var isValid = true
 
         let weekDays = getActiveWeekDays()
-        var validationMessages = ""
         if weekDays.isEmpty {
             isValid = false
             applyDaysLbl.textColor = redColor
             applyDaysLbl.shake()
-            validationMessages += " - At least 1 day from the week should be chosen\n"
         }
         if DateTimeUtils.isTimeIntervalLess(than: secondsFrom3Hours, betweenDate1: self.sleepAt!, andDate2: self.wakeUpAt!) {
             isValid = false
             sleepAtLbl.textColor = redColor
             sleepAtLbl.shake()
-            validationMessages += "- Wake up and sleep at times should differs for 3 hours at least\n"
         }
         
-        if !isValid {
-            let alert = UIAlertController(title: "Validation failed", message: validationMessages, preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-            //self.present(alert, animated: true, completion: nil)
-        } else {            
+        if isValid {
             for day in weekDays {
                 let weekDay = WeekDay()
                 weekDay.mealsCount = mealsCount!
@@ -213,10 +206,8 @@ class WeekDayController: UIViewController, UINavigationControllerDelegate, AKPic
                 RealmManager.writeWeekDay(obj: weekDay)
             }
             
-            //LocalNotificationManager.buildLocalNotifications()
             BackgroundTaskTracker.requestToUpdateNotifications()
             
-            //if let alert = askNotificationPermissionsIfNeeded(withDismiss: true) {
             askNotificationPermissionsIfNeeded(withDismiss: true) { (alert) in
                 if let alert = alert {
                     self.present(alert, animated: true, completion: nil)

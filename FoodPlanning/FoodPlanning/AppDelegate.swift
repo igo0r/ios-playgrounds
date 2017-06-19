@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         center.setNotificationCategories([category])
         
         UserDefaultsUtils.increaseSuccessPath()
-        //LocalNotificationManager.buildLocalNotifications()
+
         BackgroundTaskTracker.requestToUpdateNotifications()
         
         return true
@@ -52,17 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-        //LocalNotificationManager.buildLocalNotifications()
-        /*DispatchQueue.main.async {
-            var counter = 30
-            while counter >= 0 {//&& applicationState != .active {
-                print("applicationDidEnterBackground \(counter)")
-                counter = counter - 1
-                sleep(1)
-            }
-        }*/
-        
+        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.        
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {

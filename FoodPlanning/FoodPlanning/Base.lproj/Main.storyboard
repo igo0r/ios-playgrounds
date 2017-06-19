@@ -139,42 +139,6 @@
             </objects>
             <point key="canvasLocation" x="-1873.125" y="767.95774647887322"/>
         </scene>
-        <!--Animation View Controller-->
-        <scene sceneID="F2X-Ck-Ean">
-            <objects>
-                <viewController id="sVD-aE-ZGI" customClass="AnimationViewController" customModule="FoodPlanning" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="TH4-JG-NgS"/>
-                        <viewControllerLayoutGuide type="bottom" id="RE5-yn-TxB"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="dX7-3e-6s2">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="shD-0L-gKj" customClass="MealMeLoaderView" customModule="FoodPlanning" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                                <color key="backgroundColor" red="0.26666666666666666" green="0.17647058823529413" blue="0.17647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="shD-0L-gKj" firstAttribute="leading" secondItem="dX7-3e-6s2" secondAttribute="leading" id="GJL-Jz-jUD"/>
-                            <constraint firstItem="shD-0L-gKj" firstAttribute="top" secondItem="dX7-3e-6s2" secondAttribute="top" id="Ini-Xw-VeV"/>
-                            <constraint firstAttribute="trailing" secondItem="shD-0L-gKj" secondAttribute="trailing" id="QrK-R9-2qe"/>
-                            <constraint firstItem="RE5-yn-TxB" firstAttribute="top" secondItem="shD-0L-gKj" secondAttribute="bottom" id="VUx-tP-P0v"/>
-                            <constraint firstItem="shD-0L-gKj" firstAttribute="centerX" secondItem="dX7-3e-6s2" secondAttribute="centerX" id="aN0-g4-19f"/>
-                            <constraint firstItem="shD-0L-gKj" firstAttribute="centerY" secondItem="dX7-3e-6s2" secondAttribute="centerY" id="d78-5T-r2C"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="animatedView" destination="shD-0L-gKj" id="UYD-iR-Dav"/>
-                        <segue destination="HnE-uA-KHZ" kind="show" identifier="mainLine" id="968-OL-JXe"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4UZ-LQ-qn8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1299" y="-1695"/>
-        </scene>
         <!--Meal Tab Bar Controller-->
         <scene sceneID="yG0-e6-lql">
             <objects>
@@ -194,7 +158,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ia-Un-ZJd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1298" y="-753"/>
+            <point key="canvasLocation" x="-1307" y="-789"/>
         </scene>
         <!--Meal planner-->
         <scene sceneID="Idu-13-hxS">
@@ -544,7 +508,7 @@
                                         <rect key="frame" x="0.0" y="28" width="260" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yBo-XQ-7AF" id="xtS-OZ-cqL">
-                                            <rect key="frame" x="0.0" y="0.0" width="260" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="260" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Clock-1" translatesAutoresizingMaskIntoConstraints="NO" id="oBI-BF-k2n">
@@ -1343,7 +1307,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YMO-GN-XV4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1873.125" y="34.859154929577464"/>
+            <point key="canvasLocation" x="-1873" y="35"/>
         </scene>
     </scenes>
     <resources>

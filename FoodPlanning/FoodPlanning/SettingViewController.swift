@@ -47,7 +47,6 @@ class SettingViewController: UITableViewController, UIPickerViewDelegate, UIPick
         
         UserDefaultsUtils.setWaterTime(minutes:  waterTimeRange[row])
         
-        //LocalNotificationManager.buildLocalNotifications()
         BackgroundTaskTracker.requestToUpdateNotifications()
         
         saveBtn.isEnabled = false

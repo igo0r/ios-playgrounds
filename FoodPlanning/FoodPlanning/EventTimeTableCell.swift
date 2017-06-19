@@ -31,8 +31,6 @@ class EventTimeTableCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
     func configureCellFor(timeEvent: TimeEvent) {
@@ -50,11 +48,6 @@ class EventTimeTableCell: UITableViewCell {
             timeLbl.text =  formatter.string(from: timeEvent.startAt)
             
             eventDescriptionLbl.text = timeEvent.description
-            
-            /*if timeEvent.progressTime > 0 {
-                
-                progressView.addSubview()
-            }*/
         } else {
             hideCellElements(true)
             emptyEventsLbl.text = timeEvent.description
