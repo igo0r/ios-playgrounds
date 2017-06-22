@@ -22,4 +22,12 @@ class AlertUtils {
         
         inView.present(alertToShow, animated: true, completion: nil)
     }
+    
+    static func sendMailError() -> UIAlertController {
+        let alert = UIAlertController(title: "Could not send email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.cancel, handler: nil))
+        
+        return alert
+    }
 }

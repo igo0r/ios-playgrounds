@@ -9,6 +9,7 @@ import UIKit
 
 //App id for rates
 let appID = "1245564580"
+let appEmail = "help@mealmeintime.com"
 
 let defaultUserDayKey = "defaultUserDayKey"
 let notificationIdentifierPrefix = "MealMeNotify"

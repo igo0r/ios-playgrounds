@@ -47,6 +47,7 @@
 		C0E9528D1EBB9C4200182620 /* EventTimeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9528C1EBB9C4200182620 /* EventTimeTableCell.swift */; };
 		C0EB8C1C1EE4B383006BFA3C /* RateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EB8C1B1EE4B383006BFA3C /* RateApp.swift */; };
 		C0F147021EB52C0200FB2A19 /* WeekDayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F147011EB52C0200FB2A19 /* WeekDayController.swift */; };
+		C0FB36021EF9AF52000781EE /* SettingViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FB36011EF9AF52000781EE /* SettingViewControllerExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		C0E9528C1EBB9C4200182620 /* EventTimeTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTimeTableCell.swift; sourceTree = "<group>"; };
 		C0EB8C1B1EE4B383006BFA3C /* RateApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateApp.swift; sourceTree = "<group>"; };
 		C0F147011EB52C0200FB2A19 /* WeekDayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekDayController.swift; sourceTree = "<group>"; };
+		C0FB36011EF9AF52000781EE /* SettingViewControllerExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewControllerExt.swift; sourceTree = "<group>"; };
 		F71CA9672736C6B6AA4489B2 /* Pods-FoodPlanningTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodPlanningTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodPlanningTests/Pods-FoodPlanningTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -159,6 +161,7 @@
 				C06BDB071EC4AC7C0053B60C /* UserDefaultUtils.swift */,
 				C0E949871ED369E500FA5B09 /* LocalNotificationUtils.swift */,
 				C08DDE8B1ED882F80065AA04 /* SpinnerView.swift */,
+				C0E9498B1ED49B9400FA5B09 /* UIView.swift */,
 				C0EB8C1B1EE4B383006BFA3C /* RateApp.swift */,
 				C0CA975B1EE570AE00F1572B /* AlertUtils.swift */,
 			);
@@ -173,11 +176,11 @@
 				C03B68EE1ED0A07D00830DCA /* AKPickerView.swift */,
 				C03B68F01ED0A17300830DCA /* UIImage+Resize.swift */,
 				C0E949891ED47EA300FA5B09 /* Date.swift */,
-				C0E9498B1ED49B9400FA5B09 /* UIView.swift */,
 				C0E12D6C1EAFDC43005E5C0F /* UIColor.swift */,
 				C0E949AB1ED4A9C800FA5B09 /* WeekDayControllerExt.swift */,
 				C0E949AD1ED6168000FA5B09 /* NotificationCenterDelegate.swift */,
 				C0AEEEF01EDB3E4D00FBE6FB /* UITabBarControllerExt.swift */,
+				C0FB36011EF9AF52000781EE /* SettingViewControllerExt.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				C09690151EF086CC005391E1 /* LocalNotificationClass.swift in Sources */,
 				C09690111EF03F9B005391E1 /* BackgroundTaskTracker.swift in Sources */,
 				C00E01851EBBA1850098B9D5 /* TimeEvent.swift in Sources */,
+				C0FB36021EF9AF52000781EE /* SettingViewControllerExt.swift in Sources */,
 				C0E949AE1ED6168000FA5B09 /* NotificationCenterDelegate.swift in Sources */,
 				C0AEEEF31EDB3F3200FBE6FB /* MealTabBarController.swift in Sources */,
 				C09690131EF07F0C005391E1 /* BackgroundTaskManager.swift in Sources */,

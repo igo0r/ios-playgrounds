@@ -17,6 +17,7 @@ class WeekViewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var timeLine: UIView!
     @IBOutlet var weekDayBtns: [UIButton]!
     
+    var reloadTableDataTimer: Timer?
     var weekDay: WeekDay?
     var timeEvents = [TimeEvent]() {
         didSet {
@@ -35,8 +36,13 @@ class WeekViewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         configureNavBar(withTitle: "Meal schedule")
         configureCalendarBtn(weekCalendarBtn)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(WeekViewVC.refreshTableData), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil )
+        
+        reloadTableDataTimer = Timer(timeInterval: 60.0, target: self, selector: #selector(WeekViewVC.refreshTableData), userInfo: nil, repeats: true)
+        RunLoop.main.add(self.reloadTableDataTimer!, forMode: RunLoopMode.defaultRunLoopMode)
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -187,5 +193,11 @@ class WeekViewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         weekAttrString.append(monthStrAttrString)
         btn.setAttributedTitle(weekAttrString, for: .normal)
         btn.sizeToFit()
-    }    
+    }
+    
+    func refreshTableData() {
+        if let day = weekDay {
+            self.loadDayEventsFor(day: WeekDays(rawValue: day.weekDay)!, withProgress: true)
+        }
+    }
 }
