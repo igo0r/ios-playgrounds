@@ -11,6 +11,7 @@ import UIKit
 let appID = "1245564580"
 let appEmail = "help@mealmeintime.com"
 
+let currentDayKey = "currentDayKey"
 let defaultUserDayKey = "defaultUserDayKey"
 let notificationIdentifierPrefix = "MealMeNotify"
 let mealsCountArr = Array(3...10)

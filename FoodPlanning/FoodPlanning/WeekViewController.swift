@@ -34,12 +34,13 @@ class WeekViewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         eventsTableView.dataSource = self
         eventsTableView.tableFooterView = UIView()
         
+        DateTimeUtils.updateCurrentDateKey()
         configureNavBar(withTitle: "Meal schedule")
         configureCalendarBtn(weekCalendarBtn)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(WeekViewVC.refreshTableData), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil )
+        NotificationCenter.default.addObserver(self, selector: #selector(WeekViewVC.refreshWeekViewData), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil )
         
-        reloadTableDataTimer = Timer(timeInterval: 60.0, target: self, selector: #selector(WeekViewVC.refreshTableData), userInfo: nil, repeats: true)
+        reloadTableDataTimer = Timer(timeInterval: 60.0, target: self, selector: #selector(WeekViewVC.refreshWeekViewData), userInfo: nil, repeats: true)
         RunLoop.main.add(self.reloadTableDataTimer!, forMode: RunLoopMode.defaultRunLoopMode)
     }
 
@@ -169,7 +170,7 @@ class WeekViewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let end = weekDays[endWeekDay]!
         
         let formatter = DateFormatter()
-        formatter.dateFormat = "d"
+        formatter.dateFormat = "dd"
         var weekStr = formatter.string(from: start).uppercased()
         weekStr.append("—\(formatter.string(from: end))  ")
         
@@ -192,10 +193,18 @@ class WeekViewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         weekAttrString.append(monthStrAttrString)
         btn.setAttributedTitle(weekAttrString, for: .normal)
-        btn.sizeToFit()
+        //btn.sizeToFit()
     }
     
-    func refreshTableData() {
+    func refreshWeekViewData() {
+        if !DateTimeUtils.isCurrentDateKeyValid() {
+            DateTimeUtils.currentWeek = [:]
+            configureCalendarBtn(weekCalendarBtn)
+            for day in weekDayBtns {
+                day.setNeedsDisplay()
+            }
+        }
+        
         if let day = weekDay {
             self.loadDayEventsFor(day: WeekDays(rawValue: day.weekDay)!, withProgress: true)
         }

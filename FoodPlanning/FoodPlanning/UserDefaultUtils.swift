@@ -54,6 +54,14 @@ class UserDefaultsUtils {
         return minutes < waterTimeRange[0] || minutes > waterTimeRange[waterTimeRange.count - 1] ? 30 : minutes
     }
     
+    static func setCurrentDayKey(dayKey: String) {
+        UserDefaults.standard.set(dayKey, forKey: currentDayKey)
+    }
+    
+    static func getCurrentDayKey() -> String {
+        return UserDefaults.standard.string(forKey: currentDayKey) ?? ""
+    }
+    
     static func setWaterTime(minutes: Int) {
         UserDefaults.standard.set(minutes, forKey: waterTime)
     }

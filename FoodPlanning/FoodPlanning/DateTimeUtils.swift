@@ -48,6 +48,41 @@ class DateTimeUtils {
     }
     
     /*
+     checks if CurrentDayKey belongs to the current date
+     for situation when app opens too long and its new day already
+     */
+    static func isCurrentDateKeyValid(withUpdateDateKey: Bool = true) -> Bool {
+        let currentStr = composeCurrentDayKey()
+        let userDefaultStr = UserDefaultsUtils.getCurrentDayKey()
+        
+        if currentStr != userDefaultStr {
+            UserDefaultsUtils.setCurrentDayKey(dayKey: currentStr)
+            
+            return false
+        }
+        
+        return true
+    }
+    
+    /*
+     set user default current date key
+     */
+    static func updateCurrentDateKey() {
+        UserDefaultsUtils.setCurrentDayKey(dayKey: composeCurrentDayKey())
+    }
+    
+    /*
+     returns current dat ein format yyyy-mm-dd
+     */
+    static func composeCurrentDayKey() -> String {
+        let date = currentDate
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy:MM:dd"
+        
+        return formatter.string(from: date)
+    }
+    
+    /*
      Starts from 0 = Monday
      */
     static func getCurrentWeekDayNumber() -> WeekDays {

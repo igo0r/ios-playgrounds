@@ -82,6 +82,8 @@ class WeekDayBtn: UIButton {
         if currentWeekDay == btnWeekDay {
             layer.borderColor = white.cgColor
             layer.borderWidth = 1
+        } else {
+            layer.borderWidth = 0
         }
     }
     
