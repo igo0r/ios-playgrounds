@@ -35,7 +35,10 @@ class WeekViewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         eventsTableView.tableFooterView = UIView()
         
         DateTimeUtils.updateCurrentDateKey()
+        
         configureNavBar(withTitle: "Meal schedule")
+        configureView()
+        
         configureCalendarBtn(weekCalendarBtn)
         
         NotificationCenter.default.addObserver(self, selector: #selector(WeekViewVC.refreshWeekViewData), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil )
@@ -64,6 +67,12 @@ class WeekViewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.viewDidLayoutSubviews()
         
         SpinnerView.sharedInstance.hideSpinView()
+    }
+    
+    @IBAction func editWeekDayBtnPressed(_ sender: UIBarButtonItem) {
+        if let weekDay = weekDay {
+            performSegue(withIdentifier: "WeekDayEditor", sender: weekDay)
+        }
     }
     
     @IBAction func cleanWeekDayBtnPressed(_ sender: UIBarButtonItem) {

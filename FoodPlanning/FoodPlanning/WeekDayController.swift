@@ -13,12 +13,10 @@ class WeekDayController: UIViewController, UINavigationControllerDelegate, AKPic
 
     @IBOutlet weak var wakeUpPicker: CustomDatePicker!
     @IBOutlet weak var sleepTimePicker: CustomDatePicker!
-    @IBOutlet weak var waterBtn: UIButton!
     @IBOutlet weak var pickerView: AKPickerView!
     @IBOutlet weak var applyDaysLbl: UILabel!
     @IBOutlet weak var sleepAtLbl: UILabel!
     @IBOutlet weak var saveBtn: UIBarButtonItem!
-    @IBOutlet weak var waterMinutesLbl: UILabel!
     
     //Validation lbls
     @IBOutlet weak var validationSleepLbl: UILabel!
@@ -42,15 +40,6 @@ class WeekDayController: UIViewController, UINavigationControllerDelegate, AKPic
     }
     
     var isSleepChanged = false
-    var withWater = false {
-        didSet {
-            if withWater {
-                waterBtn.setImage(UIImage(named: "Check"), for: .normal)
-            } else {
-                waterBtn.setImage(nil, for: .normal)
-            }
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +49,7 @@ class WeekDayController: UIViewController, UINavigationControllerDelegate, AKPic
         pickerView.dataSource = self
         
         configureNavBar(withTitle: "Day plan")
+        configureView()
         configureDayForm()
     }
     
@@ -107,15 +97,12 @@ class WeekDayController: UIViewController, UINavigationControllerDelegate, AKPic
     @IBAction func navBarBtnPressed(_ sender: UIBarButtonItem) {
         SpinnerView.sharedInstance.showSpinnerFor(view: view)
         if sender.tag == 0 {
+            UserDefaultsUtils.increaseSuccessPath()
             dismiss(animated: true, completion: nil)
         } else {
             checkFormValidation()
         }
         SpinnerView.sharedInstance.hideSpinView()
-    }
-    
-    @IBAction func waterBtnPressed(_ sender: UIButton) {
-        withWater = !withWater
     }
     
     func numberOfItemsInPickerView(_ pickerView: AKPickerView) -> Int {
@@ -133,12 +120,10 @@ class WeekDayController: UIViewController, UINavigationControllerDelegate, AKPic
     func configureDayForm() {
         if let day = weekDay {
             setActiveWeekDay(true, withTag: day.weekDay)
-            withWater = day.withWater
             mealsCount = day.mealsCount
             wakeUpAt = day.getWakeUpAt()
             sleepAt = day.getSleepAt()
         }
-        waterMinutesLbl.text = "\(UserDefaultsUtils.getWaterTime()) minutes before meal. Change it in settings"
         configureMealsPicker()
     }
     
@@ -201,7 +186,6 @@ class WeekDayController: UIViewController, UINavigationControllerDelegate, AKPic
                 weekDay.sleepAt = self.sleepAt! as NSDate
                 weekDay.wakeUpAt = self.wakeUpAt! as NSDate
                 weekDay.weekDay = day.hashValue
-                weekDay.withWater = self.withWater
                 
                 RealmManager.writeWeekDay(obj: weekDay)
             }

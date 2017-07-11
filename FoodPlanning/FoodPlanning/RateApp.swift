@@ -16,7 +16,7 @@ class RateApp {
      using agree and disagree counters determine wether we should show rate popup or not
      */
     static func showRatePopupOnSuccessPath(forView: UIViewController) {
-        if UserDefaultsUtils.getDontAskToReview() == 0 && UserDefaultsUtils.getAgreeToReview() == 0 && UserDefaultsUtils.getSuccessPathes() % 20 == 0 {
+        if UserDefaultsUtils.getDontAskToReview() == 0 && UserDefaultsUtils.getAgreeToReview() == 0 && UserDefaultsUtils.getSuccessPathes() % 30 == 0 {
             let alertToShow = UIAlertController(title: "Would you like to review/rate us?", message: "It seems you have fun with an application. Please, help us to build a better product for you :)", preferredStyle: UIAlertControllerStyle.alert)
             alertToShow.addAction(UIAlertAction(title: "Don't ask me again", style: UIAlertActionStyle.default, handler: {(alert: UIAlertAction!) in
                 UserDefaultsUtils.increaseDontAskToReview()

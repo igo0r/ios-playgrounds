@@ -53,7 +53,6 @@ extension WeekDayController {
         } else {
             applyDaysLbl.textColor = white
             validationWeekDaySLbl.textColor = opacity0
-            //validationWeekDaySLbl.isHidden = true
             isValid = true
         }
         

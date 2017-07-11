@@ -33,6 +33,11 @@ class WeekDay: Object {
         return ["tmpID"]
     }
     
+    func transformNewWaterFormat() {
+        RealmManager.updateWeekDayWaterSettingsWith(obj: self, value: false)
+        UserDefaultsUtils.setWaterBeforeMeal(include: true)
+    }
+    
     func prepareTimeEvents(_ withProgress: Bool = false) -> [TimeEvent] {
         var wakeUpAt = getWakeUpAt()
         var events = [TimeEvent]()
@@ -40,11 +45,17 @@ class WeekDay: Object {
         let sleepAt = getSleepAt()
         let waterTime = TimeInterval(60 * UserDefaultsUtils.getWaterTime())
         
-        let waterDescription = "Water time!\n Swipe or press to confirm the action"
+        let waterCalculator = WaterCalculator()
+        let waterPortion = waterCalculator.divideWaterQuantityFor(times: mealsCount+1)
+        let waterNotificationDescription = "Water time!\nDrink \(waterPortion) \(waterCalculator.getWaterLblTxt()) of water\nSwipe or press to confirm the action"
+        let waterDescription = "Water drink \(waterPortion) \(waterCalculator.getWaterLblTxt())"
         
         if self.withWater {
-            events.append(TimeEvent(startAt: wakeUpAt, description: "Water time!", notificationDescription: waterDescription, weekDay: self))
-            events.append(TimeEvent(startAt: sleepAt.addingTimeInterval(-waterTime), description: "Water time!", notificationDescription: waterDescription, weekDay: self))
+            transformNewWaterFormat()
+        }
+        if UserDefaultsUtils.getWaterBeforeMeal() {
+            events.append(TimeEvent(startAt: wakeUpAt, description: waterDescription, notificationDescription: waterNotificationDescription, weekDay: self))
+            events.append(TimeEvent(startAt: sleepAt.addingTimeInterval(-waterTime), description: waterDescription, notificationDescription: waterNotificationDescription, weekDay: self))
             wakeUpAt = wakeUpAt.addingTimeInterval(waterTime)
         }
         
@@ -56,9 +67,9 @@ class WeekDay: Object {
             let mealTime = wakeUpAt.addingTimeInterval(currentInterval)
             events.append(TimeEvent(startAt: mealTime, description: "\(counter + 1) meal", notificationDescription: "Take your \(counter + 1) meal. Bon appetit! \n Swipe or press to confirm the action", weekDay: self))
             
-            if withWater && counter > 0 {
+            if UserDefaultsUtils.getWaterBeforeMeal() && counter > 0 {
                 let waterTime = wakeUpAt.addingTimeInterval(currentInterval - waterTime)
-                events.append(TimeEvent(startAt: waterTime, description: "Water time!", notificationDescription: waterDescription, weekDay: self))
+                events.append(TimeEvent(startAt: waterTime, description: waterDescription, notificationDescription: waterNotificationDescription, weekDay: self))
             }
         }
         

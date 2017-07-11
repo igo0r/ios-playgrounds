@@ -21,6 +21,7 @@
 		C043379F1EC742F500FA0616 /* WeekDayFormBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = C043379E1EC742F500FA0616 /* WeekDayFormBtn.swift */; };
 		C0478A351EB1365500E13300 /* UIView+Inspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0478A341EB1365500E13300 /* UIView+Inspectable.swift */; };
 		C0478A371EB1382E00E13300 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0478A361EB1382E00E13300 /* UIButtonExtension.swift */; };
+		C055E61C1F0D4AC100DFCE51 /* WaterCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C055E61B1F0D4AC100DFCE51 /* WaterCalculatorViewController.swift */; };
 		C063966E1EBCCAB8008F9F2B /* DateTimeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C063966D1EBCCAB8008F9F2B /* DateTimeUtils.swift */; };
 		C06BDB061EC4AC2B0053B60C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06BDB051EC4AC2B0053B60C /* Constants.swift */; };
 		C06BDB081EC4AC7C0053B60C /* UserDefaultUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06BDB071EC4AC7C0053B60C /* UserDefaultUtils.swift */; };
@@ -35,8 +36,11 @@
 		C0A696B71EAE9161001EBFB4 /* FoodPlanningTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A696B61EAE9161001EBFB4 /* FoodPlanningTests.swift */; };
 		C0AEEEF11EDB3E4D00FBE6FB /* UITabBarControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AEEEF01EDB3E4D00FBE6FB /* UITabBarControllerExt.swift */; };
 		C0AEEEF31EDB3F3200FBE6FB /* MealTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AEEEF21EDB3F3200FBE6FB /* MealTabBarController.swift */; };
+		C0C0328D1F054A4A0061FC79 /* WaterCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C0328C1F054A4A0061FC79 /* WaterCalculator.swift */; };
 		C0CA975C1EE570AE00F1572B /* AlertUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CA975B1EE570AE00F1572B /* AlertUtils.swift */; };
 		C0D140881EE368BC00940DBA /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D140871EE368BC00940DBA /* SettingViewController.swift */; };
+		C0DFDBF41F02EF9300702D12 /* WaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DFDBF31F02EF9300702D12 /* WaterViewController.swift */; };
+		C0DFDBF61F02F17B00702D12 /* UITableViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DFDBF51F02F17B00702D12 /* UITableViewControllerExt.swift */; };
 		C0E12D6B1EAFC98C005E5C0F /* WeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E12D6A1EAFC98C005E5C0F /* WeekViewController.swift */; };
 		C0E12D6D1EAFDC43005E5C0F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E12D6C1EAFDC43005E5C0F /* UIColor.swift */; };
 		C0E949881ED369E500FA5B09 /* LocalNotificationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E949871ED369E500FA5B09 /* LocalNotificationUtils.swift */; };
@@ -78,6 +82,7 @@
 		C043379E1EC742F500FA0616 /* WeekDayFormBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekDayFormBtn.swift; sourceTree = "<group>"; };
 		C0478A341EB1365500E13300 /* UIView+Inspectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Inspectable.swift"; sourceTree = "<group>"; };
 		C0478A361EB1382E00E13300 /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		C055E61B1F0D4AC100DFCE51 /* WaterCalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterCalculatorViewController.swift; sourceTree = "<group>"; };
 		C063966D1EBCCAB8008F9F2B /* DateTimeUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTimeUtils.swift; sourceTree = "<group>"; };
 		C06BDB051EC4AC2B0053B60C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C06BDB071EC4AC7C0053B60C /* UserDefaultUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultUtils.swift; sourceTree = "<group>"; };
@@ -96,8 +101,11 @@
 		C0A696B81EAE9161001EBFB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0AEEEF01EDB3E4D00FBE6FB /* UITabBarControllerExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITabBarControllerExt.swift; sourceTree = "<group>"; };
 		C0AEEEF21EDB3F3200FBE6FB /* MealTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTabBarController.swift; sourceTree = "<group>"; };
+		C0C0328C1F054A4A0061FC79 /* WaterCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterCalculator.swift; sourceTree = "<group>"; };
 		C0CA975B1EE570AE00F1572B /* AlertUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertUtils.swift; sourceTree = "<group>"; };
 		C0D140871EE368BC00940DBA /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		C0DFDBF31F02EF9300702D12 /* WaterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterViewController.swift; sourceTree = "<group>"; };
+		C0DFDBF51F02F17B00702D12 /* UITableViewControllerExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewControllerExt.swift; sourceTree = "<group>"; };
 		C0E12D6A1EAFC98C005E5C0F /* WeekViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekViewController.swift; sourceTree = "<group>"; };
 		C0E12D6C1EAFDC43005E5C0F /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		C0E949871ED369E500FA5B09 /* LocalNotificationUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationUtils.swift; sourceTree = "<group>"; };
@@ -181,6 +189,7 @@
 				C0E949AD1ED6168000FA5B09 /* NotificationCenterDelegate.swift */,
 				C0AEEEF01EDB3E4D00FBE6FB /* UITabBarControllerExt.swift */,
 				C0FB36011EF9AF52000781EE /* SettingViewControllerExt.swift */,
+				C0DFDBF51F02F17B00702D12 /* UITableViewControllerExt.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -238,6 +247,7 @@
 				C00E01841EBBA1850098B9D5 /* TimeEvent.swift */,
 				C00E01881EBBC9FB0098B9D5 /* WeekDays.swift */,
 				C0045E851EBF657700C01BFA /* WeekDay.swift */,
+				C0C0328C1F054A4A0061FC79 /* WaterCalculator.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -260,6 +270,8 @@
 				C0F147011EB52C0200FB2A19 /* WeekDayController.swift */,
 				C0AEEEF21EDB3F3200FBE6FB /* MealTabBarController.swift */,
 				C0D140871EE368BC00940DBA /* SettingViewController.swift */,
+				C0DFDBF31F02EF9300702D12 /* WaterViewController.swift */,
+				C055E61B1F0D4AC100DFCE51 /* WaterCalculatorViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -480,6 +492,9 @@
 			files = (
 				C0E9498A1ED47EA300FA5B09 /* Date.swift in Sources */,
 				C0CA975C1EE570AE00F1572B /* AlertUtils.swift in Sources */,
+				C0DFDBF41F02EF9300702D12 /* WaterViewController.swift in Sources */,
+				C0C0328D1F054A4A0061FC79 /* WaterCalculator.swift in Sources */,
+				C0DFDBF61F02F17B00702D12 /* UITableViewControllerExt.swift in Sources */,
 				C0045E8B1EBF833200C01BFA /* RealmManager.swift in Sources */,
 				C0478A371EB1382E00E13300 /* UIButtonExtension.swift in Sources */,
 				C0E12D6B1EAFC98C005E5C0F /* WeekViewController.swift in Sources */,
@@ -510,6 +525,7 @@
 				C0045E861EBF657700C01BFA /* WeekDay.swift in Sources */,
 				C063966E1EBCCAB8008F9F2B /* DateTimeUtils.swift in Sources */,
 				C0E12D6D1EAFDC43005E5C0F /* UIColor.swift in Sources */,
+				C055E61C1F0D4AC100DFCE51 /* WaterCalculatorViewController.swift in Sources */,
 				C0E9528D1EBB9C4200182620 /* EventTimeTableCell.swift in Sources */,
 				C0A696A21EAE9160001EBFB4 /* AppDelegate.swift in Sources */,
 				C0F147021EB52C0200FB2A19 /* WeekDayController.swift in Sources */,

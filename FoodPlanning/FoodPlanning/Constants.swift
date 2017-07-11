@@ -11,6 +11,13 @@ import UIKit
 let appID = "1245564580"
 let appEmail = "help@mealmeintime.com"
 
+let waterBeforeMeal = "waterBeforeMeal"
+
+let currentSystemIsMetric = "currentSystemIsMetric"
+let waterQuantity = "waterQuantity"
+let dayActivity = "dayActivity"
+let weight = "weight"
+
 let currentDayKey = "currentDayKey"
 let defaultUserDayKey = "defaultUserDayKey"
 let notificationIdentifierPrefix = "MealMeNotify"

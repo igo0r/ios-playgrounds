@@ -48,10 +48,74 @@ class UserDefaultsUtils {
         UserDefaults.standard.set(currentValue + 1, forKey: savePlanCounter)
     }
     
+    /*
+     if value not in minutes range return 30 min
+     */
     static func getWaterTime() -> Int {
         let minutes = UserDefaults.standard.integer(forKey: waterTime)
         
         return minutes < waterTimeRange[0] || minutes > waterTimeRange[waterTimeRange.count - 1] ? 30 : minutes
+    }
+    
+    static func setWaterBeforeMeal(include: Bool) {
+        UserDefaults.standard.set(include, forKey: waterBeforeMeal)
+    }
+    
+    static func getWaterBeforeMeal() -> Bool {
+        return UserDefaults.standard.bool(forKey: waterBeforeMeal)
+    }
+    
+    static func setWeight(value: Double) {
+        UserDefaults.standard.set(value, forKey: weight)
+    }
+    
+    /*
+     default value = 50 kg
+     */
+    static func getWeight() -> Double {
+        let weightValue = UserDefaults.standard.double(forKey: weight)
+        return weightValue == 0 ? 50 : weightValue
+    }
+    
+    static func setDayActivity(value: Int) {
+        UserDefaults.standard.set(value, forKey: dayActivity)
+    }
+    
+    static func getDayActivity() -> Int {
+        return UserDefaults.standard.integer(forKey: dayActivity)
+    }
+    
+    static func setWaterQuantity(value: Double) {
+        UserDefaults.standard.set(value, forKey: waterQuantity)
+    }
+    
+    static func getWaterQuantity() -> Double {
+        return UserDefaults.standard.double(forKey: waterQuantity)
+    }
+    
+    /*
+     possible values are 1,2
+     1 - false
+     2 - true
+     */
+    static func setCurrentSystem(isMetric: Bool) {
+        if isMetric {
+            UserDefaults.standard.set(2, forKey: currentSystemIsMetric)
+        } else {
+            UserDefaults.standard.set(1, forKey: currentSystemIsMetric)
+        }
+    }
+    
+    /*
+     possible values are 0,1,2
+     0 - not existing
+     1 - false
+     2 - true
+     */
+    static func isCurrentSystemMetric() -> Bool {
+        let curVal = UserDefaults.standard.integer(forKey: currentSystemIsMetric)
+        
+        return curVal == 0 ? Locale.current.usesMetricSystem : curVal == 2 ? true : false
     }
     
     static func setCurrentDayKey(dayKey: String) {

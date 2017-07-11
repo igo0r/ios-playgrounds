@@ -32,24 +32,16 @@ class RealmManager {
     }
     
     static func writeWeekDay(obj: WeekDay) {
-        //DispatchQueue.main.async {
         dq.sync {
             let realm = try! Realm()
             let days = loadWeekDay(forDay: obj.weekDay)
-            //let group  = DispatchGroup()
-            //group.enter()
             for day in days {
                 removeWeekDay(day, withNotifications: false)
             }
-            
-            //group.leave()
-            //group.notify(queue: DispatchQueue.main) { () in
-                print("Before SAVE OBJ ============")
-                try! realm.write {
-                    realm.add(obj)
-                    //obj.createLocalNotificationsForCurrentDay()
-                }
-            //}
+            print("Before SAVE OBJ ============")
+            try! realm.write {
+                realm.add(obj)
+            }
         }
     }
     
@@ -76,6 +68,13 @@ class RealmManager {
         return realm.objects(WeekDay.self).filter("weekDay == \(forDay)")
     }
     
+    static func updateWeekDayWaterSettingsWith(obj: WeekDay, value: Bool) {
+        let realm = try! Realm()
+        try! realm.write {
+            obj.withWater = value
+        }
+    }
+
     /*
      take today weekday. 
      f.e. Tuesday = 1 and build array like 1,2,3...6,0

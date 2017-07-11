@@ -24,6 +24,17 @@ extension UIViewController {
         }
     }
     
+    func configureView() {
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "lemons")
+        backgroundImage.contentMode =  UIViewContentMode.scaleAspectFill
+        
+        let backgroundView = UIView(frame: UIScreen.main.bounds)
+        backgroundView.backgroundColor = black
+        backgroundImage.addSubview(backgroundView)
+        view.insertSubview(backgroundImage, at: 0)
+    }
+    
     func configureNavBar(withTitle: String) {
         if let navItem = self.navigationController?.navigationBar.topItem {
             let navBar = navigationController?.navigationBar
@@ -31,7 +42,7 @@ extension UIViewController {
             
             navItem.title = withTitle
             //navItem.setLeftBarButton(UIBarButtonItem(image: UIImage(named: "menu.png"), style: UIBarButtonItemStyle.plain, target: nil, action: nil), animated: false)
-            navItem.leftBarButtonItem?.tintColor = UIColor(hex: "E4E0E0", alpha: 1)
+            //navItem.leftBarButtonItem?.tintColor = UIColor(hex: "E4E0E0", alpha: 1)
         }
     }
 
