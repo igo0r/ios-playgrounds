@@ -117,6 +117,9 @@ class WaterCalculatorViewController: UIViewController, UIPickerViewDelegate, UIP
         
     }
 
+    /*
+     when page loading or change metrics update weight, water units
+     */
     func updateWaterElements() {
         metricSwitcher.selectedSegmentIndex = waterCalculator.isCurrentSystemMetric ? 1 : 0
         

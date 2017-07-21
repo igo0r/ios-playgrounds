@@ -19,6 +19,9 @@ class WeekDayBtn: UIButton {
         setButtonToday()
     }
     
+    /*
+     f.e. 01 Nov
+     */
     func composeAttributedStringForWeekBtn(withActiveState: Bool) -> NSAttributedString {
         let weekDays = DateTimeUtils.getCurrentWeek()
         let weekDay = DateTimeUtils.routeFromDayTagToWeekDays(btnTag: tag)
@@ -61,6 +64,9 @@ class WeekDayBtn: UIButton {
         return weekAttrString
     }
     
+    /*
+     add red background when press button
+     */
     func setButtonActive(_ isActive: Bool) {
         if isActive {
             let attrStr = composeAttributedStringForWeekBtn(withActiveState: true)
@@ -75,6 +81,9 @@ class WeekDayBtn: UIButton {
         }
     }
     
+    /*
+     add white frame for current date
+     */
     func setButtonToday() {
         let btnWeekDay = DateTimeUtils.routeFromDayTagToWeekDays(btnTag: tag)
         let currentWeekDay = DateTimeUtils.getCurrentWeekDayNumber()

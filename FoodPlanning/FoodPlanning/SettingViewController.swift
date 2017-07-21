@@ -61,6 +61,9 @@ class SettingViewController: UITableViewController {
         }
     }
 
+    /*
+     monitoring notification changes
+     */
     func willEnterForeground() {
         print("Enter foreground")
         LocalNotificationUtils.isAuthorizedToSendNotifications() { (isAuth) in

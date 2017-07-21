@@ -46,6 +46,9 @@ extension UIViewController {
         }
     }
 
+    /*
+     open application page in the settings
+     */
     func openAppSettings() {
         if let appSettings = URL(string: UIApplicationOpenSettingsURLString) {
          UIApplication.shared.open(appSettings, options: [:], completionHandler: nil)
@@ -116,6 +119,10 @@ extension UIViewController {
         }
     }
     
+    /*
+     ask about permissions to send notifications
+     and check if its possible to show popup
+     */
     func enableLocalNotifications(_ enable: Bool, cH: @escaping (Bool) -> ()) {
         let counter = UserDefaultsUtils.getRequestPermissionsCounter()
         if enable && counter == 0 {

@@ -22,6 +22,9 @@ extension WeekDayController {
         return isValidDatePickers && isValidWeekDays
     }
     
+    /*
+     check timedifference between start and sleep at least 3 hours
+     */
     func validateDatePickers() -> Bool {
         var isValid = false
         if sleepAt != nil && wakeUpAt != nil {
@@ -42,6 +45,9 @@ extension WeekDayController {
         return isValid
     }
     
+    /*
+     check that at least 1 weekday is choosen
+     */
     func validateActiveWeekDays() -> Bool {
         var isValid = false
         if getActiveWeekDays().isEmpty {

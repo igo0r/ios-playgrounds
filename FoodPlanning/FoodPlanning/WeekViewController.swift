@@ -172,6 +172,10 @@ class WeekViewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     }
     
+    /*
+     compose string
+     f.e. 01-07 November 2017
+     */
     func configureCalendarBtn(_ btn: UIButton) {
         let weekDays = DateTimeUtils.getCurrentWeek()
         let (startWeekDay, endWeekDay) = DateTimeUtils.getWeekStartEndAsWeekDays()
@@ -205,6 +209,9 @@ class WeekViewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         //btn.sizeToFit()
     }
     
+    /*
+     when page opens too long - progress needs to be updated
+     */
     func refreshWeekViewData() {
         if !DateTimeUtils.isCurrentDateKeyValid() {
             DateTimeUtils.currentWeek = [:]

@@ -11,6 +11,9 @@ import MessageUI
 
 extension SettingViewController: MFMailComposeViewControllerDelegate {
     
+    /*
+     mail configuration for feddback action
+     */
     func configuredMailComposeViewController() -> MFMailComposeViewController {
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.mailComposeDelegate = self
@@ -32,7 +35,6 @@ extension SettingViewController: MFMailComposeViewControllerDelegate {
     }
     
     func showSendMailErrorAlert() {
-        
         let alert = AlertUtils.sendMailError()
         self.present(alert, animated: true, completion: nil)
     }

@@ -10,6 +10,9 @@ import UIKit
 
 extension UITabBarController {
     
+    /*
+     add white vertical lines between elements
+     */
     func setupTabBarSeparators() {
         let itemWidth = floor(self.tabBar.frame.size.width / CGFloat(self.tabBar.items!.count))
         

@@ -117,6 +117,9 @@ class WeekDayController: UIViewController, UINavigationControllerDelegate, AKPic
         mealsCount = mealsCountArr[item]
     }
     
+    /*
+     set data for all the fields
+     */
     func configureDayForm() {
         if let day = weekDay {
             setActiveWeekDay(true, withTag: day.weekDay)

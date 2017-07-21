@@ -18,19 +18,21 @@ class RealmManager {
         realm = try! Realm()
     }
     
+    /*
+     get weekday data
+     */
     static func loadEventsFor(day: WeekDays, _ completionHandler: @escaping (WeekDay?) -> ()) {
-        //return realm.objects(WeekDay.self).filter("weekDay == \(day.rawValue)")
-        //DispatchQueue.main.async {
         dq.sync {
             let realm = try! Realm()
             let obj = realm.objects(WeekDay.self).filter("weekDay == \(day.rawValue)").first
         
-            //DispatchQueue.main.async {
-                completionHandler(obj)
-            //}
+            completionHandler(obj)
         }
     }
     
+    /*
+     save weekday but before delete
+     */
     static func writeWeekDay(obj: WeekDay) {
         dq.sync {
             let realm = try! Realm()

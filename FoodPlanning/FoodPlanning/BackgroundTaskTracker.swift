@@ -16,12 +16,18 @@ class BackgroundTaskTracker {
     static var backgroundNotificationsInProgress = false
     static var updateNotifications = false
     
+    /*
+     starting point - signal to start background process
+     */
     static func requestToUpdateNotifications() {
         print("requestToUpdateNotifications")
         updateNotifications = true
         initiateNotificationsUpdate()
     }
     
+    /*
+     check if backgroung task not in progress and than start new one
+     */
     static func initiateNotificationsUpdate() {
         if updateNotifications && !backgroundNotificationsInProgress {
             updateNotifications = false
@@ -31,6 +37,9 @@ class BackgroundTaskTracker {
         }
     }
     
+    /*
+     start new background task
+     */
     static func beginBackgroundTask() {
         if backgroundManageNotifications == nil || backgroundManageNotifications == UIBackgroundTaskInvalid {
             print("beginBackgroundTask")
@@ -38,6 +47,9 @@ class BackgroundTaskTracker {
         }
     }
     
+    /*
+     build notifications
+     */
     static func doBackgroundTask()
     {
         print("do buildLocalNotifications !!")
@@ -45,6 +57,9 @@ class BackgroundTaskTracker {
         localNotifications.buildLocalNotifications()
     }
     
+    /*
+     check if next background task exists and than start it
+     */
     static func proceedNextBackgroundTask() {
         print("proceedNextBackgroundTask")
         backgroundNotificationsInProgress = false

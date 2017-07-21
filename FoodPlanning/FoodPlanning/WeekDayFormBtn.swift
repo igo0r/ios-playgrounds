@@ -15,6 +15,9 @@ class WeekDayFormBtn: UIButton {
     
     let checkImg = UIImage(named: "CheckWeekDay")
     
+    /*
+     btn tags 0..6
+     */
     override func draw(_ rect: CGRect) {
         let weekDays = DateTimeUtils.getCurrentWeek()
         let btnWeekDay = DateTimeUtils.routeFromDayTagToWeekDays(btnTag: tag)
@@ -33,6 +36,9 @@ class WeekDayFormBtn: UIButton {
         tintColor = green
     }
     
+    /*
+     week days mon, tue.. to set active
+     */
     func setActive(_ active: Bool) {
         if active {
             isActiveWeekDay = true

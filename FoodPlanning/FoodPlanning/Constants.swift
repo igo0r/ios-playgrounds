@@ -13,6 +13,7 @@ let appEmail = "help@mealmeintime.com"
 
 let waterBeforeMeal = "waterBeforeMeal"
 
+//Water calculator
 let currentSystemIsMetric = "currentSystemIsMetric"
 let waterQuantity = "waterQuantity"
 let dayActivity = "dayActivity"

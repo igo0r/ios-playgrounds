@@ -33,6 +33,9 @@ class EventTimeTableCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
 
+    /*
+     f.e. 01:30 Time to drink water
+     */
     func configureCellFor(timeEvent: TimeEvent) {
         setCellProgress(withTimeEvent: timeEvent)
         if timeEvent.weekDay != nil {
@@ -54,6 +57,9 @@ class EventTimeTableCell: UITableViewCell {
         }
     }
 
+    /*
+     set progress from 0 to 1
+     */
     fileprivate func setCellProgress(withTimeEvent timeEvent: TimeEvent) {
         if timeEvent.progressTime == 0 {
             progressDone.isHidden = true

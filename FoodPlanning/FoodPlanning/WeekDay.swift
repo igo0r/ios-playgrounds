@@ -15,12 +15,12 @@ class WeekDay: Object {
     dynamic var sleepAt = NSDate()
     dynamic var withWater = false
     dynamic var mealsCount = 3
+    let recurrentEvents = LinkingObjects(fromType: RecurrentEvent.self, property: "weekDay")
     
     override static func primaryKey() -> String? {
         return "weekDay"
     }
 
-    
     func getWakeUpAt() -> Date {
         return wakeUpAt as Date
     }
@@ -33,11 +33,21 @@ class WeekDay: Object {
         return ["tmpID"]
     }
     
+    /*
+     needs for migration water settings from day form to standalone tab bar
+     */
     func transformNewWaterFormat() {
         RealmManager.updateWeekDayWaterSettingsWith(obj: self, value: false)
         UserDefaultsUtils.setWaterBeforeMeal(include: true)
     }
     
+    /*
+     calculate dose of water
+     create water notifications if necessary 
+     take meals count and divide it from start to the end
+     
+     returns array of TimeEvent
+     */
     func prepareTimeEvents(_ withProgress: Bool = false) -> [TimeEvent] {
         var wakeUpAt = getWakeUpAt()
         var events = [TimeEvent]()
@@ -82,22 +92,12 @@ class WeekDay: Object {
         
         return events
     }
-    
-    func createLocalNotificationsForCurrentDay() {
-        let events = prepareTimeEvents()
-        for event in events {
-            event.createLocalNotification()
-        }
-       // LocalNotificationUtils.printPendingLocalNotifications()
-    }
-    
-    func deleteLocalNotificationsForCurrentDay() {
-        let identifier = LocalNotificationUtils.composeNotificationIdentifierFor(dayOfWeek: WeekDays(rawValue: weekDay)!, date: nil)
-        LocalNotificationUtils.removeLocalNotificationsWith(identifier: identifier)
-    }
-    
+
     /*
-     returns timeevents with
+     returns timeevents with progress from 0 to 1
+     1 for passed
+     0 for comming
+     and 0..1 for current event
      */
     func prepareProgressTimeForToday(events: [TimeEvent]) -> [TimeEvent] {
         var events = events
@@ -121,10 +121,4 @@ class WeekDay: Object {
         
         return events
     }
-    
-// Specify properties to ignore (Realm won't persist these)
-    
-//  override static func ignoredProperties() -> [String] {
-//    return []
-//  }
 }

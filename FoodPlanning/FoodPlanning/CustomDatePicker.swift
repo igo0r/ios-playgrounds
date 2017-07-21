@@ -11,8 +11,6 @@ import UIKit
 class CustomDatePicker: UIDatePicker {
     
     override func draw(_ rect: CGRect) {
-        //backgroundColor = blackуме
-        //  backgroundColor = UIColor.clear//black
         setValue(white, forKey: "textColor")
         setValue(true, forKey: "highlightsToday")
     }

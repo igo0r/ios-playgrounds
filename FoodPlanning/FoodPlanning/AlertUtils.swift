@@ -10,6 +10,10 @@ import Foundation
 import UIKit
 
 class AlertUtils {
+    
+    /*
+     add alert whehn user tried to delete weekday events
+     */
     static func removeWeekDayWithAlert(withTitle title: String, message: String, forWeekDay: WeekDay, inView: UIViewController, cH: @escaping (Bool) -> ()) {
         let alertToShow = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         alertToShow.addAction(UIAlertAction(title: "Delete", style: UIAlertActionStyle.destructive, handler: {(alert: UIAlertAction!) in
@@ -23,6 +27,9 @@ class AlertUtils {
         inView.present(alertToShow, animated: true, completion: nil)
     }
     
+    /*
+     handle configuration error with alert
+     */
     static func sendMailError() -> UIAlertController {
         let alert = UIAlertController(title: "Could not send email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", preferredStyle: .alert)
         

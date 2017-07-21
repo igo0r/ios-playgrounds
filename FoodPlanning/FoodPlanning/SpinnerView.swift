@@ -16,6 +16,9 @@ class SpinnerView {
     var progressView = UIView()
     var activityIndicator = UIActivityIndicatorView()
     
+    /*
+     nice spinner to be shown
+     */
     func showSpinnerFor(view: UIView) {
         //containerView.frame = view.frame
         containerView.frame  = UIScreen.main.bounds

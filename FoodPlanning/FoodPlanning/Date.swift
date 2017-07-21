@@ -33,6 +33,9 @@ extension Date {
         return Calendar.current.dateComponents([.day], from: date.nine, to: self.nine).day ?? 0
     }
     
+    /*
+     from "anyday 9:30" to "today 9:30"
+     */
     func transformToCurrentDate() -> Date {
         let daysDiff = self.days(from: DateTimeUtils.currentDate)
         return DateTimeUtils.currentCalendar.date(byAdding: .day, value: -daysDiff, to: self)!
@@ -43,6 +46,9 @@ extension Date {
         return DateTimeUtils.currentCalendar.dateComponents([.second], from: date, to: self).second ?? 0
     }
     
+    /*
+     add 13 hours to the current time but check that its not more than tomorrow 
+     */
     func addingTimeIntervalNotBiggerThanTomorrow(_ interval: TimeInterval) -> Date {
         let tomorrowNoon = self.tomorrow.noon
         var newDate = self.addingTimeInterval(secondsFrom13Hours)

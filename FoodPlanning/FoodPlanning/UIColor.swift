@@ -13,6 +13,9 @@ extension UIColor {
         self.init(hex: hex, alpha:1)
     }
     
+    /*
+     hex color creation
+     */
     convenience init(hex: String, alpha: CGFloat) {
         var hexWithoutSymbol = hex
         if hexWithoutSymbol.hasPrefix("#") {

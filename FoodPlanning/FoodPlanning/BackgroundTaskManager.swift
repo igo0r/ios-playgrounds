@@ -19,6 +19,9 @@ class BackgroundTaskManager {
         self.backgroundUpdateTask = UIApplication.shared.beginBackgroundTask(withName: withName) {}
     }
     
+    /*
+     start background task with code
+     */
     func doBackgroundTask(withCode: @escaping (_ cH: @escaping () -> Void) -> Void)
     {
         backgroundDQ.async {
@@ -30,6 +33,9 @@ class BackgroundTaskManager {
         }
     }
     
+    /*
+     action to finish current background task and action to take the next one
+     */
     func endBackgroungTask() {
         if backgroundUpdateTask != nil && backgroundUpdateTask != UIBackgroundTaskInvalid {
             UIApplication.shared.endBackgroundTask(backgroundUpdateTask)
