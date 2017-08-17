@@ -12,8 +12,8 @@ struct TimeEvent {
     var startAt = Date()
     var description = ""
     var notificationDescription = ""
+    var isEditable = true
     var weekDay: WeekDay?
-    var recurrentEvent: RecurrentEvent?
     
     /*From 0 to 1 used for progressView*/
     var progressTime: Double = 0
@@ -53,13 +53,13 @@ struct TimeEvent {
     /*
      create recurrent event from current event
      */
-    mutating func createReccurentEvent() -> RecurrentEvent {
+    func createReccurentEvent() -> RecurrentEvent {
         let recurrentEvent = RecurrentEvent()
         recurrentEvent.startAt = startAt as NSDate
-        recurrentEvent.descriptionText = description
+        recurrentEvent.descriptionText = notificationDescription
+        recurrentEvent.titleText = description
         recurrentEvent.weekDay = weekDay ?? nil
-        
-        self.recurrentEvent = recurrentEvent
+    
         return recurrentEvent
     }
 }

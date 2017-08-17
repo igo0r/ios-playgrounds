@@ -13,6 +13,7 @@ class CustomDatePicker: UIDatePicker {
     override func draw(_ rect: CGRect) {
         setValue(white, forKey: "textColor")
         setValue(true, forKey: "highlightsToday")
+        datePickerMode = .time
     }
 
 }

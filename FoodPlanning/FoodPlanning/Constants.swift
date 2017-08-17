@@ -40,8 +40,14 @@ let progressViewMaxValue: Double = 150
 let waterTime = "waterTime"
 let waterTimeRange = Array(5...50)
 
-//Fonts 
-let medium17 = UIFont(name: "AvenirNext-Medium", size: 17)!
+//Fonts
+let fontRegular14 = UIFont(name: "AvenirNext-Regular", size: 14)!
+let fontMedium17 = UIFont(name: "AvenirNext-Medium", size: 17)!
+let fontMedium15 = UIFont(name: "AvenirNext-Medium", size: 15)!
+let fontMedium20 = UIFont(name: "AvenirNext-Medium", size: 20)!
+let fontDemiBold15 = UIFont(name: "AvenirNext-DemiBold", size: 15)!
+let fontDemiBold17 = UIFont(name: "AvenirNext-DemiBold", size: 17)!
+let fontDemiBold18 = UIFont(name: "AvenirNext-DemiBold", size: 18)!
 
 //Colors
 let opacity0 = UIColor(hex: "000000", alpha: 0)

@@ -10,12 +10,14 @@ import UIKit
 
 class WaterViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
+    static let storyboardID = "WaterController"
+    
     @IBOutlet weak var waterSwitcher: UISwitch!
     @IBOutlet weak var waterTimerPicker: UIPickerView!
-    @IBOutlet weak var saveBtn: UIBarButtonItem!
     
     @IBOutlet weak var waterQuantityLbl: UILabel!
-    var waterCalculator = WaterCalculator()
+    
+    var waterForm: DefaultWaterForm = WaterForm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,32 +28,21 @@ class WaterViewController: UITableViewController, UIPickerViewDelegate, UIPicker
         waterTimerPicker.dataSource = self
         waterTimerPicker.delegate = self
         
-        configureNavBar(withTitle: "Water")
+        configureNavBar(withTitle: waterForm.getNavBarTitle())
+        configureNavBarButtons()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        saveBtn.isEnabled = false
-        
-        waterQuantityLbl.text = "\(Int(waterCalculator.waterQuantity)) \(waterCalculator.getWaterLblTxt())"
-        waterSwitcher.isOn = UserDefaultsUtils.getWaterBeforeMeal()
-        waterTimerPicker.selectRow(waterTimeRange.index(of: UserDefaultsUtils.getWaterTime()) ?? 30, inComponent: 0, animated: true)
+        waterQuantityLbl.text = "\(Int(waterForm.waterCalculator.waterQuantity)) \(waterForm.waterCalculator.getWaterLblTxt())"
+        waterSwitcher.isOn = waterForm.isWaterOn
+        waterTimerPicker.selectRow(waterTimeRange.index(of: waterForm.waterTime) ?? 30, inComponent: 0, animated: true)
     }
 
     @IBAction func waterSwitcherPressed(_ sender: UISwitch) {
-        saveBtn.isEnabled = true
-        UserDefaultsUtils.setWaterBeforeMeal(include: sender.isOn)
-    }
-    
-    @IBAction func saveBtnPressed(_ sender: UIBarButtonItem) {
-        let row = waterTimerPicker.selectedRow(inComponent: 0)
-        
-        UserDefaultsUtils.setWaterTime(minutes:  waterTimeRange[row])
-        UserDefaultsUtils.setWaterBeforeMeal(include: waterSwitcher.isOn)
-        
-        BackgroundTaskTracker.requestToUpdateNotifications()
-        saveBtn.isEnabled = false
+        waterForm.isWaterOn = sender.isOn
+        waterForm.updateWaterForm = true
     }
     
     // MARK: - Table view data source
@@ -65,6 +56,7 @@ class WaterViewController: UITableViewController, UIPickerViewDelegate, UIPicker
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 1 {
+            waterForm.updateWaterForm = true
             performSegue(withIdentifier: "WaterCalculation", sender: nil)
         }
     }
@@ -80,15 +72,27 @@ class WaterViewController: UITableViewController, UIPickerViewDelegate, UIPicker
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         
-        let pickerLabel = UILabel()
-        pickerLabel.textColor = whiteColor
+        let pickerLabel = PickerLabel()
         pickerLabel.text = component == 0 ? "\(waterTimeRange[row])" : "min"
-        pickerLabel.font = UIFont(name: "AvenirNext-Medium", size: 20)!
-        pickerLabel.textAlignment = NSTextAlignment.center
+        
         return pickerLabel
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        saveBtn.isEnabled = true
+        waterForm.waterTime = waterTimeRange[row]
+        waterForm.updateWaterForm = true
+    }
+    
+    func setWaterForm(waterForm: DefaultWaterForm) {
+        self.waterForm = waterForm
+    }
+    
+    private func configureNavBarButtons() {
+        switch waterForm.getWaterFormCondition() {
+        case .WaterTemplateView:
+            setupStandAloneBarButtons()
+        case .WaterWeekDayView:
+            setupeWeekDayBarButtons()
+        }
     }
 }

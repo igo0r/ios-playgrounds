@@ -37,8 +37,24 @@ class WeekDay: Object {
      needs for migration water settings from day form to standalone tab bar
      */
     func transformNewWaterFormat() {
-        RealmManager.updateWeekDayWaterSettingsWith(obj: self, value: false)
+        WeekDayRealmManager.updateWeekDayWaterSettingsWith(obj: self, value: false)
         UserDefaultsUtils.setWaterBeforeMeal(include: true)
+    }
+    
+    /*
+     migrate from weekdays to recurrent events + weekdays
+     create recurrent events if needed
+     return timeevents
+     */
+    func prepareEvents(_ withProgress: Bool = false) -> [TimeEvent] {
+        var timeEvents = TimeEventRealmManager.loadTimeEventsFor(weekDay: self)
+        if timeEvents.count == 0 {
+            timeEvents = prepareTimeEvents()
+            TimeEventRealmManager.writeTimeEvents(objs: timeEvents)
+        }
+        
+        timeEvents = prepareProgressTimeFor(events: timeEvents, withProgress: withProgress)
+        return timeEvents
     }
     
     /*
@@ -57,7 +73,7 @@ class WeekDay: Object {
         
         let waterCalculator = WaterCalculator()
         let waterPortion = waterCalculator.divideWaterQuantityFor(times: mealsCount+1)
-        let waterNotificationDescription = "Water time!\nDrink \(waterPortion) \(waterCalculator.getWaterLblTxt()) of water\nSwipe or press to confirm the action"
+        let waterNotificationDescription = "Water time!\nDrink \(waterPortion) \(waterCalculator.getWaterLblTxt()) of water."
         let waterDescription = "Water drink \(waterPortion) \(waterCalculator.getWaterLblTxt())"
         
         if self.withWater {
@@ -75,7 +91,7 @@ class WeekDay: Object {
         for counter in 0..<mealsCount {
             let currentInterval = TimeInterval(counter * stepBetweenMeals)
             let mealTime = wakeUpAt.addingTimeInterval(currentInterval)
-            events.append(TimeEvent(startAt: mealTime, description: "\(counter + 1) meal", notificationDescription: "Take your \(counter + 1) meal. Bon appetit! \n Swipe or press to confirm the action", weekDay: self))
+            events.append(TimeEvent(startAt: mealTime, description: "\(counter + 1) meal", notificationDescription: "Take your \(counter + 1) meal. Bon appetit!", weekDay: self))
             
             if UserDefaultsUtils.getWaterBeforeMeal() && counter > 0 {
                 let waterTime = wakeUpAt.addingTimeInterval(currentInterval - waterTime)
@@ -83,12 +99,9 @@ class WeekDay: Object {
             }
         }
         
-        events.append(TimeEvent(startAt: sleepAt, description: "Time to go to bed!", notificationDescription: "Its time to go to bed!\n Swipe or press to confirm the action", weekDay: self))
+        events.append(TimeEvent(startAt: sleepAt, description: "Time to go to bed!", notificationDescription: "Good night!", weekDay: self))
         events.sort(by: {$0.startAt < $1.startAt})
-        
-        if WeekDays(rawValue: weekDay) == DateTimeUtils.getCurrentWeekDayNumber() && withProgress {
-            events = prepareProgressTimeForToday(events: events)
-        }
+        events = prepareProgressTimeFor(events: events, withProgress: withProgress)
         
         return events
     }
@@ -99,7 +112,10 @@ class WeekDay: Object {
      0 for comming
      and 0..1 for current event
      */
-    func prepareProgressTimeForToday(events: [TimeEvent]) -> [TimeEvent] {
+    func prepareProgressTimeFor(events: [TimeEvent], withProgress: Bool) -> [TimeEvent] {
+        if WeekDays(rawValue: weekDay) != DateTimeUtils.getCurrentWeekDayNumber() || !withProgress {
+            return events
+        }
         var events = events
         for (index, _) in events.enumerated() {
             let previousEventTime = index == 0 ? DateTimeUtils.startOfToday() : events[index - 1].startAt.transformToCurrentDate()
@@ -107,12 +123,10 @@ class WeekDay: Object {
             let intervalFromNowToCurrentEvent = DateTimeUtils.now.timeIntervalSince(currentEventTime)
             let intervalFromNowToPreviousEvent = DateTimeUtils.now.timeIntervalSince(previousEventTime)
             if intervalFromNowToPreviousEvent > 0 && intervalFromNowToCurrentEvent <= 0 {
-                let timeInterval = currentEventTime.timeIntervalSince(previousEventTime)
-                let progressIndex = progressViewMaxValue / timeInterval
-                events[index].progressTime = progressIndex * intervalFromNowToPreviousEvent
+                events[index].progressTime = intervalFromNowToCurrentEvent
             }
             else if intervalFromNowToCurrentEvent < 0 {
-                events[index].progressTime = 2
+                events[index].progressTime = 0
             }
             else if intervalFromNowToCurrentEvent > 0 {
                 events[index].progressTime = progressViewMaxValue

@@ -25,6 +25,17 @@ extension UIViewController {
     }
     
     func configureView() {
+        view.backgroundColor = UIColor.clear
+        let backgroundImage = getBackgroundImage()
+        view.insertSubview(backgroundImage, at: 0)
+    }
+    
+    func configureView(withTableView tableView: UITableView) {
+        view.backgroundColor = UIColor.clear
+        tableView.backgroundView = getBackgroundImage()
+    }
+
+    func getBackgroundImage() -> UIView {
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "lemons")
         backgroundImage.contentMode =  UIViewContentMode.scaleAspectFill
@@ -32,18 +43,25 @@ extension UIViewController {
         let backgroundView = UIView(frame: UIScreen.main.bounds)
         backgroundView.backgroundColor = black
         backgroundImage.addSubview(backgroundView)
-        view.insertSubview(backgroundImage, at: 0)
+        
+        return backgroundImage
+    }
+    
+    func getPreviousControllerFromNav() -> UIViewController? {
+        if let childVC = navigationController?.childViewControllers {
+            if childVC.count > 1 {
+                return childVC[childVC.count - 2]
+            }
+        }
+        
+        return nil
     }
     
     func configureNavBar(withTitle: String) {
-        if let navItem = self.navigationController?.navigationBar.topItem {
-            let navBar = navigationController?.navigationBar
-            navBar?.isTranslucent = false
-            
-            navItem.title = withTitle
-            //navItem.setLeftBarButton(UIBarButtonItem(image: UIImage(named: "menu.png"), style: UIBarButtonItemStyle.plain, target: nil, action: nil), animated: false)
-            //navItem.leftBarButtonItem?.tintColor = UIColor(hex: "E4E0E0", alpha: 1)
-        }
+        
+        let navBar = navigationController?.navigationBar
+        navBar?.isTranslucent = false
+        self.title = withTitle
     }
 
     /*
@@ -117,6 +135,22 @@ extension UIViewController {
             
             cH(alertToShow)
         }
+    }
+    
+    /**
+     for the keys when user tap somewhere not in text edit - hide keyboard
+     **/
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    /*
+     action for hiding keyboard
+     */
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     /*

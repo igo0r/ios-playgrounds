@@ -46,6 +46,24 @@ extension WeekDayController {
     }
     
     /*
+     based on active weekDays buttons like mon, tue generate WeekDay objects and return them
+     */
+    func prepareWeekDayArrayWith(weekDays: [WeekDays]) -> [WeekDay] {
+        var weekDaysToSave = [WeekDay]()
+        for day in weekDays {
+            let weekDay = WeekDay()
+            weekDay.mealsCount = mealsCount!
+            weekDay.sleepAt = self.sleepAt! as NSDate
+            weekDay.wakeUpAt = self.wakeUpAt! as NSDate
+            weekDay.weekDay = day.hashValue
+            
+            weekDaysToSave.append(weekDay)
+        }
+        
+        return  weekDaysToSave
+    }
+    
+    /*
      check that at least 1 weekday is choosen
      */
     func validateActiveWeekDays() -> Bool {

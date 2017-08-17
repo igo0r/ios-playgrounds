@@ -17,7 +17,7 @@ class AlertUtils {
     static func removeWeekDayWithAlert(withTitle title: String, message: String, forWeekDay: WeekDay, inView: UIViewController, cH: @escaping (Bool) -> ()) {
         let alertToShow = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         alertToShow.addAction(UIAlertAction(title: "Delete", style: UIAlertActionStyle.destructive, handler: {(alert: UIAlertAction!) in
-            RealmManager.removeWeekDay(forWeekDay, withNotifications: true)
+            WeekDayRealmManager.removeWeekDay(forWeekDay, withNotifications: true)
             cH(true)
         }))
         alertToShow.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: {(alert: UIAlertAction!) in
@@ -37,4 +37,5 @@ class AlertUtils {
         
         return alert
     }
+
 }

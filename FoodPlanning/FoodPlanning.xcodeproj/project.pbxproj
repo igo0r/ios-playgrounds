@@ -10,36 +10,55 @@
 		275371C2F6B21D8C922D91C5 /* Pods_FoodPlanning.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8442E92A5031A37AD66F3C8 /* Pods_FoodPlanning.framework */; };
 		B80B1DE1D032D455A234E2D4 /* Pods_FoodPlanningTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E8D04ADB93AFB4E5EF8BA84 /* Pods_FoodPlanningTests.framework */; };
 		C0045E861EBF657700C01BFA /* WeekDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0045E851EBF657700C01BFA /* WeekDay.swift */; };
-		C0045E8B1EBF833200C01BFA /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0045E8A1EBF833200C01BFA /* RealmManager.swift */; };
+		C0045E8B1EBF833200C01BFA /* TimeEventRealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0045E8A1EBF833200C01BFA /* TimeEventRealmManager.swift */; };
 		C0045E8D1EBF844400C01BFA /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0045E8C1EBF844400C01BFA /* UIViewControllerExt.swift */; };
 		C008DE1B1F1969AA00B0B30D /* RecurrentEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C008DE1A1F1969AA00B0B30D /* RecurrentEvent.swift */; };
 		C00E01851EBBA1850098B9D5 /* TimeEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00E01841EBBA1850098B9D5 /* TimeEvent.swift */; };
 		C00E01871EBBB6C70098B9D5 /* WeekDayBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00E01861EBBB6C70098B9D5 /* WeekDayBtn.swift */; };
 		C00E01891EBBC9FB0098B9D5 /* WeekDays.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00E01881EBBC9FB0098B9D5 /* WeekDays.swift */; };
+		C0141D111F27B0AA0045161F /* EventCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0141D101F27B0AA0045161F /* EventCellProtocol.swift */; };
+		C0141D131F27EB330045161F /* FormLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0141D121F27EB330045161F /* FormLabel.swift */; };
+		C017F8C91F435B4C00978B91 /* TimeToEventLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C017F8C81F435B4C00978B91 /* TimeToEventLabel.swift */; };
 		C03B68EF1ED0A07D00830DCA /* AKPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03B68EE1ED0A07D00830DCA /* AKPickerView.swift */; };
 		C03B68F11ED0A17300830DCA /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03B68F01ED0A17300830DCA /* UIImage+Resize.swift */; };
 		C043379D1EC71E4B00FA0616 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C043379C1EC71E4B00FA0616 /* Assets.xcassets */; };
 		C043379F1EC742F500FA0616 /* WeekDayFormBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = C043379E1EC742F500FA0616 /* WeekDayFormBtn.swift */; };
+		C044800F1F44D9ED00BA6F92 /* TipLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C044800E1F44D9ED00BA6F92 /* TipLabel.swift */; };
 		C0478A351EB1365500E13300 /* UIView+Inspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0478A341EB1365500E13300 /* UIView+Inspectable.swift */; };
 		C0478A371EB1382E00E13300 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0478A361EB1382E00E13300 /* UIButtonExtension.swift */; };
 		C055E61C1F0D4AC100DFCE51 /* WaterCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C055E61B1F0D4AC100DFCE51 /* WaterCalculatorViewController.swift */; };
+		C0592EC81F3277070014B221 /* WaterForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0592EC71F3277060014B221 /* WaterForm.swift */; };
+		C0592ECB1F32773F0014B221 /* WeekDayWaterForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0592ECA1F32773F0014B221 /* WeekDayWaterForm.swift */; };
 		C063966E1EBCCAB8008F9F2B /* DateTimeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C063966D1EBCCAB8008F9F2B /* DateTimeUtils.swift */; };
+		C06A92BF1F291BFC0048E938 /* TimeEventFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06A92BE1F291BFC0048E938 /* TimeEventFormController.swift */; };
 		C06BDB061EC4AC2B0053B60C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06BDB051EC4AC2B0053B60C /* Constants.swift */; };
 		C06BDB081EC4AC7C0053B60C /* UserDefaultUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06BDB071EC4AC7C0053B60C /* UserDefaultUtils.swift */; };
 		C0810C481ECA40670041721A /* CustomDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0810C471ECA40670041721A /* CustomDatePicker.swift */; };
+		C08156B51F23FA9E003658C0 /* TimeEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08156B41F23FA9E003658C0 /* TimeEventViewController.swift */; };
+		C08351641F38B6C100448560 /* WeekDayRealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08351631F38B6C100448560 /* WeekDayRealmManager.swift */; };
 		C08DDE8C1ED882F80065AA04 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08DDE8B1ED882F80065AA04 /* SpinnerView.swift */; };
 		C09690111EF03F9B005391E1 /* BackgroundTaskTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09690101EF03F9A005391E1 /* BackgroundTaskTracker.swift */; };
 		C09690131EF07F0C005391E1 /* BackgroundTaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09690121EF07F0C005391E1 /* BackgroundTaskManager.swift */; };
 		C09690151EF086CC005391E1 /* LocalNotificationClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09690141EF086CC005391E1 /* LocalNotificationClass.swift */; };
+		C096ECA21F3539970059736C /* TimeEventViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C096ECA11F3539970059736C /* TimeEventViewExt.swift */; };
 		C0A696A21EAE9160001EBFB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A696A11EAE9160001EBFB4 /* AppDelegate.swift */; };
 		C0A696A71EAE9160001EBFB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0A696A51EAE9160001EBFB4 /* Main.storyboard */; };
 		C0A696AC1EAE9160001EBFB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0A696AA1EAE9160001EBFB4 /* LaunchScreen.storyboard */; };
 		C0A696B71EAE9161001EBFB4 /* FoodPlanningTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A696B61EAE9161001EBFB4 /* FoodPlanningTests.swift */; };
 		C0AEEEF11EDB3E4D00FBE6FB /* UITabBarControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AEEEF01EDB3E4D00FBE6FB /* UITabBarControllerExt.swift */; };
 		C0AEEEF31EDB3F3200FBE6FB /* MealTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AEEEF21EDB3F3200FBE6FB /* MealTabBarController.swift */; };
+		C0BA7C8F1F3BA0E500B69A20 /* RealmMigrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA7C8E1F3BA0E500B69A20 /* RealmMigrationManager.swift */; };
+		C0BE77BE1F2A72260059C1C3 /* NavigationBarActionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BE77BD1F2A72260059C1C3 /* NavigationBarActionProtocol.swift */; };
 		C0C0328D1F054A4A0061FC79 /* WaterCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C0328C1F054A4A0061FC79 /* WaterCalculator.swift */; };
 		C0CA975C1EE570AE00F1572B /* AlertUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CA975B1EE570AE00F1572B /* AlertUtils.swift */; };
 		C0D140881EE368BC00940DBA /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D140871EE368BC00940DBA /* SettingViewController.swift */; };
+		C0D256291F2BEA0100841238 /* EventViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D256281F2BEA0100841238 /* EventViewProtocol.swift */; };
+		C0D2562B1F2CBAC500841238 /* FormValidationLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D2562A1F2CBAC500841238 /* FormValidationLabel.swift */; };
+		C0D2562D1F2D1EC500841238 /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D2562C1F2D1EC500841238 /* FormTextField.swift */; };
+		C0D2562F1F2E647100841238 /* WaterViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D2562E1F2E647100841238 /* WaterViewExt.swift */; };
+		C0D2563A1F2E6D9500841238 /* DefaultWaterForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D256391F2E6D9500841238 /* DefaultWaterForm.swift */; };
+		C0D2563D1F2E79D800841238 /* PickerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D2563C1F2E79D800841238 /* PickerLabel.swift */; };
+		C0D256401F3106EA00841238 /* WaterVCExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D2563F1F3106EA00841238 /* WaterVCExt.swift */; };
 		C0DFDBF41F02EF9300702D12 /* WaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DFDBF31F02EF9300702D12 /* WaterViewController.swift */; };
 		C0DFDBF61F02F17B00702D12 /* UITableViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DFDBF51F02F17B00702D12 /* UITableViewControllerExt.swift */; };
 		C0E12D6B1EAFC98C005E5C0F /* WeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E12D6A1EAFC98C005E5C0F /* WeekViewController.swift */; };
@@ -49,10 +68,11 @@
 		C0E9498C1ED49B9400FA5B09 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9498B1ED49B9400FA5B09 /* UIView.swift */; };
 		C0E949AC1ED4A9C800FA5B09 /* WeekDayControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E949AB1ED4A9C800FA5B09 /* WeekDayControllerExt.swift */; };
 		C0E949AE1ED6168000FA5B09 /* NotificationCenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E949AD1ED6168000FA5B09 /* NotificationCenterDelegate.swift */; };
-		C0E9528D1EBB9C4200182620 /* EventTimeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9528C1EBB9C4200182620 /* EventTimeTableCell.swift */; };
 		C0EB8C1C1EE4B383006BFA3C /* RateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EB8C1B1EE4B383006BFA3C /* RateApp.swift */; };
 		C0F147021EB52C0200FB2A19 /* WeekDayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F147011EB52C0200FB2A19 /* WeekDayController.swift */; };
 		C0FB36021EF9AF52000781EE /* SettingViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FB36011EF9AF52000781EE /* SettingViewControllerExt.swift */; };
+		C0FFF70B1F2673FA0094EE15 /* EventTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FFF7091F2673FA0094EE15 /* EventTableCell.swift */; };
+		C0FFF70C1F2673FA0094EE15 /* EventTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0FFF70A1F2673FA0094EE15 /* EventTableCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,27 +92,37 @@
 		A8442E92A5031A37AD66F3C8 /* Pods_FoodPlanning.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodPlanning.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3FF581C80A23090FDE1C21D /* Pods-FoodPlanning.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodPlanning.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodPlanning/Pods-FoodPlanning.release.xcconfig"; sourceTree = "<group>"; };
 		C0045E851EBF657700C01BFA /* WeekDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekDay.swift; sourceTree = "<group>"; };
-		C0045E8A1EBF833200C01BFA /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		C0045E8A1EBF833200C01BFA /* TimeEventRealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeEventRealmManager.swift; sourceTree = "<group>"; };
 		C0045E8C1EBF844400C01BFA /* UIViewControllerExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 		C008DE1A1F1969AA00B0B30D /* RecurrentEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecurrentEvent.swift; sourceTree = "<group>"; };
 		C00E01841EBBA1850098B9D5 /* TimeEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeEvent.swift; sourceTree = "<group>"; };
 		C00E01861EBBB6C70098B9D5 /* WeekDayBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekDayBtn.swift; sourceTree = "<group>"; };
 		C00E01881EBBC9FB0098B9D5 /* WeekDays.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekDays.swift; sourceTree = "<group>"; };
+		C0141D101F27B0AA0045161F /* EventCellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCellProtocol.swift; sourceTree = "<group>"; };
+		C0141D121F27EB330045161F /* FormLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormLabel.swift; sourceTree = "<group>"; };
+		C017F8C81F435B4C00978B91 /* TimeToEventLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeToEventLabel.swift; sourceTree = "<group>"; };
 		C03B68EE1ED0A07D00830DCA /* AKPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPickerView.swift; sourceTree = "<group>"; };
 		C03B68F01ED0A17300830DCA /* UIImage+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
 		C043379C1EC71E4B00FA0616 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C043379E1EC742F500FA0616 /* WeekDayFormBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekDayFormBtn.swift; sourceTree = "<group>"; };
+		C044800E1F44D9ED00BA6F92 /* TipLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipLabel.swift; sourceTree = "<group>"; };
 		C0478A341EB1365500E13300 /* UIView+Inspectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Inspectable.swift"; sourceTree = "<group>"; };
 		C0478A361EB1382E00E13300 /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		C055E61B1F0D4AC100DFCE51 /* WaterCalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterCalculatorViewController.swift; sourceTree = "<group>"; };
+		C0592EC71F3277060014B221 /* WaterForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterForm.swift; sourceTree = "<group>"; };
+		C0592ECA1F32773F0014B221 /* WeekDayWaterForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekDayWaterForm.swift; sourceTree = "<group>"; };
 		C063966D1EBCCAB8008F9F2B /* DateTimeUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTimeUtils.swift; sourceTree = "<group>"; };
+		C06A92BE1F291BFC0048E938 /* TimeEventFormController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeEventFormController.swift; sourceTree = "<group>"; };
 		C06BDB051EC4AC2B0053B60C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C06BDB071EC4AC7C0053B60C /* UserDefaultUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultUtils.swift; sourceTree = "<group>"; };
 		C0810C471ECA40670041721A /* CustomDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDatePicker.swift; sourceTree = "<group>"; };
+		C08156B41F23FA9E003658C0 /* TimeEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeEventViewController.swift; sourceTree = "<group>"; };
+		C08351631F38B6C100448560 /* WeekDayRealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekDayRealmManager.swift; sourceTree = "<group>"; };
 		C08DDE8B1ED882F80065AA04 /* SpinnerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		C09690101EF03F9A005391E1 /* BackgroundTaskTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundTaskTracker.swift; sourceTree = "<group>"; };
 		C09690121EF07F0C005391E1 /* BackgroundTaskManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundTaskManager.swift; sourceTree = "<group>"; };
 		C09690141EF086CC005391E1 /* LocalNotificationClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationClass.swift; sourceTree = "<group>"; };
+		C096ECA11F3539970059736C /* TimeEventViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeEventViewExt.swift; sourceTree = "<group>"; };
 		C0A6969E1EAE9160001EBFB4 /* FoodPlanning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodPlanning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0A696A11EAE9160001EBFB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0A696A61EAE9160001EBFB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -103,9 +133,18 @@
 		C0A696B81EAE9161001EBFB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0AEEEF01EDB3E4D00FBE6FB /* UITabBarControllerExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITabBarControllerExt.swift; sourceTree = "<group>"; };
 		C0AEEEF21EDB3F3200FBE6FB /* MealTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTabBarController.swift; sourceTree = "<group>"; };
+		C0BA7C8E1F3BA0E500B69A20 /* RealmMigrationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmMigrationManager.swift; sourceTree = "<group>"; };
+		C0BE77BD1F2A72260059C1C3 /* NavigationBarActionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarActionProtocol.swift; sourceTree = "<group>"; };
 		C0C0328C1F054A4A0061FC79 /* WaterCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterCalculator.swift; sourceTree = "<group>"; };
 		C0CA975B1EE570AE00F1572B /* AlertUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertUtils.swift; sourceTree = "<group>"; };
 		C0D140871EE368BC00940DBA /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		C0D256281F2BEA0100841238 /* EventViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewProtocol.swift; sourceTree = "<group>"; };
+		C0D2562A1F2CBAC500841238 /* FormValidationLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormValidationLabel.swift; sourceTree = "<group>"; };
+		C0D2562C1F2D1EC500841238 /* FormTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTextField.swift; sourceTree = "<group>"; };
+		C0D2562E1F2E647100841238 /* WaterViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterViewExt.swift; sourceTree = "<group>"; };
+		C0D256391F2E6D9500841238 /* DefaultWaterForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultWaterForm.swift; sourceTree = "<group>"; };
+		C0D2563C1F2E79D800841238 /* PickerLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerLabel.swift; sourceTree = "<group>"; };
+		C0D2563F1F3106EA00841238 /* WaterVCExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterVCExt.swift; sourceTree = "<group>"; };
 		C0DFDBF31F02EF9300702D12 /* WaterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterViewController.swift; sourceTree = "<group>"; };
 		C0DFDBF51F02F17B00702D12 /* UITableViewControllerExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewControllerExt.swift; sourceTree = "<group>"; };
 		C0E12D6A1EAFC98C005E5C0F /* WeekViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekViewController.swift; sourceTree = "<group>"; };
@@ -115,10 +154,11 @@
 		C0E9498B1ED49B9400FA5B09 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		C0E949AB1ED4A9C800FA5B09 /* WeekDayControllerExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekDayControllerExt.swift; sourceTree = "<group>"; };
 		C0E949AD1ED6168000FA5B09 /* NotificationCenterDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCenterDelegate.swift; sourceTree = "<group>"; };
-		C0E9528C1EBB9C4200182620 /* EventTimeTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTimeTableCell.swift; sourceTree = "<group>"; };
 		C0EB8C1B1EE4B383006BFA3C /* RateApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateApp.swift; sourceTree = "<group>"; };
 		C0F147011EB52C0200FB2A19 /* WeekDayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekDayController.swift; sourceTree = "<group>"; };
 		C0FB36011EF9AF52000781EE /* SettingViewControllerExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewControllerExt.swift; sourceTree = "<group>"; };
+		C0FFF7091F2673FA0094EE15 /* EventTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableCell.swift; sourceTree = "<group>"; };
+		C0FFF70A1F2673FA0094EE15 /* EventTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventTableCell.xib; sourceTree = "<group>"; };
 		F71CA9672736C6B6AA4489B2 /* Pods-FoodPlanningTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodPlanningTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodPlanningTests/Pods-FoodPlanningTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,15 +194,24 @@
 		C0045E891EBF82F800C01BFA /* ModelManager */ = {
 			isa = PBXGroup;
 			children = (
-				C0045E8A1EBF833200C01BFA /* RealmManager.swift */,
-				C09690101EF03F9A005391E1 /* BackgroundTaskTracker.swift */,
-				C09690121EF07F0C005391E1 /* BackgroundTaskManager.swift */,
-				C09690141EF086CC005391E1 /* LocalNotificationClass.swift */,
+				C08351671F38B7F900448560 /* LocalNotification */,
+				C08351661F38B7EA00448560 /* Background */,
+				C08351651F38B7DA00448560 /* Realm */,
 			);
 			name = ModelManager;
 			sourceTree = "<group>";
 		};
-		C0478A331EB1363200E13300 /* Utils */ = {
+		C0141D0F1F27B0930045161F /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				C0141D101F27B0AA0045161F /* EventCellProtocol.swift */,
+				C0BE77BD1F2A72260059C1C3 /* NavigationBarActionProtocol.swift */,
+				C0D256281F2BEA0100841238 /* EventViewProtocol.swift */,
+			);
+			name = Protocol;
+			sourceTree = "<group>";
+		};
+		C0478A331EB1363200E13300 /* Util */ = {
 			isa = PBXGroup;
 			children = (
 				C0478A341EB1365500E13300 /* UIView+Inspectable.swift */,
@@ -175,25 +224,115 @@
 				C0EB8C1B1EE4B383006BFA3C /* RateApp.swift */,
 				C0CA975B1EE570AE00F1572B /* AlertUtils.swift */,
 			);
-			name = Utils;
+			name = Util;
 			sourceTree = "<group>";
 		};
-		C063966F1EBE7261008F9F2B /* Extensions */ = {
+		C0592EC91F32772A0014B221 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C0592ECA1F32773F0014B221 /* WeekDayWaterForm.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		C063966F1EBE7261008F9F2B /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				C0478A361EB1382E00E13300 /* UIButtonExtension.swift */,
-				C0045E8C1EBF844400C01BFA /* UIViewControllerExt.swift */,
 				C03B68EE1ED0A07D00830DCA /* AKPickerView.swift */,
+				C0045E8C1EBF844400C01BFA /* UIViewControllerExt.swift */,
 				C03B68F01ED0A17300830DCA /* UIImage+Resize.swift */,
 				C0E949891ED47EA300FA5B09 /* Date.swift */,
 				C0E12D6C1EAFDC43005E5C0F /* UIColor.swift */,
-				C0E949AB1ED4A9C800FA5B09 /* WeekDayControllerExt.swift */,
 				C0E949AD1ED6168000FA5B09 /* NotificationCenterDelegate.swift */,
 				C0AEEEF01EDB3E4D00FBE6FB /* UITabBarControllerExt.swift */,
 				C0FB36011EF9AF52000781EE /* SettingViewControllerExt.swift */,
 				C0DFDBF51F02F17B00702D12 /* UITableViewControllerExt.swift */,
 			);
-			name = Extensions;
+			name = Extension;
+			sourceTree = "<group>";
+		};
+		C06A92B81F2919740048E938 /* WeekDayForm */ = {
+			isa = PBXGroup;
+			children = (
+				C0592EC91F32772A0014B221 /* Model */,
+				C06A92BB1F2919F00048E938 /* Extension */,
+				C06A92BA1F2919990048E938 /* View */,
+				C06A92B91F2919920048E938 /* Controller */,
+			);
+			name = WeekDayForm;
+			sourceTree = "<group>";
+		};
+		C06A92B91F2919920048E938 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C0F147011EB52C0200FB2A19 /* WeekDayController.swift */,
+				C08156B41F23FA9E003658C0 /* TimeEventViewController.swift */,
+				C06A92BE1F291BFC0048E938 /* TimeEventFormController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		C06A92BA1F2919990048E938 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C00E01861EBBB6C70098B9D5 /* WeekDayBtn.swift */,
+				C043379E1EC742F500FA0616 /* WeekDayFormBtn.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		C06A92BB1F2919F00048E938 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C0E949AB1ED4A9C800FA5B09 /* WeekDayControllerExt.swift */,
+				C0D2562E1F2E647100841238 /* WaterViewExt.swift */,
+				C096ECA11F3539970059736C /* TimeEventViewExt.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
+		C06A92BC1F291A2D0048E938 /* WeekDayView */ = {
+			isa = PBXGroup;
+			children = (
+				C06A92BD1F291A480048E938 /* Controller */,
+			);
+			name = WeekDayView;
+			sourceTree = "<group>";
+		};
+		C06A92BD1F291A480048E938 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C0E12D6A1EAFC98C005E5C0F /* WeekViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		C08351651F38B7DA00448560 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				C0045E8A1EBF833200C01BFA /* TimeEventRealmManager.swift */,
+				C0BA7C8E1F3BA0E500B69A20 /* RealmMigrationManager.swift */,
+				C08351631F38B6C100448560 /* WeekDayRealmManager.swift */,
+			);
+			name = Realm;
+			sourceTree = "<group>";
+		};
+		C08351661F38B7EA00448560 /* Background */ = {
+			isa = PBXGroup;
+			children = (
+				C09690101EF03F9A005391E1 /* BackgroundTaskTracker.swift */,
+				C09690121EF07F0C005391E1 /* BackgroundTaskManager.swift */,
+			);
+			name = Background;
+			sourceTree = "<group>";
+		};
+		C08351671F38B7F900448560 /* LocalNotification */ = {
+			isa = PBXGroup;
+			children = (
+				C09690141EF086CC005391E1 /* LocalNotificationClass.swift */,
+			);
+			name = LocalNotification;
 			sourceTree = "<group>";
 		};
 		C0A696951EAE9160001EBFB4 = {
@@ -219,15 +358,12 @@
 		C0A696A01EAE9160001EBFB4 /* FoodPlanning */ = {
 			isa = PBXGroup;
 			children = (
-				C0045E891EBF82F800C01BFA /* ModelManager */,
-				C063966F1EBE7261008F9F2B /* Extensions */,
-				C0478A331EB1363200E13300 /* Utils */,
-				C0E12D691EAFC922005E5C0F /* Controller */,
-				C0E12D681EAFC91D005E5C0F /* View */,
-				C0E12D671EAFC917005E5C0F /* Model */,
+				C0D256311F2E667A00841238 /* MealApp */,
+				C0D256301F2E665500841238 /* Application */,
 				C0A696A11EAE9160001EBFB4 /* AppDelegate.swift */,
 				C043379C1EC71E4B00FA0616 /* Assets.xcassets */,
 				C0A696A51EAE9160001EBFB4 /* Main.storyboard */,
+				C0FFF70A1F2673FA0094EE15 /* EventTableCell.xib */,
 				C0A696AA1EAE9160001EBFB4 /* LaunchScreen.storyboard */,
 				C0A696AD1EAE9160001EBFB4 /* Info.plist */,
 			);
@@ -243,6 +379,74 @@
 			path = FoodPlanningTests;
 			sourceTree = "<group>";
 		};
+		C0D256301F2E665500841238 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				C0141D0F1F27B0930045161F /* Protocol */,
+				C0045E891EBF82F800C01BFA /* ModelManager */,
+				C063966F1EBE7261008F9F2B /* Extension */,
+				C0478A331EB1363200E13300 /* Util */,
+				C0E12D691EAFC922005E5C0F /* Controller */,
+				C0E12D681EAFC91D005E5C0F /* View */,
+				C0E12D671EAFC917005E5C0F /* Model */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		C0D256311F2E667A00841238 /* MealApp */ = {
+			isa = PBXGroup;
+			children = (
+				C0D256321F2E66CB00841238 /* WaterForm */,
+				C06A92BC1F291A2D0048E938 /* WeekDayView */,
+				C06A92B81F2919740048E938 /* WeekDayForm */,
+			);
+			name = MealApp;
+			sourceTree = "<group>";
+		};
+		C0D256321F2E66CB00841238 /* WaterForm */ = {
+			isa = PBXGroup;
+			children = (
+				C0D2563E1F3106C900841238 /* Extension */,
+				C0D2563B1F2E79B400841238 /* View */,
+				C0D256361F2E6C1A00841238 /* Model */,
+				C0D256331F2E66E900841238 /* Controller */,
+			);
+			name = WaterForm;
+			sourceTree = "<group>";
+		};
+		C0D256331F2E66E900841238 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C0DFDBF31F02EF9300702D12 /* WaterViewController.swift */,
+				C055E61B1F0D4AC100DFCE51 /* WaterCalculatorViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		C0D256361F2E6C1A00841238 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C0592EC71F3277060014B221 /* WaterForm.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		C0D2563B1F2E79B400841238 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C0D2563C1F2E79D800841238 /* PickerLabel.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		C0D2563E1F3106C900841238 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C0D2563F1F3106EA00841238 /* WaterVCExt.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
 		C0E12D671EAFC917005E5C0F /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +455,7 @@
 				C0045E851EBF657700C01BFA /* WeekDay.swift */,
 				C0C0328C1F054A4A0061FC79 /* WaterCalculator.swift */,
 				C008DE1A1F1969AA00B0B30D /* RecurrentEvent.swift */,
+				C0D256391F2E6D9500841238 /* DefaultWaterForm.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -258,10 +463,13 @@
 		C0E12D681EAFC91D005E5C0F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C0E9528C1EBB9C4200182620 /* EventTimeTableCell.swift */,
-				C00E01861EBBB6C70098B9D5 /* WeekDayBtn.swift */,
-				C043379E1EC742F500FA0616 /* WeekDayFormBtn.swift */,
+				C0FFF7091F2673FA0094EE15 /* EventTableCell.swift */,
 				C0810C471ECA40670041721A /* CustomDatePicker.swift */,
+				C0141D121F27EB330045161F /* FormLabel.swift */,
+				C0D2562A1F2CBAC500841238 /* FormValidationLabel.swift */,
+				C0D2562C1F2D1EC500841238 /* FormTextField.swift */,
+				C017F8C81F435B4C00978B91 /* TimeToEventLabel.swift */,
+				C044800E1F44D9ED00BA6F92 /* TipLabel.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -269,12 +477,8 @@
 		C0E12D691EAFC922005E5C0F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C0E12D6A1EAFC98C005E5C0F /* WeekViewController.swift */,
-				C0F147011EB52C0200FB2A19 /* WeekDayController.swift */,
 				C0AEEEF21EDB3F3200FBE6FB /* MealTabBarController.swift */,
 				C0D140871EE368BC00940DBA /* SettingViewController.swift */,
-				C0DFDBF31F02EF9300702D12 /* WaterViewController.swift */,
-				C055E61B1F0D4AC100DFCE51 /* WaterCalculatorViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -382,6 +586,7 @@
 			files = (
 				C0A696AC1EAE9160001EBFB4 /* LaunchScreen.storyboard in Resources */,
 				C043379D1EC71E4B00FA0616 /* Assets.xcassets in Resources */,
+				C0FFF70C1F2673FA0094EE15 /* EventTableCell.xib in Resources */,
 				C0A696A71EAE9160001EBFB4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -495,42 +700,61 @@
 			files = (
 				C0E9498A1ED47EA300FA5B09 /* Date.swift in Sources */,
 				C0CA975C1EE570AE00F1572B /* AlertUtils.swift in Sources */,
+				C0D256401F3106EA00841238 /* WaterVCExt.swift in Sources */,
 				C0DFDBF41F02EF9300702D12 /* WaterViewController.swift in Sources */,
 				C0C0328D1F054A4A0061FC79 /* WaterCalculator.swift in Sources */,
 				C0DFDBF61F02F17B00702D12 /* UITableViewControllerExt.swift in Sources */,
-				C0045E8B1EBF833200C01BFA /* RealmManager.swift in Sources */,
+				C0045E8B1EBF833200C01BFA /* TimeEventRealmManager.swift in Sources */,
 				C0478A371EB1382E00E13300 /* UIButtonExtension.swift in Sources */,
 				C0E12D6B1EAFC98C005E5C0F /* WeekViewController.swift in Sources */,
 				C0478A351EB1365500E13300 /* UIView+Inspectable.swift in Sources */,
+				C0D2562F1F2E647100841238 /* WaterViewExt.swift in Sources */,
 				C0AEEEF11EDB3E4D00FBE6FB /* UITabBarControllerExt.swift in Sources */,
 				C0D140881EE368BC00940DBA /* SettingViewController.swift in Sources */,
+				C017F8C91F435B4C00978B91 /* TimeToEventLabel.swift in Sources */,
 				C008DE1B1F1969AA00B0B30D /* RecurrentEvent.swift in Sources */,
 				C0045E8D1EBF844400C01BFA /* UIViewControllerExt.swift in Sources */,
 				C06BDB061EC4AC2B0053B60C /* Constants.swift in Sources */,
+				C044800F1F44D9ED00BA6F92 /* TipLabel.swift in Sources */,
 				C043379F1EC742F500FA0616 /* WeekDayFormBtn.swift in Sources */,
+				C08156B51F23FA9E003658C0 /* TimeEventViewController.swift in Sources */,
 				C06BDB081EC4AC7C0053B60C /* UserDefaultUtils.swift in Sources */,
+				C0592EC81F3277070014B221 /* WaterForm.swift in Sources */,
 				C0810C481ECA40670041721A /* CustomDatePicker.swift in Sources */,
+				C0141D111F27B0AA0045161F /* EventCellProtocol.swift in Sources */,
 				C08DDE8C1ED882F80065AA04 /* SpinnerView.swift in Sources */,
+				C0FFF70B1F2673FA0094EE15 /* EventTableCell.swift in Sources */,
+				C0D2562B1F2CBAC500841238 /* FormValidationLabel.swift in Sources */,
+				C0BA7C8F1F3BA0E500B69A20 /* RealmMigrationManager.swift in Sources */,
 				C00E01871EBBB6C70098B9D5 /* WeekDayBtn.swift in Sources */,
 				C03B68EF1ED0A07D00830DCA /* AKPickerView.swift in Sources */,
+				C0D256291F2BEA0100841238 /* EventViewProtocol.swift in Sources */,
+				C0D2563D1F2E79D800841238 /* PickerLabel.swift in Sources */,
+				C096ECA21F3539970059736C /* TimeEventViewExt.swift in Sources */,
 				C09690151EF086CC005391E1 /* LocalNotificationClass.swift in Sources */,
+				C0BE77BE1F2A72260059C1C3 /* NavigationBarActionProtocol.swift in Sources */,
 				C09690111EF03F9B005391E1 /* BackgroundTaskTracker.swift in Sources */,
+				C0592ECB1F32773F0014B221 /* WeekDayWaterForm.swift in Sources */,
 				C00E01851EBBA1850098B9D5 /* TimeEvent.swift in Sources */,
+				C0141D131F27EB330045161F /* FormLabel.swift in Sources */,
 				C0FB36021EF9AF52000781EE /* SettingViewControllerExt.swift in Sources */,
 				C0E949AE1ED6168000FA5B09 /* NotificationCenterDelegate.swift in Sources */,
 				C0AEEEF31EDB3F3200FBE6FB /* MealTabBarController.swift in Sources */,
 				C09690131EF07F0C005391E1 /* BackgroundTaskManager.swift in Sources */,
 				C00E01891EBBC9FB0098B9D5 /* WeekDays.swift in Sources */,
 				C0E949881ED369E500FA5B09 /* LocalNotificationUtils.swift in Sources */,
+				C08351641F38B6C100448560 /* WeekDayRealmManager.swift in Sources */,
 				C0EB8C1C1EE4B383006BFA3C /* RateApp.swift in Sources */,
 				C0E949AC1ED4A9C800FA5B09 /* WeekDayControllerExt.swift in Sources */,
 				C0E9498C1ED49B9400FA5B09 /* UIView.swift in Sources */,
 				C03B68F11ED0A17300830DCA /* UIImage+Resize.swift in Sources */,
 				C0045E861EBF657700C01BFA /* WeekDay.swift in Sources */,
 				C063966E1EBCCAB8008F9F2B /* DateTimeUtils.swift in Sources */,
+				C0D2563A1F2E6D9500841238 /* DefaultWaterForm.swift in Sources */,
 				C0E12D6D1EAFDC43005E5C0F /* UIColor.swift in Sources */,
+				C0D2562D1F2D1EC500841238 /* FormTextField.swift in Sources */,
 				C055E61C1F0D4AC100DFCE51 /* WaterCalculatorViewController.swift in Sources */,
-				C0E9528D1EBB9C4200182620 /* EventTimeTableCell.swift in Sources */,
+				C06A92BF1F291BFC0048E938 /* TimeEventFormController.swift in Sources */,
 				C0A696A21EAE9160001EBFB4 /* AppDelegate.swift in Sources */,
 				C0F147021EB52C0200FB2A19 /* WeekDayController.swift in Sources */,
 			);

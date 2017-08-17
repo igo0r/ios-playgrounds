@@ -12,13 +12,14 @@ import RealmSwift
 class RecurrentEvent: Object {
     dynamic var startAt = NSDate()
     dynamic var descriptionText = ""
+    dynamic var titleText = ""
     dynamic var weekDay: WeekDay?
     
     /*
      create time event from recurrent event
      */
     func creareTimeEvent() -> TimeEvent {
-        let timeEvent = TimeEvent(startAt: startAt as Date, description: descriptionText, notificationDescription: descriptionText, weekDay: weekDay)
+        let timeEvent = TimeEvent(startAt: startAt as Date, description: titleText, notificationDescription: descriptionText, weekDay: weekDay)
         
         return timeEvent
     }

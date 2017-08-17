@@ -24,7 +24,7 @@ class WeekDayFormBtn: UIButton {
         let date = weekDays[btnWeekDay]!
         
         let formatter = DateFormatter()
-        formatter.dateFormat = " EE"
+        formatter.dateFormat = "EEEEEE"
         let weekStr = formatter.string(from: date).lowercased()
         
         setTitle(weekStr, for: .normal)
@@ -43,7 +43,6 @@ class WeekDayFormBtn: UIButton {
         if active {
             isActiveWeekDay = true
             layer.borderColor = green.cgColor
-            setImage(checkImg, for: .normal)
             layer.borderWidth = 2
         } else {
             isActiveWeekDay = false

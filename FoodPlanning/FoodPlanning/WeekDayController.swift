@@ -10,7 +10,8 @@ import UIKit
 import UserNotifications
 
 class WeekDayController: UIViewController, UINavigationControllerDelegate, AKPickerViewDelegate, AKPickerViewDataSource {
-
+    
+    @IBOutlet weak var tipToEditLbl: TipLabel!
     @IBOutlet weak var wakeUpPicker: CustomDatePicker!
     @IBOutlet weak var sleepTimePicker: CustomDatePicker!
     @IBOutlet weak var pickerView: AKPickerView!
@@ -24,6 +25,7 @@ class WeekDayController: UIViewController, UINavigationControllerDelegate, AKPic
     
     @IBOutlet var weekDays: [WeekDayFormBtn]!
     
+    var waterForm = WeekDayWaterForm()
     var weekDay: WeekDay?
     var mealsCount: Int?
     var wakeUpAt: Date? {
@@ -48,16 +50,16 @@ class WeekDayController: UIViewController, UINavigationControllerDelegate, AKPic
         pickerView.delegate = self
         pickerView.dataSource = self
         
-        configureNavBar(withTitle: "Day plan")
+        configureNavBar(withTitle: "Day plan. Step 1")
         configureView()
         configureDayForm()
+        configureTips()
+        let selectedItem = mealsCountArr.index(of: mealsCount!)!
+        pickerView.selectItem(selectedItem, animated: false, notifySelection: false)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        let selectedItem = mealsCountArr.index(of: mealsCount!)!
-        pickerView.selectItem(selectedItem, animated: true)
         _ = isFormValid()
     }
     
@@ -78,6 +80,7 @@ class WeekDayController: UIViewController, UINavigationControllerDelegate, AKPic
             isSleepChanged = true
             sleepAt = date
         }
+        waterForm.updateWaterForm = true
     }
     
     @IBAction func weekDayBtnPressed(_ sender: WeekDayFormBtn) {
@@ -115,6 +118,7 @@ class WeekDayController: UIViewController, UINavigationControllerDelegate, AKPic
     
     func pickerView(_ pickerView: AKPickerView, didSelectItem item: Int) {
         mealsCount = mealsCountArr[item]
+        waterForm.updateWaterForm = true
     }
     
     /*
@@ -126,6 +130,8 @@ class WeekDayController: UIViewController, UINavigationControllerDelegate, AKPic
             mealsCount = day.mealsCount
             wakeUpAt = day.getWakeUpAt()
             sleepAt = day.getSleepAt()
+        } else {
+            waterForm.updateWaterForm = true
         }
         configureMealsPicker()
     }
@@ -157,10 +163,20 @@ class WeekDayController: UIViewController, UINavigationControllerDelegate, AKPic
         }
     }
     
+    func configureTips() {
+        if let timeEvents = waterForm.getTimeEvents() {
+            if timeEvents.count > 0 {
+                tipToEditLbl.shakeVertical()
+            } else {
+                tipToEditLbl.isHidden = true
+            }
+        }
+    }
+    
     func configureMealsPicker() {
-        pickerView.font = UIFont(name: "AvenirNext-DemiBold", size: 17)!
-        pickerView.highlightedFont = UIFont(name: "AvenirNext-DemiBold", size: 18)!
-        pickerView.highlightedTextColor = UIColor(hex: "E4E0E0")
+        pickerView.font = fontDemiBold17
+        pickerView.highlightedFont = fontDemiBold18
+        pickerView.highlightedTextColor = white
         pickerView.interitemSpacing = 14
         pickerView.pickerViewStyle = .flat
         pickerView.maskDisabled = true
@@ -183,27 +199,15 @@ class WeekDayController: UIViewController, UINavigationControllerDelegate, AKPic
         }
         
         if isValid {
-            for day in weekDays {
-                let weekDay = WeekDay()
-                weekDay.mealsCount = mealsCount!
-                weekDay.sleepAt = self.sleepAt! as NSDate
-                weekDay.wakeUpAt = self.wakeUpAt! as NSDate
-                weekDay.weekDay = day.hashValue
-                
-                RealmManager.writeWeekDay(obj: weekDay)
+            guard let waterVC = storyboard?.instantiateViewController(withIdentifier: WaterViewController.storyboardID) else {
+                print("View controller WaterViewController.storyboardID not found")
+                return
             }
-            
-            BackgroundTaskTracker.requestToUpdateNotifications()
-            
-            askNotificationPermissionsIfNeeded(withDismiss: true) { (alert) in
-                if let alert = alert {
-                    self.present(alert, animated: true, completion: nil)
-                } else {
-                self.dismiss(animated: true, completion: nil)
-                }
+            if let vc = waterVC as? WaterViewController {
+                waterForm.setWeekDays(prepareWeekDayArrayWith(weekDays: weekDays))
+                vc.waterForm = waterForm
+                navigationController?.pushViewController(vc, animated: true)
             }
-            UserDefaultsUtils.increasSavePlanCounter()
-            UserDefaultsUtils.increaseSuccessPath()
         }
     }
 }

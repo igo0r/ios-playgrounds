@@ -14,7 +14,6 @@ class WeekViewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var weekCalendarBtn: UIButton!
     
     @IBOutlet weak var cleanWeekDatBtn: UIBarButtonItem!
-    @IBOutlet weak var timeLine: UIView!
     @IBOutlet var weekDayBtns: [UIButton]!
     
     var reloadTableDataTimer: Timer?
@@ -29,6 +28,8 @@ class WeekViewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.viewDidLoad()
         
         SpinnerView.sharedInstance.showSpinnerFor(view: view)
+        
+        eventsTableView.register(UINib(nibName: "EventTableCell", bundle: Bundle.main), forCellReuseIdentifier: "CellTable")
         
         eventsTableView.delegate = self
         eventsTableView.dataSource = self
@@ -63,6 +64,7 @@ class WeekViewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         RateApp.showRatePopupOnSuccessPath(forView: self)
     }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -103,28 +105,27 @@ class WeekViewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = eventsTableView.dequeueReusableCell(withIdentifier: "EventTime", for: indexPath) as? EventTimeTableCell {
+        
+        if let cell = eventsTableView.dequeueReusableCell(withIdentifier: "CellTable", for: indexPath) as? EventTableCell {
+            cell.delegation = EventViewTableCell()
             cell.configureCellFor(timeEvent: timeEvents[indexPath.row])
             
             return cell
         }
         
-        let cell = EventTimeTableCell()
+        let cell = EventTableCell()
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        var height:CGFloat = CGFloat()
-        if timeEvents.count == 1 {
-            height = 200
-        } else {
-            height = 70
-        }
-        
-        return height
+        return UITableViewAutomaticDimension
     }
-
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return timeEvents.count
     }
@@ -138,28 +139,32 @@ class WeekViewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             if let nav = segue.destination as? UINavigationController {
                 if let destination = nav.childViewControllers[0] as? WeekDayController {
                     if let weekDay = sender as? WeekDay {
+                        let waterForm = WeekDayWaterForm()
+                        waterForm.setTimeEvents(TimeEventRealmManager.loadTimeEventsFor(weekDay: weekDay))
                         destination.weekDay = weekDay
+                        destination.waterForm = waterForm
                     }
                 }
             }
         }
     }
     
-    func loadDayEventsFor(day: WeekDays, withProgress: Bool = false) {
-        RealmManager.loadEventsFor(day: day) { resultDay in
+    func loadDayEventsFor(day: WeekDays, withProgress: Bool = false, withUpdatingCellHeight: Bool = true) {
+        WeekDayRealmManager.loadEventsFor(day: day) { resultDay in
             if let weekDay = resultDay {
-                self.timeLine.isHidden = false
                 self.weekDay = weekDay
-                self.timeEvents = weekDay.prepareTimeEvents(withProgress)
+                self.timeEvents = weekDay.prepareEvents(withProgress)
             } else {
                 self.weekDay = WeekDay()
                 self.weekDay?.weekDay = day.rawValue
                 
-                self.timeLine.isHidden = true
                 self.timeEvents = [TimeEvent(startAt: Date(), description: "Tap to create your meal plan", notificationDescription: "", weekDay: nil)]
             }
             
             self.eventsTableView.reloadData()
+            if withUpdatingCellHeight {
+                self.refreshTableCellsHeight()
+            }
         }
     }
     
@@ -209,6 +214,11 @@ class WeekViewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         //btn.sizeToFit()
     }
     
+    func refreshTableCellsHeight() {
+        eventsTableView.beginUpdates()
+        eventsTableView.endUpdates()
+    }
+    
     /*
      when page opens too long - progress needs to be updated
      */
@@ -222,7 +232,7 @@ class WeekViewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
         
         if let day = weekDay {
-            self.loadDayEventsFor(day: WeekDays(rawValue: day.weekDay)!, withProgress: true)
+            self.loadDayEventsFor(day: WeekDays(rawValue: day.weekDay)!, withProgress: true, withUpdatingCellHeight: false)
         }
     }
 }

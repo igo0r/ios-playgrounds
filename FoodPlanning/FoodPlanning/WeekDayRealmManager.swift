@@ -9,8 +9,8 @@
 import Foundation
 import RealmSwift
 
-class RealmManager {
-    static let sharedInstance = RealmManager()
+class WeekDayRealmManager {
+    static let sharedInstance = WeekDayRealmManager()
     private let realm: Realm
     static let dq = DispatchQueue.global(qos: .userInteractive)
     
@@ -25,7 +25,7 @@ class RealmManager {
         dq.sync {
             let realm = try! Realm()
             let obj = realm.objects(WeekDay.self).filter("weekDay == \(day.rawValue)").first
-        
+            
             completionHandler(obj)
         }
     }
@@ -51,6 +51,7 @@ class RealmManager {
      forDay from 0 ... 6 mon - sun
      */
     static func removeWeekDay(_ day: WeekDay, withNotifications: Bool) {
+        TimeEventRealmManager.deleteRecurrentEventsFor(weekDay: day)
         let realm = try! Realm()
         
         try! realm.write {
@@ -60,7 +61,7 @@ class RealmManager {
             BackgroundTaskTracker.requestToUpdateNotifications()
         }
     }
-
+    
     
     /*
      forDay from 0 ... 6 mon - sun
@@ -76,9 +77,9 @@ class RealmManager {
             obj.withWater = value
         }
     }
-
+    
     /*
-     take today weekday. 
+     take today weekday.
      f.e. Tuesday = 1 and build array like 1,2,3...6,0
      sorts from today
      */
@@ -89,7 +90,7 @@ class RealmManager {
         
         let sortedResult = result.sorted(by: { (lhd, rhd) -> Bool in
             if lhd.weekDay >= weekDay.rawValue && rhd.weekDay < weekDay.rawValue {
-               return lhd.weekDay > rhd.weekDay
+                return lhd.weekDay > rhd.weekDay
             } else if lhd.weekDay < weekDay.rawValue && rhd.weekDay >= weekDay.rawValue {
                 return lhd.weekDay > rhd.weekDay
             }

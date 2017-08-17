@@ -72,6 +72,29 @@ class DateTimeUtils {
     }
     
     /*
+     From Date to "08:12 am" depending on firstWeekDay
+     */
+    static func fromDateToStringUsingCurrentDateFormat(forDate date: Date) -> String {
+        let formatter = getCurrentDateFormatter()
+        
+        return formatter.string(from: date)
+    }
+    
+    /*
+     return different date formats for 12/24 houts formats depending on first week day
+     */
+    static func getCurrentDateFormatter() -> DateFormatter {
+        let formatter = DateFormatter()
+        if DateTimeUtils.currentCalendar.firstWeekday == 1 {
+            formatter.dateFormat = "h:mm a"
+        } else {
+            formatter.dateFormat = "HH:mm"
+        }
+        
+        return formatter
+    }
+    
+    /*
      returns current dat ein format yyyy-mm-dd
      */
     static func composeCurrentDayKey() -> String {
@@ -114,6 +137,17 @@ class DateTimeUtils {
         }
         
         return finalWeekDay
+    }
+    
+    static func convertToHoursMinsFrom(seconds: TimeInterval) -> String {
+        let seconds = Int(abs(seconds))
+        let hours: Int = seconds / 3600
+        var timeString = hours > 0 ? "\(hours) h " : ""
+        let min: Int = (seconds / 60) - (hours * 60)
+        
+        timeString += "\(min) m"
+        
+        return timeString
     }
     
     /*

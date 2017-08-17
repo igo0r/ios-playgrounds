@@ -30,11 +30,11 @@ class LocalNotificationClass {
             group.enter()
             LocalNotificationUtils.removeAllPendingLocalNotifications()
             group.leave()
-            //let weekDays = RealmManager.getAllWeekDays()
-            let weekDays = RealmManager.getAllWeekDaysSorted()
+
+            let weekDays = WeekDayRealmManager.getAllWeekDaysSorted()
             var timeEvents: [TimeEvent] = []
             for weekDay in weekDays {
-                timeEvents.append(contentsOf: weekDay.prepareTimeEvents())
+                timeEvents.append(contentsOf: weekDay.prepareEvents())
             }
             var notificationRequests: [UNNotificationRequest] = []
             var todayPastNotificationRequests: [UNNotificationRequest] = []
@@ -49,13 +49,6 @@ class LocalNotificationClass {
             }
             notificationRequests = notificationRequests + todayPastNotificationRequests
             notificationRequests.insert(self.composeSpecialReminderNotificationRequest(), at: 0)
-            
-            /*notificationRequests.sort {
-                let trigger1 = $0.trigger as! UNCalendarNotificationTrigger
-                let trigger2 = $1.trigger as! UNCalendarNotificationTrigger
-                
-                return trigger1.nextTriggerDate()! < trigger2.nextTriggerDate()!
-            }*/
             
             let slicedNotificationRequests = notificationRequests.prefix(upTo: notificationRequests.count > 63 ? 63 : notificationRequests.count)
             
