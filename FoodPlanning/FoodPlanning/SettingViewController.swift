@@ -12,26 +12,31 @@ import MessageUI
 class SettingViewController: UITableViewController {
 
     @IBOutlet weak var notificationSwitcher: UISwitch!
-    
+    var callConfigView = true
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureView()
         configureNavBar(withTitle: "Settings")
-        
+        configureView()
         NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         LocalNotificationUtils.isAuthorizedToSendNotifications() { (isAuth) in
-            self.notificationSwitcher.setOn(isAuth, animated: true)
+            DispatchQueue.main.async {
+                self.notificationSwitcher.setOn(isAuth, animated: true)
+            }
         }
     }
 
     @IBAction func notificationSwitchAction(_ sender: UISwitch) {
-        enableLocalNotifications(sender.isOn) { sender.setOn($0, animated: true) }
+        enableLocalNotifications(sender.isOn) { result in
+            DispatchQueue.main.async {
+                sender.setOn(result, animated: true)
+            }
+        }
     }
     
     // MARK: - Table view data source
@@ -64,7 +69,7 @@ class SettingViewController: UITableViewController {
     /*
      monitoring notification changes
      */
-    func willEnterForeground() {
+    @objc func willEnterForeground() {
         print("Enter foreground")
         LocalNotificationUtils.isAuthorizedToSendNotifications() { (isAuth) in
             self.notificationSwitcher.setOn(isAuth, animated: true)

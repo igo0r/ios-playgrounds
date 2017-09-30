@@ -41,6 +41,7 @@
 		C09690131EF07F0C005391E1 /* BackgroundTaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09690121EF07F0C005391E1 /* BackgroundTaskManager.swift */; };
 		C09690151EF086CC005391E1 /* LocalNotificationClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09690141EF086CC005391E1 /* LocalNotificationClass.swift */; };
 		C096ECA21F3539970059736C /* TimeEventViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C096ECA11F3539970059736C /* TimeEventViewExt.swift */; };
+		C09D434F1F7FEDC200A36FDD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C09D43511F7FEDC200A36FDD /* Localizable.strings */; };
 		C0A696A21EAE9160001EBFB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A696A11EAE9160001EBFB4 /* AppDelegate.swift */; };
 		C0A696A71EAE9160001EBFB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0A696A51EAE9160001EBFB4 /* Main.storyboard */; };
 		C0A696AC1EAE9160001EBFB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0A696AA1EAE9160001EBFB4 /* LaunchScreen.storyboard */; };
@@ -123,6 +124,10 @@
 		C09690121EF07F0C005391E1 /* BackgroundTaskManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundTaskManager.swift; sourceTree = "<group>"; };
 		C09690141EF086CC005391E1 /* LocalNotificationClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationClass.swift; sourceTree = "<group>"; };
 		C096ECA11F3539970059736C /* TimeEventViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeEventViewExt.swift; sourceTree = "<group>"; };
+		C09D434B1F7FEAD200A36FDD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		C09D434C1F7FEAD300A36FDD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		C09D43501F7FEDC200A36FDD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C09D43521F7FEDC600A36FDD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C0A6969E1EAE9160001EBFB4 /* FoodPlanning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodPlanning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0A696A11EAE9160001EBFB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0A696A61EAE9160001EBFB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -243,10 +248,10 @@
 				C0045E8C1EBF844400C01BFA /* UIViewControllerExt.swift */,
 				C03B68F01ED0A17300830DCA /* UIImage+Resize.swift */,
 				C0E949891ED47EA300FA5B09 /* Date.swift */,
+				C0FB36011EF9AF52000781EE /* SettingViewControllerExt.swift */,
 				C0E12D6C1EAFDC43005E5C0F /* UIColor.swift */,
 				C0E949AD1ED6168000FA5B09 /* NotificationCenterDelegate.swift */,
 				C0AEEEF01EDB3E4D00FBE6FB /* UITabBarControllerExt.swift */,
-				C0FB36011EF9AF52000781EE /* SettingViewControllerExt.swift */,
 				C0DFDBF51F02F17B00702D12 /* UITableViewControllerExt.swift */,
 			);
 			name = Extension;
@@ -335,9 +340,26 @@
 			name = LocalNotification;
 			sourceTree = "<group>";
 		};
+		C09D43491F7D690000A36FDD /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				C09D434A1F7D690C00A36FDD /* Controller */,
+			);
+			name = Setting;
+			sourceTree = "<group>";
+		};
+		C09D434A1F7D690C00A36FDD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C0D140871EE368BC00940DBA /* SettingViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		C0A696951EAE9160001EBFB4 = {
 			isa = PBXGroup;
 			children = (
+				C09D43511F7FEDC200A36FDD /* Localizable.strings */,
 				C0A696A01EAE9160001EBFB4 /* FoodPlanning */,
 				C0A696B51EAE9161001EBFB4 /* FoodPlanningTests */,
 				C0A6969F1EAE9160001EBFB4 /* Products */,
@@ -396,6 +418,7 @@
 		C0D256311F2E667A00841238 /* MealApp */ = {
 			isa = PBXGroup;
 			children = (
+				C09D43491F7D690000A36FDD /* Setting */,
 				C0D256321F2E66CB00841238 /* WaterForm */,
 				C06A92BC1F291A2D0048E938 /* WeekDayView */,
 				C06A92B81F2919740048E938 /* WeekDayForm */,
@@ -478,7 +501,6 @@
 			isa = PBXGroup;
 			children = (
 				C0AEEEF21EDB3F3200FBE6FB /* MealTabBarController.swift */,
-				C0D140871EE368BC00940DBA /* SettingViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -545,16 +567,18 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Igor Lantushenko";
 				TargetAttributes = {
 					C0A6969D1EAE9160001EBFB4 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = C63RZKM6PP;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					C0A696B11EAE9161001EBFB4 = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = C0A6969D1EAE9160001EBFB4;
 					};
@@ -584,6 +608,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C09D434F1F7FEDC200A36FDD /* Localizable.strings in Resources */,
 				C0A696AC1EAE9160001EBFB4 /* LaunchScreen.storyboard in Resources */,
 				C043379D1EC71E4B00FA0616 /* Assets.xcassets in Resources */,
 				C0FFF70C1F2673FA0094EE15 /* EventTableCell.xib in Resources */,
@@ -607,13 +632,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FoodPlanningTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2A805D79C2E57480F75AF724 /* [CP] Check Pods Manifest.lock */ = {
@@ -622,13 +650,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FoodPlanning-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8FCF701E097B1398BCA61A21 /* [CP] Copy Pods Resources */ = {
@@ -682,9 +713,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FoodPlanning/Pods-FoodPlanning-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -779,10 +815,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		C09D43511F7FEDC200A36FDD /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C09D43501F7FEDC200A36FDD /* ru */,
+				C09D43521F7FEDC600A36FDD /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		C0A696A51EAE9160001EBFB4 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				C0A696A61EAE9160001EBFB4 /* Base */,
+				C09D434B1F7FEAD200A36FDD /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -791,6 +837,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				C0A696AB1EAE9160001EBFB4 /* Base */,
+				C09D434C1F7FEAD300A36FDD /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -802,13 +849,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -816,7 +866,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -839,12 +893,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -853,13 +908,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -867,7 +925,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -884,10 +946,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -908,7 +971,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.FoodPlanning;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -928,7 +992,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.FoodPlanning;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -943,7 +1008,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.FoodPlanningTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FoodPlanning.app/FoodPlanning";
 			};
 			name = Debug;
@@ -958,7 +1024,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.FoodPlanningTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FoodPlanning.app/FoodPlanning";
 			};
 			name = Release;

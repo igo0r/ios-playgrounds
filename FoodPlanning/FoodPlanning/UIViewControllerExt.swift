@@ -27,7 +27,11 @@ extension UIViewController {
     func configureView() {
         view.backgroundColor = UIColor.clear
         let backgroundImage = getBackgroundImage()
-        view.insertSubview(backgroundImage, at: 0)
+        if let current = self as? UITableViewController {
+            current.tableView.backgroundView = backgroundImage
+        } else {
+            view.insertSubview(backgroundImage, at: 0)
+        }
     }
     
     func configureView(withTableView tableView: UITableView) {
@@ -149,7 +153,7 @@ extension UIViewController {
     /*
      action for hiding keyboard
      */
-    func dismissKeyboard() {
+    @objc func dismissKeyboard() {
         view.endEditing(true)
     }
     

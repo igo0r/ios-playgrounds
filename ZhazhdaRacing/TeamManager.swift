@@ -12,9 +12,9 @@ class TeamManager {
     static let apiClient = ApiClient()
     private init() {}
     
-    static func getAllTeams(ch: () -> ()) {
+    static func getAllTeams(ch: ([Team]) -> ()) {
         if let urlComp = apiClient.getAllTeamsURL() {
-            apiClient.composeRequest(withUrl: urlComp) { (responseObject, error) in
+            /*apiClient.composeRequest(withUrl: urlComp) { (responseObject, error) in
                 if let jsonTeams = responseObject as? [String:AnyObject] {
                     var teams = [String]()
                     for jsonTeam in jsonTeams {
@@ -23,7 +23,7 @@ class TeamManager {
                     
                     
                 }
-            }
+            }*/
         }
     }
 }

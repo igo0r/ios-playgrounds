@@ -266,7 +266,7 @@ public class AKPickerView: UIView, UICollectionViewDataSource, UICollectionViewD
         }
     }
     /// Readwrite. A boolean value indicates whether the mask is disabled.
-    @IBInspectable public var maskDisabled: Bool! = nil {
+    public var maskDisabled: Bool! = nil {
         didSet {
             self.collectionView.layer.mask = self.maskDisabled == true ? nil : {
                 let maskLayer = CAGradientLayer()
@@ -373,8 +373,8 @@ public class AKPickerView: UIView, UICollectionViewDataSource, UICollectionViewD
      :returns: A CGSize which contains given string just.
      */
     fileprivate func sizeForString(_ string: NSString) -> CGSize {
-        let size = string.size(attributes: [NSFontAttributeName: self.font])
-        let highlightedSize = string.size(attributes: [NSFontAttributeName: self.highlightedFont])
+        let size = string.size(withAttributes: [NSAttributedStringKey.font: self.font])
+        let highlightedSize = string.size(withAttributes: [NSAttributedStringKey.font: self.highlightedFont])
         return CGSize(
             width: ceil(max(size.width, highlightedSize.width)),
             height: ceil(max(size.height, highlightedSize.height)))

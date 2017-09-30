@@ -13,13 +13,15 @@ class TeamCell: UITableViewCell {
     static let name = "TeamCell"
     static let identifier = "GridInfo"
     
-    @IBOutlet weak var rightLbl: UILabel!
-    @IBOutlet weak var leftLbl: UILabel!
+    @IBOutlet weak var rightLbl: GridCellLabel!
+    @IBOutlet weak var leftLbl: GridCellLabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         backgroundColor = UIColor.clear
+        layoutMargins = .zero //or UIEdgeInsetsMake(top, left, bottom, right)
+        separatorInset = .zero
     }
     
     func configureCellFor(gridInfo: GridInfo) {

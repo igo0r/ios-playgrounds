@@ -198,20 +198,19 @@ class WeekViewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let weekAttrString = NSMutableAttributedString(
             string: weekStr,
             attributes: [
-                NSFontAttributeName: UIFont(name: "AvenirNext-Bold", size: 14)!,
-                NSForegroundColorAttributeName: UIColor(hex: "F0554A")
+                NSAttributedStringKey.font: UIFont(name: "AvenirNext-Bold", size: 14)!,
+                NSAttributedStringKey.foregroundColor: UIColor(hex: "F0554A")
             ]
         )
         let monthStrAttrString = NSMutableAttributedString(
             string: monthStr,
             attributes: [
-                NSFontAttributeName: UIFont(name: "AvenirNext-DemiBold", size: 14)!,
-                NSForegroundColorAttributeName: UIColor(hex: "FCFFFF")            ]
+                NSAttributedStringKey.font: UIFont(name: "AvenirNext-DemiBold", size: 14)!,
+                NSAttributedStringKey.foregroundColor: UIColor(hex: "FCFFFF")            ]
         )
         
         weekAttrString.append(monthStrAttrString)
         btn.setAttributedTitle(weekAttrString, for: .normal)
-        //btn.sizeToFit()
     }
     
     func refreshTableCellsHeight() {
@@ -222,7 +221,7 @@ class WeekViewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     /*
      when page opens too long - progress needs to be updated
      */
-    func refreshWeekViewData() {
+    @objc func refreshWeekViewData() {
         if !DateTimeUtils.isCurrentDateKeyValid() {
             DateTimeUtils.currentWeek = [:]
             configureCalendarBtn(weekCalendarBtn)

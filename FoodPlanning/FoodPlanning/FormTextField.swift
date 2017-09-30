@@ -17,14 +17,14 @@ class FormTextField: UITextField {
         
         attributedPlaceholder = NSAttributedString(
             string: "",
-            attributes: [NSForegroundColorAttributeName: redColor, NSFontAttributeName: fontMedium15]
+            attributes: [NSAttributedStringKey.foregroundColor: redColor, NSAttributedStringKey.font: fontMedium15]
         )
     }
     
     func setAttributedPlaceholder(withText text: String) {
         attributedPlaceholder = NSAttributedString(
             string: text,
-            attributes: [NSForegroundColorAttributeName: redColor, NSFontAttributeName: fontMedium15]
+            attributes: [NSAttributedStringKey.foregroundColor: redColor, NSAttributedStringKey.font: fontMedium15]
         )
     }
 

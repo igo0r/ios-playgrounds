@@ -26,67 +26,83 @@ enum TableType: Int {
             return gridGapsPosition
         }
     }
+    
+    func getTitle() -> String {
+        switch self {
+        case .TeamLastLaps:
+            return "Team last lap"
+        case .GridBestLaps:
+            return "Race best laps"
+        case .GridLastLap:
+            return "Grid last lap"
+        case .GridGapPositions:
+            return "Grid gap"
+        }
+    }
 }
 
-class RacerModeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RacerModeVC: UIViewController {
 
     @IBOutlet var tableViews: [UITableView]!
     static let storyboardID = "RacerVC"
     
-    override var shouldAutorotate: Bool {
-        return false
-    }
+    var currentTeam = Team()
     
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return .landscape
-    }
+    var popupTV: UITableView = UITableView()
+    
+    lazy var items: [Team] = {
+        return teams
+    }()
+    
+ /*   lazy var popoverContentController: UINavigationController = {
+        let controller = TeamListTVC(style: .plain)
+        controller.selectionHandler = self.selectionHandler
+        let navigationController = UINavigationController(rootViewController: controller)
+        return navigationController
+    }()
+    lazy var popoverController: UIPopoverController = {
+        return UIPopoverController(contentViewController: self.popoverContentController)
+    }()*/
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configureView()
+        configureNavBar(withTitle: currentTeam.fullName)
+        addBarLeftRightActionsWith(leftBtnTitle: "Back", rightBtnTitle: "🏎")
         let cell = UINib(nibName: TeamCell.name, bundle: Bundle.main)
         for (index, _) in tableViews.enumerated() {
             tableViews[index].delegate = self
             tableViews[index].dataSource = self
             tableViews[index].register(cell, forCellReuseIdentifier: TeamCell.identifier)
             tableViews[index].tableFooterView = UIView()
-        }
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let tableType = TableType(rawValue: tableView.tag) {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: TeamCell.identifier, for: indexPath) as? TeamCell {
-                cell.configureCellFor(gridInfo: tableType.getValues()[indexPath.row])
-                return cell
-            }
+            tableViews[index].bounces = false
+            tableViews[index].showsVerticalScrollIndicator = false
         }
         
-        return UITableViewCell()
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let tableType = TableType(rawValue: tableView.tag) {
-            return tableType.getValues().count
-        }
-        
-        return 0
+        getTeamData()
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
-        
-        if isLandScapeMode() {
-            
+        for (index, _) in tableViews.enumerated() {
+            tableViews[index].layoutIfNeeded()
         }
+        
+    }
+    
+    func getTeamData() {
+        TeamManager.getAllTeams() { teams in
+            let tI = UserDefaultUtil.getTeamIdentifier()
+            let filteredTeams = teams.filter{ $0.identifier == tI }
+            
+            self.currentTeam = filteredTeams.count > 0 ? filteredTeams[0] : teams[0]
+            self.reloadTablesData()
+        }
+    }
+    
+    func reloadTablesData() {
+        _ = tableViews.map{$0.reloadData()}
     }
 }

@@ -10,10 +10,10 @@ import Foundation
 import RealmSwift
 
 class RecurrentEvent: Object {
-    dynamic var startAt = NSDate()
-    dynamic var descriptionText = ""
-    dynamic var titleText = ""
-    dynamic var weekDay: WeekDay?
+    @objc dynamic var startAt = NSDate()
+    @objc dynamic var descriptionText = ""
+    @objc dynamic var titleText = ""
+    @objc dynamic var weekDay: WeekDay?
     
     /*
      create time event from recurrent event

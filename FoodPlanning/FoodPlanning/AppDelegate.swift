@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         RealmMigrationManager.migrate()
         UINavigationBar.appearance().barTintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         UINavigationBar.appearance().tintColor = UIColor.white
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: white, NSFontAttributeName: UIFont(name: "AvenirNext-Medium", size: 21)!]
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: white, NSAttributedStringKey.font: UIFont(name: "AvenirNext-Medium", size: 21)!]
         
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
         

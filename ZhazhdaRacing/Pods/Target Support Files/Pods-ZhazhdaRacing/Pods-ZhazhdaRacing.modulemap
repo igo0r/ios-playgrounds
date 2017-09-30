@@ -1,0 +1,6 @@
+framework module Pods_ZhazhdaRacing {
+  umbrella header "Pods-ZhazhdaRacing-umbrella.h"
+
+  export *
+  module * { export * }
+}

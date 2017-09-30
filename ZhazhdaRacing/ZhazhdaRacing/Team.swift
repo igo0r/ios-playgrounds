@@ -9,6 +9,23 @@
 import Foundation
 
 struct Team {
-    let name = ""
-    let racer = ""
+    var name = ""
+    var racer = ""
+    var identifier = ""
+    
+    init() {
+        self.name = ""
+        self.racer = ""
+        self.identifier = ""
+    }
+    
+    init(name: String, racer: String) {
+        self.name = name
+        self.racer = racer
+        self.identifier = ""
+    }
+    
+    var fullName: String {
+        return "\(name)/\(racer)"
+    }
 }

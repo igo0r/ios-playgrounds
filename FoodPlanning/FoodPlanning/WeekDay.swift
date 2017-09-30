@@ -10,22 +10,22 @@ import Foundation
 import RealmSwift
 
 class WeekDay: Object {
-    dynamic var weekDay = 0
-    dynamic var wakeUpAt = NSDate()
-    dynamic var sleepAt = NSDate()
-    dynamic var withWater = false
-    dynamic var mealsCount = 3
+    @objc dynamic var weekDay = 0
+    @objc dynamic var wakeUpAt = NSDate()
+    @objc dynamic var sleepAt = NSDate()
+    @objc dynamic var withWater = false
+    @objc dynamic var mealsCount = 3
     let recurrentEvents = LinkingObjects(fromType: RecurrentEvent.self, property: "weekDay")
     
     override static func primaryKey() -> String? {
         return "weekDay"
     }
 
-    func getWakeUpAt() -> Date {
+    @objc func getWakeUpAt() -> Date {
         return wakeUpAt as Date
     }
     
-    func getSleepAt() -> Date {
+    @objc func getSleepAt() -> Date {
         return sleepAt as Date
     }
     

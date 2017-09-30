@@ -9,6 +9,32 @@
 import UIKit
 
 extension UIViewController {
+    
+    func configureNavBar(withTitle: String) {
+        let navBar = navigationController?.navigationBar
+        navBar?.isTranslucent = false
+        navBar?.barStyle = .black
+        self.title = withTitle
+    }
+    
+    func goToPreviousViewController() {
+        if self.getPreviousControllerFromNav() != nil {
+            _ = self.navigationController?.popViewController(animated: true)
+        } else {
+            dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    func getPreviousControllerFromNav() -> UIViewController? {
+        if let childVC = navigationController?.childViewControllers {
+            if childVC.count > 1 {
+                return childVC[childVC.count - 2]
+            }
+        }
+        
+        return nil
+    }
+    
     func configureView() {
         view.backgroundColor = UIColor.clear
         let backgroundImage = getBackgroundImage()
@@ -26,7 +52,7 @@ extension UIViewController {
         backgroundImage.contentMode =  UIViewContentMode.scaleAspectFill
         
         let backgroundView = UIView(frame: UIScreen.main.bounds)
-        backgroundView.backgroundColor = black07
+        backgroundView.backgroundColor = black08
         backgroundImage.addSubview(backgroundView)
         
         return backgroundImage

@@ -1,0 +1,171 @@
+
+/* Class = "UIButton"; normalTitle = "PREV"; ObjectID = "0vV-jj-dSI"; */
+"0vV-jj-dSI.normalTitle" = "PREV";
+
+/* Class = "UILabel"; text = "200"; ObjectID = "3sh-QM-5Hx"; */
+"3sh-QM-5Hx.text" = "200";
+
+/* Class = "UILabel"; text = "Rate MealWaterLab on app store"; ObjectID = "3vD-d2-Adu"; */
+"3vD-d2-Adu.text" = "Rate MealWaterLab on app store";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "4tN-3s-Gfx"; */
+"4tN-3s-Gfx.title" = "Settings";
+
+/* Class = "UIButton"; normalTitle = "MON 07"; ObjectID = "6qS-OJ-nmr"; */
+"6qS-OJ-nmr.normalTitle" = "MON 07";
+
+/* Class = "UIButton"; normalTitle = "MON 07"; ObjectID = "9DC-VD-9nI"; */
+"9DC-VD-9nI.normalTitle" = "MON 07";
+
+/* Class = "UILabel"; text = "Meal name:"; ObjectID = "9he-nQ-Cv1"; */
+"9he-nQ-Cv1.text" = "Meal name:";
+
+/* Class = "UILabel"; text = "Or set it manually"; ObjectID = "AUM-MA-IO8"; */
+"AUM-MA-IO8.text" = "Or set it manually";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "DSt-z2-L72"; */
+"DSt-z2-L72.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UILabel"; text = "Send feedback"; ObjectID = "GLG-YM-c0p"; */
+"GLG-YM-c0p.text" = "Send feedback";
+
+/* Class = "UINavigationItem"; title = "Meal schedule"; ObjectID = "GY5-cM-trT"; */
+"GY5-cM-trT.title" = "Meal schedule";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Ga0-hM-CpK"; */
+"Ga0-hM-CpK.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "NEXT"; ObjectID = "GbH-ye-gqQ"; */
+"GbH-ye-gqQ.normalTitle" = "NEXT";
+
+/* Class = "UIButton"; normalTitle = " mon"; ObjectID = "Gph-oS-hEd"; */
+"Gph-oS-hEd.normalTitle" = " mon";
+
+/* Class = "UILabel"; text = "100"; ObjectID = "GrZ-lX-eXr"; */
+"GrZ-lX-eXr.text" = "100";
+
+/* Class = "UILabel"; text = "Notifications"; ObjectID = "GuX-8T-AB4"; */
+"GuX-8T-AB4.text" = "Notifications";
+
+/* Class = "UILabel"; text = "To change name or description - navigate to the last step without changing anything."; ObjectID = "KhV-cd-OSL"; */
+"KhV-cd-OSL.text" = "To change name or description - navigate to the last step without changing anything.";
+
+/* Class = "UILabel"; text = "Meal time:"; ObjectID = "N7L-Bs-Dct"; */
+"N7L-Bs-Dct.text" = "Meal time:";
+
+/* Class = "UILabel"; text = "Week days to apply"; ObjectID = "Nur-M6-HG0"; */
+"Nur-M6-HG0.text" = "Week days to apply";
+
+/* Class = "UIButton"; normalTitle = "All"; ObjectID = "NxK-vr-Lo3"; */
+"NxK-vr-Lo3.normalTitle" = "All";
+
+/* Class = "UINavigationItem"; title = "Water"; ObjectID = "Qu6-pg-s6R"; */
+"Qu6-pg-s6R.title" = "Water";
+
+/* Class = "UITextField"; placeholder = "E.g. breakfast, lunch, sneak..."; ObjectID = "Rr3-Bh-czl"; */
+"Rr3-Bh-czl.placeholder" = "E.g. breakfast, lunch, sneak...";
+
+/* Class = "UIBarButtonItem"; title = "Next"; ObjectID = "T6m-We-VVu"; */
+"T6m-We-VVu.title" = "Next";
+
+/* Class = "UIButton"; normalTitle = "MON 07"; ObjectID = "TTl-et-j0h"; */
+"TTl-et-j0h.normalTitle" = "MON 07";
+
+/* Class = "UIButton"; normalTitle = " mon"; ObjectID = "VMY-DG-NgI"; */
+"VMY-DG-NgI.normalTitle" = " mon";
+
+/* Class = "UIButton"; normalTitle = "mon"; ObjectID = "Vkg-M9-rW4"; */
+"Vkg-M9-rW4.normalTitle" = "mon";
+
+/* Class = "UISegmentedControl"; W0X-dE-TB0.segmentTitles[0] = "lb, oz"; ObjectID = "W0X-dE-TB0"; */
+"W0X-dE-TB0.segmentTitles[0]" = "lb, oz";
+
+/* Class = "UISegmentedControl"; W0X-dE-TB0.segmentTitles[1] = "kg, gram"; ObjectID = "W0X-dE-TB0"; */
+"W0X-dE-TB0.segmentTitles[1]" = "kg, gram";
+
+/* Class = "UILabel"; text = "Weight"; ObjectID = "X8Y-qn-XFZ"; */
+"X8Y-qn-XFZ.text" = "Weight";
+
+/* Class = "UILabel"; text = "Quantity of water"; ObjectID = "Yea-a0-TKh"; */
+"Yea-a0-TKh.text" = "Quantity of water";
+
+/* Class = "UIButton"; normalTitle = "MON 07"; ObjectID = "Yid-sP-368"; */
+"Yid-sP-368.normalTitle" = "MON 07";
+
+/* Class = "UIButton"; normalTitle = " mon"; ObjectID = "ZSK-C0-Jex"; */
+"ZSK-C0-Jex.normalTitle" = " mon";
+
+/* Class = "UITabBarItem"; title = "Meal planner"; ObjectID = "ZZI-Oz-R6Z"; */
+"ZZI-Oz-R6Z.title" = "Meal planner";
+
+/* Class = "UIButton"; normalTitle = "MON 07"; ObjectID = "aFc-14-cRV"; */
+"aFc-14-cRV.normalTitle" = "MON 07";
+
+/* Class = "UILabel"; text = "Wake me up at"; ObjectID = "b1n-tj-EQA"; */
+"b1n-tj-EQA.text" = "Wake me up at";
+
+/* Class = "UILabel"; text = "Note: This is an estimate. The actual requirement may vary depending on many factors."; ObjectID = "cun-ii-CWk"; */
+"cun-ii-CWk.text" = "Note: This is an estimate. The actual requirement may vary depending on many factors.";
+
+/* Class = "UILabel"; text = "Meal description:"; ObjectID = "dRu-t6-U1x"; */
+"dRu-t6-U1x.text" = "Meal description:";
+
+/* Class = "UILabel"; text = "Water reminders"; ObjectID = "fOt-Hv-yow"; */
+"fOt-Hv-yow.text" = "Water reminders";
+
+/* Class = "UIButton"; normalTitle = "7-13  NOV. 2017"; ObjectID = "fUP-ej-aTE"; */
+"fUP-ej-aTE.normalTitle" = "7-13  NOV. 2017";
+
+/* Class = "UILabel"; text = "gram"; ObjectID = "fm2-Gc-zYp"; */
+"fm2-Gc-zYp.text" = "gram";
+
+/* Class = "UIButton"; normalTitle = "MON 07"; ObjectID = "gky-iY-Bsr"; */
+"gky-iY-Bsr.normalTitle" = "MON 07";
+
+/* Class = "UIButton"; normalTitle = " tue"; ObjectID = "h9k-4C-Eic"; */
+"h9k-4C-Eic.normalTitle" = " tue";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "hzn-qn-PeS"; */
+"hzn-qn-PeS.text" = "Label";
+
+/* Class = "UILabel"; text = "Drink before meal in"; ObjectID = "k9d-cn-JVM"; */
+"k9d-cn-JVM.text" = "Drink before meal in";
+
+/* Class = "UITabBarItem"; title = "Water template"; ObjectID = "kc9-Ua-o84"; */
+"kc9-Ua-o84.title" = "Water template";
+
+/* Class = "UIButton"; normalTitle = " mon"; ObjectID = "ljD-0g-MoJ"; */
+"ljD-0g-MoJ.normalTitle" = " mon";
+
+/* Class = "UILabel"; text = "5000"; ObjectID = "ljK-HE-7K7"; */
+"ljK-HE-7K7.text" = "5000";
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "nyK-GB-9ip"; */
+"nyK-GB-9ip.title" = "Settings";
+
+/* Class = "UILabel"; text = "At least 3 hours from wake up"; ObjectID = "rIo-Fm-pvi"; */
+"rIo-Fm-pvi.text" = "At least 3 hours from wake up";
+
+/* Class = "UILabel"; text = "Day activity"; ObjectID = "rmi-tO-CLQ"; */
+"rmi-tO-CLQ.text" = "Day activity";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "rug-z3-d6a"; */
+"rug-z3-d6a.title" = "Back";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "s66-me-k7j"; */
+"s66-me-k7j.text" = "Detail";
+
+/* Class = "UILabel"; text = "Meals count"; ObjectID = "tIY-TN-mhp"; */
+"tIY-TN-mhp.text" = "Meals count";
+
+/* Class = "UIButton"; normalTitle = "Estimate water quantity"; ObjectID = "vHv-eO-IJN"; */
+"vHv-eO-IJN.normalTitle" = "Estimate water quantity";
+
+/* Class = "UIButton"; normalTitle = " mon"; ObjectID = "w4e-0H-66u"; */
+"w4e-0H-66u.normalTitle" = " mon";
+
+/* Class = "UIButton"; normalTitle = "MON 07"; ObjectID = "wD2-5S-TGc"; */
+"wD2-5S-TGc.normalTitle" = "MON 07";
+
+/* Class = "UILabel"; text = "Go to bed at"; ObjectID = "xCI-yF-roh"; */
+"xCI-yF-roh.text" = "Go to bed at";

@@ -48,15 +48,15 @@ class WeekDayBtn: UIButton {
         let weekAttrString = NSMutableAttributedString(
             string: weekStr,
             attributes: [
-                NSFontAttributeName: UIFont(name: "AvenirNext-DemiBold", size: 11)!,
-                NSForegroundColorAttributeName: weekDayColor
+                NSAttributedStringKey.font: UIFont(name: "AvenirNext-DemiBold", size: 11)!,
+                NSAttributedStringKey.foregroundColor: weekDayColor
             ]
         )
         let dayAttrString = NSMutableAttributedString(
             string: dayStr,
             attributes: [
-                NSFontAttributeName: UIFont(name: "AvenirNext-DemiBold", size: 22)!,
-                NSForegroundColorAttributeName: whiteColor            ]
+                NSAttributedStringKey.font: UIFont(name: "AvenirNext-DemiBold", size: 22)!,
+                NSAttributedStringKey.foregroundColor: whiteColor            ]
         )
         
         weekAttrString.append(dayAttrString)

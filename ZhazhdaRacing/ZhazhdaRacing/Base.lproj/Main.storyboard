@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="CLw-eO-qk7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="CLw-eO-qk7">
     <device id="retina4_0" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -36,6 +36,9 @@
                                                 <real key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="typeBtnPrsd:" destination="CLw-eO-qk7" eventType="touchUpInside" id="cnx-hM-Wl8"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9u-wI-OKA" customClass="TypeButton" customModule="ZhazhdaRacing" customModuleProvider="target">
                                         <rect key="frame" x="172.5" y="0.0" width="167" height="30"/>
@@ -92,18 +95,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fsx-Je-hzm">
-                                <rect key="frame" x="28" y="28" width="512" height="284"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fsx-Je-hzm">
+                                <rect key="frame" x="8" y="8" width="552" height="304"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="VBJ-fq-df6">
-                                        <rect key="frame" x="0.0" y="0.0" width="253.5" height="284"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="VBJ-fq-df6">
+                                        <rect key="frame" x="0.0" y="0.0" width="272" height="304"/>
                                         <subviews>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fjn-8w-EOr" customClass="GridInfoTV" customModule="ZhazhdaRacing" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="253.5" height="137"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="272" height="148"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="137" id="Let-0n-8v3"/>
-                                                </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="5"/>
@@ -111,11 +111,8 @@
                                                 </userDefinedRuntimeAttributes>
                                             </tableView>
                                             <tableView clipsSubviews="YES" tag="2" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vs0-E3-46s" customClass="GridInfoTV" customModule="ZhazhdaRacing" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="142" width="253.5" height="142"/>
+                                                <rect key="frame" x="0.0" y="156" width="272" height="148"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="142" id="tvd-KI-Gmv"/>
-                                                </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="5"/>
@@ -124,15 +121,12 @@
                                             </tableView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ueG-Po-VpD">
-                                        <rect key="frame" x="258.5" y="0.0" width="253.5" height="284"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ueG-Po-VpD">
+                                        <rect key="frame" x="280" y="0.0" width="272" height="304"/>
                                         <subviews>
                                             <tableView clipsSubviews="YES" tag="1" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="A5e-Fp-qQs" customClass="GridInfoTV" customModule="ZhazhdaRacing" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="253.5" height="137"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="272" height="148"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="137" id="wNo-AM-Kwb"/>
-                                                </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="5"/>
@@ -140,11 +134,8 @@
                                                 </userDefinedRuntimeAttributes>
                                             </tableView>
                                             <tableView clipsSubviews="YES" tag="3" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gkQ-ki-akJ" customClass="GridInfoTV" customModule="ZhazhdaRacing" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="142" width="253.5" height="142"/>
+                                                <rect key="frame" x="0.0" y="156" width="272" height="148"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="142" id="YV2-QH-Hkq"/>
-                                                </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="5"/>
@@ -155,15 +146,15 @@
                                     </stackView>
                                 </subviews>
                                 <variation key="heightClass=compact" axis="horizontal"/>
-                                <variation key="heightClass=regular" distribution="fillProportionally"/>
+                                <variation key="heightClass=regular" distribution="fillEqually"/>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="fsx-Je-hzm" secondAttribute="trailing" constant="8" id="4V0-dG-Rwn"/>
-                            <constraint firstItem="juM-Aj-OO1" firstAttribute="top" secondItem="fsx-Je-hzm" secondAttribute="bottom" constant="8" id="ZLO-La-5yi"/>
-                            <constraint firstItem="fsx-Je-hzm" firstAttribute="leading" secondItem="njB-bd-o9r" secondAttribute="leadingMargin" constant="8" id="aRD-PI-k76"/>
-                            <constraint firstItem="fsx-Je-hzm" firstAttribute="top" secondItem="Qm4-S7-cQa" secondAttribute="bottom" constant="8" id="tms-Ep-Exo"/>
+                            <constraint firstItem="fsx-Je-hzm" firstAttribute="leading" secondItem="njB-bd-o9r" secondAttribute="leading" constant="8" id="CMd-2b-xkU"/>
+                            <constraint firstAttribute="trailing" secondItem="fsx-Je-hzm" secondAttribute="trailing" constant="8" id="Rcd-UD-00T"/>
+                            <constraint firstItem="juM-Aj-OO1" firstAttribute="top" secondItem="fsx-Je-hzm" secondAttribute="bottom" constant="8" id="V75-OK-T1p"/>
+                            <constraint firstItem="fsx-Je-hzm" firstAttribute="top" secondItem="Qm4-S7-cQa" secondAttribute="bottom" constant="8" id="lgx-c1-7N1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="g16-OU-hDm"/>
@@ -177,6 +168,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jsL-nP-ljK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1674" y="-261"/>
+        </scene>
+        <!--General ModeVC-->
+        <scene sceneID="kMn-Aq-vRt">
+            <objects>
+                <viewController storyboardIdentifier="GeneralModeVC" id="FrA-tu-Ih1" customClass="GeneralModeVC" customModule="ZhazhdaRacing" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nba-K4-xX6"/>
+                        <viewControllerLayoutGuide type="bottom" id="yJk-Lq-d14"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xrk-Jg-pL5">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="omj-9j-9BD">
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewLayout key="collectionViewLayout" id="av4-Mb-Le3" customClass="GeneralModeCVL" customModule="ZhazhdaRacing" customModuleProvider="target"/>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="omj-9j-9BD" firstAttribute="leading" secondItem="Xrk-Jg-pL5" secondAttribute="leading" id="APu-1K-X2s"/>
+                            <constraint firstItem="omj-9j-9BD" firstAttribute="top" secondItem="nba-K4-xX6" secondAttribute="bottom" id="jjG-6n-EDz"/>
+                            <constraint firstAttribute="trailing" secondItem="omj-9j-9BD" secondAttribute="trailing" id="mvw-fF-XrZ"/>
+                            <constraint firstItem="yJk-Lq-d14" firstAttribute="top" secondItem="omj-9j-9BD" secondAttribute="bottom" id="wwU-y9-1Wa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="gridTable" destination="omj-9j-9BD" id="G21-ue-oNF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ogX-GS-rrE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-930" y="-274"/>
         </scene>
     </scenes>
 </document>
